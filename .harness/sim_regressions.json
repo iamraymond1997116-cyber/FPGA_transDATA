@@ -1,0 +1,8 @@
+{
+  "comment": "V6.3 testbenches. 'all' runs every tb_*.sv. Each entry lists tb base names (no extension).",
+  "regressions": {
+    "smoke": ["tb_sensor_power_control_v60"],
+    "nightly": ["tb_sensor_power_control_v60", "tb_trigger_chain"],
+    "all": []
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": {
+    "status": ["not_started", "in_progress", "blocked", "passing"],
+    "stage": {
+      "V1": "Lint + sim pass",
+      "V2": "Board-verified",
+      "V3": "Regression green + analyzed"
+    }
+  },
+  "features": [
+    {
+      "id": "v6-001",
+      "priority": 1,
+      "area": "power",
+      "title": "5-mode power sequencing",
+      "user_visible_behavior": "Sensor cycles through FULL/PCUT/NCUT/EXTR/FCYC modes automatically",
+      "dependencies": [],
+      "status": "passing",
+      "stage": "V2",
+      "verification": "1. Program board 2. Capture UART frames 3. Check MODE field cycles through all 5",
+      "evidence": "V6.3 bitstream generated, v63_* capture logs show 5 modes"
+    },
+    {
+      "id": "v6-002",
+      "priority": 1,
+      "area": "capture",
+      "title": "128-point dual-channel capture",
+      "user_visible_behavior": "Each trigger produces 128 samples on both CH1 and CH2",
+      "dependencies": ["v6-001"],
+      "status": "passing",
+      "stage": "V2",
+      "verification": "1. Check CSV has 128 values per channel 2. Verify CH1/CH2 data correlation",
+      "evidence": "V6.3 bitstream, capture CSV analysis"
+    },
+    {
+      "id": "v6-003",
+      "priority": 1,
+      "area": "uart",
+      "title": "UART ASCII frame output (1 Mbps)",
+      "user_visible_behavior": "ASCII frames: header + CH1/CH2 raw 128x4-hex, no binary garbage",
+      "dependencies": ["v6-002"],
+      "status": "passing",
+      "stage": "V2",
+      "verification": "1. capture_ascii_v60.py parses header 2. CH1/CH2 regex matches 3. No UART framing errors",
+      "evidence": "capture_ascii_v60.py parses correctly, v63 logs clean"
+    },
+    {
+      "id": "v6-004",
+      "priority": 2,
+      "area": "display",
+      "title": "LCD version/mode display",
+      "user_visible_behavior": "LCD shows V6.3 and current mode name",
+      "dependencies": [],
+      "status": "passing",
+      "stage": "V2",
+      "verification": "Visual inspection of LCD during capture cycle",
+      "evidence": "V6.3 bitstream"
+    },
+    {
+      "id": "v6-005",
+      "priority": 3,
+      "area": "infra",
+      "title": "Harness (simplified V6.3)",
+      "user_visible_behavior": "tasks.ps1 provides check/build/program/capture commands",
+      "dependencies": [],
+      "status": "passing",
+      "stage": "V3",
+      "verification": "1. check passes 2. build runs 3. program connects 4. capture parses",
+      "evidence": "365-line tasks.ps1, 26 rules in lessons.md"
+    },
+    {
+      "id": "v6-006",
+      "priority": 2,
+      "area": "analysis",
+      "title": "Capture analysis pipeline",
+      "user_visible_behavior": "Contrastive learning, t-SNE/PCA visualizations, sensor identification",
+      "dependencies": ["v6-003"],
+      "status": "in_progress",
+      "stage": "V2",
+      "verification": "1. Run analysis scripts 2. Check separation metrics 3. Verify identification accuracy",
+      "evidence": "logs/analysis/ with research_report.md"
+    }
+  ]
+}

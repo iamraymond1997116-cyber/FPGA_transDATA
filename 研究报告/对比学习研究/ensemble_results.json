@@ -1,0 +1,5797 @@
+{
+  "experiment_info": {
+    "timestamp": "2026-05-27T03:57:18.880993",
+    "target_sensor": "B2-1",
+    "n_sensors": 10,
+    "n_samples_total": 100000,
+    "n_features_original": 128,
+    "n_features_engineered": 147,
+    "train_test_split": "80/20 stratified"
+  },
+  "feature_selection": {
+    "fscore_k5": {
+      "method": "SelectKBest_f_classif",
+      "k": 5,
+      "selected_features": [
+        "bin_31",
+        "bin_47",
+        "bin_79",
+        "range",
+        "skew"
+      ]
+    },
+    "mutual_info_k5": {
+      "method": "SelectKBest_mutual_info",
+      "k": 5,
+      "selected_features": [
+        "bin_31",
+        "mean",
+        "q75",
+        "energy_mid",
+        "energy_high"
+      ]
+    },
+    "rfe_k5": {
+      "method": "RFE_LogisticRegression",
+      "k": 5,
+      "selected_features": [
+        "bin_79",
+        "bin_111",
+        "bin_119",
+        "std",
+        "peak_second"
+      ]
+    },
+    "lasso_k5": {
+      "method": "LassoCV",
+      "k": 5,
+      "selected_features": [
+        "peak_second",
+        "bin_63",
+        "bin_79",
+        "bin_31",
+        "bin_111"
+      ]
+    },
+    "fscore_k10": {
+      "method": "SelectKBest_f_classif",
+      "k": 10,
+      "selected_features": [
+        "bin_15",
+        "bin_31",
+        "bin_47",
+        "bin_79",
+        "max",
+        "range",
+        "skew",
+        "kurt",
+        "peak_val",
+        "peak_second"
+      ]
+    },
+    "mutual_info_k10": {
+      "method": "SelectKBest_mutual_info",
+      "k": 10,
+      "selected_features": [
+        "bin_15",
+        "bin_17",
+        "bin_23",
+        "bin_31",
+        "mean",
+        "std",
+        "q75",
+        "iqr",
+        "energy_mid",
+        "energy_high"
+      ]
+    },
+    "rfe_k10": {
+      "method": "RFE_LogisticRegression",
+      "k": 10,
+      "selected_features": [
+        "bin_15",
+        "bin_45",
+        "bin_46",
+        "bin_47",
+        "bin_79",
+        "bin_111",
+        "bin_119",
+        "bin_121",
+        "std",
+        "peak_second"
+      ]
+    },
+    "lasso_k10": {
+      "method": "LassoCV",
+      "k": 10,
+      "selected_features": [
+        "bin_106",
+        "bin_121",
+        "bin_109",
+        "bin_115",
+        "bin_0",
+        "peak_second",
+        "bin_63",
+        "bin_79",
+        "bin_31",
+        "bin_111"
+      ]
+    },
+    "fscore_k20": {
+      "method": "SelectKBest_f_classif",
+      "k": 20,
+      "selected_features": [
+        "bin_0",
+        "bin_1",
+        "bin_2",
+        "bin_4",
+        "bin_5",
+        "bin_15",
+        "bin_31",
+        "bin_47",
+        "bin_53",
+        "bin_63",
+        "bin_79",
+        "bin_95",
+        "std",
+        "max",
+        "range",
+        "skew",
+        "kurt",
+        "energy_ratio_low",
+        "peak_val",
+        "peak_second"
+      ]
+    },
+    "mutual_info_k20": {
+      "method": "SelectKBest_mutual_info",
+      "k": 20,
+      "selected_features": [
+        "bin_7",
+        "bin_11",
+        "bin_15",
+        "bin_16",
+        "bin_17",
+        "bin_18",
+        "bin_19",
+        "bin_20",
+        "bin_23",
+        "bin_25",
+        "bin_27",
+        "bin_31",
+        "bin_32",
+        "bin_35",
+        "mean",
+        "std",
+        "q75",
+        "iqr",
+        "energy_mid",
+        "energy_high"
+      ]
+    },
+    "rfe_k20": {
+      "method": "RFE_LogisticRegression",
+      "k": 20,
+      "selected_features": [
+        "bin_9",
+        "bin_15",
+        "bin_40",
+        "bin_41",
+        "bin_42",
+        "bin_45",
+        "bin_46",
+        "bin_47",
+        "bin_49",
+        "bin_50",
+        "bin_79",
+        "bin_98",
+        "bin_106",
+        "bin_109",
+        "bin_111",
+        "bin_115",
+        "bin_119",
+        "bin_121",
+        "std",
+        "peak_second"
+      ]
+    },
+    "lasso_k20": {
+      "method": "LassoCV",
+      "k": 20,
+      "selected_features": [
+        "bin_0",
+        "bin_9",
+        "bin_31",
+        "bin_53",
+        "bin_63",
+        "bin_79",
+        "bin_96",
+        "bin_98",
+        "bin_106",
+        "bin_109",
+        "bin_111",
+        "bin_113",
+        "bin_115",
+        "bin_119",
+        "bin_121",
+        "bin_123",
+        "kurt",
+        "energy_ratio_low",
+        "energy_ratio_mid",
+        "peak_second"
+      ]
+    },
+    "fscore_k50": {
+      "method": "SelectKBest_f_classif",
+      "k": 50,
+      "selected_features": [
+        "bin_0",
+        "bin_1",
+        "bin_2",
+        "bin_3",
+        "bin_4",
+        "bin_5",
+        "bin_6",
+        "bin_7",
+        "bin_8",
+        "bin_9",
+        "bin_10",
+        "bin_12",
+        "bin_13",
+        "bin_14",
+        "bin_15",
+        "bin_16",
+        "bin_17",
+        "bin_18",
+        "bin_20",
+        "bin_21",
+        "bin_22",
+        "bin_24",
+        "bin_25",
+        "bin_26",
+        "bin_28",
+        "bin_29",
+        "bin_30",
+        "bin_31",
+        "bin_32",
+        "bin_33",
+        "bin_34",
+        "bin_36",
+        "bin_37",
+        "bin_38",
+        "bin_47",
+        "bin_49",
+        "bin_50",
+        "bin_53",
+        "bin_63",
+        "bin_79",
+        "bin_95",
+        "bin_127",
+        "std",
+        "max",
+        "range",
+        "skew",
+        "kurt",
+        "energy_ratio_low",
+        "peak_val",
+        "peak_second"
+      ]
+    },
+    "mutual_info_k50": {
+      "method": "SelectKBest_mutual_info",
+      "k": 50,
+      "selected_features": [
+        "bin_0",
+        "bin_1",
+        "bin_2",
+        "bin_3",
+        "bin_4",
+        "bin_5",
+        "bin_6",
+        "bin_7",
+        "bin_8",
+        "bin_9",
+        "bin_10",
+        "bin_11",
+        "bin_12",
+        "bin_13",
+        "bin_14",
+        "bin_15",
+        "bin_16",
+        "bin_17",
+        "bin_18",
+        "bin_19",
+        "bin_20",
+        "bin_21",
+        "bin_22",
+        "bin_23",
+        "bin_24",
+        "bin_25",
+        "bin_26",
+        "bin_27",
+        "bin_28",
+        "bin_29",
+        "bin_30",
+        "bin_31",
+        "bin_32",
+        "bin_33",
+        "bin_34",
+        "bin_35",
+        "bin_36",
+        "bin_37",
+        "bin_39",
+        "mean",
+        "std",
+        "max",
+        "range",
+        "q75",
+        "iqr",
+        "energy_low",
+        "energy_mid",
+        "energy_high",
+        "peak_val",
+        "peak_second"
+      ]
+    },
+    "rfe_k50": {
+      "method": "RFE_LogisticRegression",
+      "k": 50,
+      "selected_features": [
+        "bin_0",
+        "bin_4",
+        "bin_8",
+        "bin_9",
+        "bin_10",
+        "bin_12",
+        "bin_13",
+        "bin_14",
+        "bin_15",
+        "bin_32",
+        "bin_33",
+        "bin_34",
+        "bin_36",
+        "bin_37",
+        "bin_38",
+        "bin_40",
+        "bin_41",
+        "bin_42",
+        "bin_44",
+        "bin_45",
+        "bin_46",
+        "bin_47",
+        "bin_48",
+        "bin_49",
+        "bin_50",
+        "bin_52",
+        "bin_53",
+        "bin_54",
+        "bin_56",
+        "bin_58",
+        "bin_62",
+        "bin_63",
+        "bin_64",
+        "bin_79",
+        "bin_84",
+        "bin_95",
+        "bin_96",
+        "bin_98",
+        "bin_103",
+        "bin_106",
+        "bin_107",
+        "bin_109",
+        "bin_111",
+        "bin_115",
+        "bin_119",
+        "bin_121",
+        "bin_123",
+        "std",
+        "q25",
+        "peak_second"
+      ]
+    },
+    "lasso_k50": {
+      "method": "LassoCV",
+      "k": 50,
+      "selected_features": [
+        "bin_0",
+        "bin_9",
+        "bin_31",
+        "bin_53",
+        "bin_63",
+        "bin_79",
+        "bin_96",
+        "bin_98",
+        "bin_106",
+        "bin_109",
+        "bin_111",
+        "bin_113",
+        "bin_115",
+        "bin_119",
+        "bin_121",
+        "bin_123",
+        "kurt",
+        "energy_ratio_low",
+        "energy_ratio_mid",
+        "peak_second"
+      ]
+    }
+  },
+  "all_results": [
+    {
+      "accuracy": 0.85685,
+      "precision": 0.4095577447076085,
+      "recall": 0.977,
+      "f1": 0.577167331265692,
+      "auc": 0.972597375,
+      "confusion_matrix": [
+        [
+          15183,
+          2817
+        ],
+        [
+          46,
+          1954
+        ]
+      ],
+      "b2_1_detection_rate": 0.977,
+      "other_rejection_rate": 0.8435,
+      "tp": 1954,
+      "fp": 2817,
+      "tn": 15183,
+      "fn": 46,
+      "classifier": "RF",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9174,
+      "precision": 0.8849557522123894,
+      "recall": 0.2,
+      "f1": 0.3262642740619902,
+      "auc": 0.9556853333333333,
+      "confusion_matrix": [
+        [
+          17948,
+          52
+        ],
+        [
+          1600,
+          400
+        ]
+      ],
+      "b2_1_detection_rate": 0.2,
+      "other_rejection_rate": 0.9971111111111111,
+      "tp": 400,
+      "fp": 52,
+      "tn": 17948,
+      "fn": 1600,
+      "classifier": "GB",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8071,
+      "precision": 0.2799621032685931,
+      "recall": 0.591,
+      "f1": 0.3799421407907425,
+      "auc": 0.8295173472222223,
+      "confusion_matrix": [
+        [
+          14960,
+          3040
+        ],
+        [
+          818,
+          1182
+        ]
+      ],
+      "b2_1_detection_rate": 0.591,
+      "other_rejection_rate": 0.8311111111111111,
+      "tp": 1182,
+      "fp": 3040,
+      "tn": 14960,
+      "fn": 818,
+      "classifier": "ExtraTrees",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5066913888888889,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.7989,
+      "precision": 0.1099537037037037,
+      "recall": 0.1425,
+      "f1": 0.12412891986062717,
+      "auc": 0.5078151666666667,
+      "confusion_matrix": [
+        [
+          15693,
+          2307
+        ],
+        [
+          1715,
+          285
+        ]
+      ],
+      "b2_1_detection_rate": 0.1425,
+      "other_rejection_rate": 0.8718333333333333,
+      "tp": 285,
+      "fp": 2307,
+      "tn": 15693,
+      "fn": 1715,
+      "classifier": "LogReg",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9583,
+      "precision": 0.8675914249684742,
+      "recall": 0.688,
+      "f1": 0.7674288901282766,
+      "auc": 0.9753732361111112,
+      "confusion_matrix": [
+        [
+          17790,
+          210
+        ],
+        [
+          624,
+          1376
+        ]
+      ],
+      "b2_1_detection_rate": 0.688,
+      "other_rejection_rate": 0.9883333333333333,
+      "tp": 1376,
+      "fp": 210,
+      "tn": 17790,
+      "fn": 624,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9336,
+      "precision": 0.6225382932166302,
+      "recall": 0.8535,
+      "f1": 0.7199493884436946,
+      "auc": 0.9748056111111111,
+      "confusion_matrix": [
+        [
+          16965,
+          1035
+        ],
+        [
+          293,
+          1707
+        ]
+      ],
+      "b2_1_detection_rate": 0.8535,
+      "other_rejection_rate": 0.9425,
+      "tp": 1707,
+      "fp": 1035,
+      "tn": 16965,
+      "fn": 293,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.96365,
+      "precision": 0.8394666666666667,
+      "recall": 0.787,
+      "f1": 0.8123870967741935,
+      "auc": 0.9877869722222222,
+      "confusion_matrix": [
+        [
+          17699,
+          301
+        ],
+        [
+          426,
+          1574
+        ]
+      ],
+      "b2_1_detection_rate": 0.787,
+      "other_rejection_rate": 0.9832777777777778,
+      "tp": 1574,
+      "fp": 301,
+      "tn": 17699,
+      "fn": 426,
+      "classifier": "Bagging_RF",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6423089861111111,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "fscore_k5",
+      "feature_selection": "fscore",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.95255,
+      "precision": 0.7045543012845465,
+      "recall": 0.905,
+      "f1": 0.7922959072007004,
+      "auc": 0.9870594166666665,
+      "confusion_matrix": [
+        [
+          17241,
+          759
+        ],
+        [
+          190,
+          1810
+        ]
+      ],
+      "b2_1_detection_rate": 0.905,
+      "other_rejection_rate": 0.9578333333333333,
+      "tp": 1810,
+      "fp": 759,
+      "tn": 17241,
+      "fn": 190,
+      "classifier": "RF",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.93325,
+      "precision": 0.9896907216494846,
+      "recall": 0.336,
+      "f1": 0.5016797312430011,
+      "auc": 0.9729594583333334,
+      "confusion_matrix": [
+        [
+          17993,
+          7
+        ],
+        [
+          1328,
+          672
+        ]
+      ],
+      "b2_1_detection_rate": 0.336,
+      "other_rejection_rate": 0.9996111111111111,
+      "tp": 672,
+      "fp": 7,
+      "tn": 17993,
+      "fn": 1328,
+      "classifier": "GB",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.82565,
+      "precision": 0.3509721387051513,
+      "recall": 0.8755,
+      "f1": 0.5010731148948347,
+      "auc": 0.9355081527777778,
+      "confusion_matrix": [
+        [
+          14762,
+          3238
+        ],
+        [
+          249,
+          1751
+        ]
+      ],
+      "b2_1_detection_rate": 0.8755,
+      "other_rejection_rate": 0.8201111111111111,
+      "tp": 1751,
+      "fp": 3238,
+      "tn": 14762,
+      "fn": 249,
+      "classifier": "ExtraTrees",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4868668055555555,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.86695,
+      "precision": 0.11967779056386652,
+      "recall": 0.052,
+      "f1": 0.0724991286162426,
+      "auc": 0.5196100555555555,
+      "confusion_matrix": [
+        [
+          17235,
+          765
+        ],
+        [
+          1896,
+          104
+        ]
+      ],
+      "b2_1_detection_rate": 0.052,
+      "other_rejection_rate": 0.9575,
+      "tp": 104,
+      "fp": 765,
+      "tn": 17235,
+      "fn": 1896,
+      "classifier": "LogReg",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.96155,
+      "precision": 0.9775019394879751,
+      "recall": 0.63,
+      "f1": 0.7661903314077227,
+      "auc": 0.9908082916666666,
+      "confusion_matrix": [
+        [
+          17971,
+          29
+        ],
+        [
+          740,
+          1260
+        ]
+      ],
+      "b2_1_detection_rate": 0.63,
+      "other_rejection_rate": 0.9983888888888889,
+      "tp": 1260,
+      "fp": 29,
+      "tn": 17971,
+      "fn": 740,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.95635,
+      "precision": 0.7245914707054604,
+      "recall": 0.909,
+      "f1": 0.8063872255489022,
+      "auc": 0.9913097222222221,
+      "confusion_matrix": [
+        [
+          17309,
+          691
+        ],
+        [
+          182,
+          1818
+        ]
+      ],
+      "b2_1_detection_rate": 0.909,
+      "other_rejection_rate": 0.9616111111111111,
+      "tp": 1818,
+      "fp": 691,
+      "tn": 17309,
+      "fn": 182,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.96895,
+      "precision": 0.7937792927141031,
+      "recall": 0.9315,
+      "f1": 0.8571428571428571,
+      "auc": 0.9949225555555555,
+      "confusion_matrix": [
+        [
+          17516,
+          484
+        ],
+        [
+          137,
+          1863
+        ]
+      ],
+      "b2_1_detection_rate": 0.9315,
+      "other_rejection_rate": 0.9731111111111111,
+      "tp": 1863,
+      "fp": 484,
+      "tn": 17516,
+      "fn": 137,
+      "classifier": "Bagging_RF",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6864418055555556,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "mutual_info_k5",
+      "feature_selection": "mutual_info",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.8568,
+      "precision": 0.40916736753574434,
+      "recall": 0.973,
+      "f1": 0.576080521018354,
+      "auc": 0.9729961944444445,
+      "confusion_matrix": [
+        [
+          15190,
+          2810
+        ],
+        [
+          54,
+          1946
+        ]
+      ],
+      "b2_1_detection_rate": 0.973,
+      "other_rejection_rate": 0.8438888888888889,
+      "tp": 1946,
+      "fp": 2810,
+      "tn": 15190,
+      "fn": 54,
+      "classifier": "RF",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9157,
+      "precision": 0.9266304347826086,
+      "recall": 0.1705,
+      "f1": 0.28800675675675674,
+      "auc": 0.9389913333333333,
+      "confusion_matrix": [
+        [
+          17973,
+          27
+        ],
+        [
+          1659,
+          341
+        ]
+      ],
+      "b2_1_detection_rate": 0.1705,
+      "other_rejection_rate": 0.9985,
+      "tp": 341,
+      "fp": 27,
+      "tn": 17973,
+      "fn": 1659,
+      "classifier": "GB",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8044,
+      "precision": 0.2951135876553793,
+      "recall": 0.6885,
+      "f1": 0.41314131413141314,
+      "auc": 0.8566732777777778,
+      "confusion_matrix": [
+        [
+          14711,
+          3289
+        ],
+        [
+          623,
+          1377
+        ]
+      ],
+      "b2_1_detection_rate": 0.6885,
+      "other_rejection_rate": 0.8172777777777778,
+      "tp": 1377,
+      "fp": 3289,
+      "tn": 14711,
+      "fn": 623,
+      "classifier": "ExtraTrees",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4883240555555555,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8779,
+      "precision": 0.16,
+      "recall": 0.052,
+      "f1": 0.07849056603773585,
+      "auc": 0.5418692777777778,
+      "confusion_matrix": [
+        [
+          17454,
+          546
+        ],
+        [
+          1896,
+          104
+        ]
+      ],
+      "b2_1_detection_rate": 0.052,
+      "other_rejection_rate": 0.9696666666666667,
+      "tp": 104,
+      "fp": 546,
+      "tn": 17454,
+      "fn": 1896,
+      "classifier": "LogReg",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.94365,
+      "precision": 0.8586688578471652,
+      "recall": 0.5225,
+      "f1": 0.6496736089524402,
+      "auc": 0.9718844166666667,
+      "confusion_matrix": [
+        [
+          17828,
+          172
+        ],
+        [
+          955,
+          1045
+        ]
+      ],
+      "b2_1_detection_rate": 0.5225,
+      "other_rejection_rate": 0.9904444444444445,
+      "tp": 1045,
+      "fp": 172,
+      "tn": 17828,
+      "fn": 955,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.91975,
+      "precision": 0.5620094191522763,
+      "recall": 0.895,
+      "f1": 0.6904532304725168,
+      "auc": 0.9743333888888888,
+      "confusion_matrix": [
+        [
+          16605,
+          1395
+        ],
+        [
+          210,
+          1790
+        ]
+      ],
+      "b2_1_detection_rate": 0.895,
+      "other_rejection_rate": 0.9225,
+      "tp": 1790,
+      "fp": 1395,
+      "tn": 16605,
+      "fn": 210,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.95265,
+      "precision": 0.7355704697986577,
+      "recall": 0.822,
+      "f1": 0.7763872491145218,
+      "auc": 0.9843915277777777,
+      "confusion_matrix": [
+        [
+          17409,
+          591
+        ],
+        [
+          356,
+          1644
+        ]
+      ],
+      "b2_1_detection_rate": 0.822,
+      "other_rejection_rate": 0.9671666666666666,
+      "tp": 1644,
+      "fp": 591,
+      "tn": 17409,
+      "fn": 356,
+      "classifier": "Bagging_RF",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.7359993333333332,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "rfe_k5",
+      "feature_selection": "rfe",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.88545,
+      "precision": 0.4650324441240086,
+      "recall": 0.9675,
+      "f1": 0.6281447816912838,
+      "auc": 0.9768275277777778,
+      "confusion_matrix": [
+        [
+          15774,
+          2226
+        ],
+        [
+          65,
+          1935
+        ]
+      ],
+      "b2_1_detection_rate": 0.9675,
+      "other_rejection_rate": 0.8763333333333333,
+      "tp": 1935,
+      "fp": 2226,
+      "tn": 15774,
+      "fn": 65,
+      "classifier": "RF",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.919,
+      "precision": 0.9567307692307693,
+      "recall": 0.199,
+      "f1": 0.3294701986754967,
+      "auc": 0.9533170972222221,
+      "confusion_matrix": [
+        [
+          17982,
+          18
+        ],
+        [
+          1602,
+          398
+        ]
+      ],
+      "b2_1_detection_rate": 0.199,
+      "other_rejection_rate": 0.999,
+      "tp": 398,
+      "fp": 18,
+      "tn": 17982,
+      "fn": 1602,
+      "classifier": "GB",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.82215,
+      "precision": 0.3177241863732147,
+      "recall": 0.6785,
+      "f1": 0.4327858395790145,
+      "auc": 0.8722013472222222,
+      "confusion_matrix": [
+        [
+          15086,
+          2914
+        ],
+        [
+          643,
+          1357
+        ]
+      ],
+      "b2_1_detection_rate": 0.6785,
+      "other_rejection_rate": 0.8381111111111111,
+      "tp": 1357,
+      "fp": 2914,
+      "tn": 15086,
+      "fn": 643,
+      "classifier": "ExtraTrees",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4883313888888889,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.86955,
+      "precision": 0.11889862327909888,
+      "recall": 0.0475,
+      "f1": 0.06788138620936049,
+      "auc": 0.4851165555555555,
+      "confusion_matrix": [
+        [
+          17296,
+          704
+        ],
+        [
+          1905,
+          95
+        ]
+      ],
+      "b2_1_detection_rate": 0.0475,
+      "other_rejection_rate": 0.9608888888888889,
+      "tp": 95,
+      "fp": 704,
+      "tn": 17296,
+      "fn": 1905,
+      "classifier": "LogReg",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.94835,
+      "precision": 0.8654572940287226,
+      "recall": 0.5725,
+      "f1": 0.6891363226000602,
+      "auc": 0.9801285833333333,
+      "confusion_matrix": [
+        [
+          17822,
+          178
+        ],
+        [
+          855,
+          1145
+        ]
+      ],
+      "b2_1_detection_rate": 0.5725,
+      "other_rejection_rate": 0.9901111111111112,
+      "tp": 1145,
+      "fp": 178,
+      "tn": 17822,
+      "fn": 855,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.94165,
+      "precision": 0.6503067484662577,
+      "recall": 0.901,
+      "f1": 0.7553971913644938,
+      "auc": 0.9805913055555557,
+      "confusion_matrix": [
+        [
+          17031,
+          969
+        ],
+        [
+          198,
+          1802
+        ]
+      ],
+      "b2_1_detection_rate": 0.901,
+      "other_rejection_rate": 0.9461666666666667,
+      "tp": 1802,
+      "fp": 969,
+      "tn": 17031,
+      "fn": 198,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9541,
+      "precision": 0.7273109243697479,
+      "recall": 0.8655,
+      "f1": 0.7904109589041096,
+      "auc": 0.9854996527777778,
+      "confusion_matrix": [
+        [
+          17351,
+          649
+        ],
+        [
+          269,
+          1731
+        ]
+      ],
+      "b2_1_detection_rate": 0.8655,
+      "other_rejection_rate": 0.9639444444444445,
+      "tp": 1731,
+      "fp": 649,
+      "tn": 17351,
+      "fn": 269,
+      "classifier": "Bagging_RF",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6985892916666666,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "lasso_k5",
+      "feature_selection": "lasso",
+      "k": 5,
+      "n_features": 5,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.86065,
+      "precision": 0.4164366107453812,
+      "recall": 0.9805,
+      "f1": 0.5845878670442689,
+      "auc": 0.9752072916666668,
+      "confusion_matrix": [
+        [
+          15252,
+          2748
+        ],
+        [
+          39,
+          1961
+        ]
+      ],
+      "b2_1_detection_rate": 0.9805,
+      "other_rejection_rate": 0.8473333333333334,
+      "tp": 1961,
+      "fp": 2748,
+      "tn": 15252,
+      "fn": 39,
+      "classifier": "RF",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9166,
+      "precision": 0.9689265536723164,
+      "recall": 0.1715,
+      "f1": 0.29141886151231944,
+      "auc": 0.9601480416666667,
+      "confusion_matrix": [
+        [
+          17989,
+          11
+        ],
+        [
+          1657,
+          343
+        ]
+      ],
+      "b2_1_detection_rate": 0.1715,
+      "other_rejection_rate": 0.9993888888888889,
+      "tp": 343,
+      "fp": 11,
+      "tn": 17989,
+      "fn": 1657,
+      "classifier": "GB",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8101,
+      "precision": 0.31379453189726597,
+      "recall": 0.7575,
+      "f1": 0.4437609841827768,
+      "auc": 0.8861137361111111,
+      "confusion_matrix": [
+        [
+          14687,
+          3313
+        ],
+        [
+          485,
+          1515
+        ]
+      ],
+      "b2_1_detection_rate": 0.7575,
+      "other_rejection_rate": 0.8159444444444445,
+      "tp": 1515,
+      "fp": 3313,
+      "tn": 14687,
+      "fn": 485,
+      "classifier": "ExtraTrees",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5008833611111111,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.58985,
+      "precision": 0.09913403127827324,
+      "recall": 0.3835,
+      "f1": 0.157543391188251,
+      "auc": 0.5085621388888889,
+      "confusion_matrix": [
+        [
+          11030,
+          6970
+        ],
+        [
+          1233,
+          767
+        ]
+      ],
+      "b2_1_detection_rate": 0.3835,
+      "other_rejection_rate": 0.6127777777777778,
+      "tp": 767,
+      "fp": 6970,
+      "tn": 11030,
+      "fn": 1233,
+      "classifier": "LogReg",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9538,
+      "precision": 0.9032983508245878,
+      "recall": 0.6025,
+      "f1": 0.7228554289142172,
+      "auc": 0.9800003611111111,
+      "confusion_matrix": [
+        [
+          17871,
+          129
+        ],
+        [
+          795,
+          1205
+        ]
+      ],
+      "b2_1_detection_rate": 0.6025,
+      "other_rejection_rate": 0.9928333333333333,
+      "tp": 1205,
+      "fp": 129,
+      "tn": 17871,
+      "fn": 795,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.93715,
+      "precision": 0.6368324125230203,
+      "recall": 0.8645,
+      "f1": 0.7334040296924709,
+      "auc": 0.9798559722222222,
+      "confusion_matrix": [
+        [
+          17014,
+          986
+        ],
+        [
+          271,
+          1729
+        ]
+      ],
+      "b2_1_detection_rate": 0.8645,
+      "other_rejection_rate": 0.9452222222222222,
+      "tp": 1729,
+      "fp": 986,
+      "tn": 17014,
+      "fn": 271,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9696,
+      "precision": 0.859504132231405,
+      "recall": 0.832,
+      "f1": 0.8455284552845529,
+      "auc": 0.991785861111111,
+      "confusion_matrix": [
+        [
+          17728,
+          272
+        ],
+        [
+          336,
+          1664
+        ]
+      ],
+      "b2_1_detection_rate": 0.832,
+      "other_rejection_rate": 0.9848888888888889,
+      "tp": 1664,
+      "fp": 272,
+      "tn": 17728,
+      "fn": 336,
+      "classifier": "Bagging_RF",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.669373986111111,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "fscore_k10",
+      "feature_selection": "fscore",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.9543,
+      "precision": 0.7137795275590552,
+      "recall": 0.9065,
+      "f1": 0.7986784140969163,
+      "auc": 0.9883907361111111,
+      "confusion_matrix": [
+        [
+          17273,
+          727
+        ],
+        [
+          187,
+          1813
+        ]
+      ],
+      "b2_1_detection_rate": 0.9065,
+      "other_rejection_rate": 0.9596111111111111,
+      "tp": 1813,
+      "fp": 727,
+      "tn": 17273,
+      "fn": 187,
+      "classifier": "RF",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9333,
+      "precision": 0.9985029940119761,
+      "recall": 0.3335,
+      "f1": 0.5,
+      "auc": 0.9779680972222223,
+      "confusion_matrix": [
+        [
+          17999,
+          1
+        ],
+        [
+          1333,
+          667
+        ]
+      ],
+      "b2_1_detection_rate": 0.3335,
+      "other_rejection_rate": 0.9999444444444444,
+      "tp": 667,
+      "fp": 1,
+      "tn": 17999,
+      "fn": 1333,
+      "classifier": "GB",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8218,
+      "precision": 0.32653061224489793,
+      "recall": 0.736,
+      "f1": 0.45236631837738167,
+      "auc": 0.8978370555555556,
+      "confusion_matrix": [
+        [
+          14964,
+          3036
+        ],
+        [
+          528,
+          1472
+        ]
+      ],
+      "b2_1_detection_rate": 0.736,
+      "other_rejection_rate": 0.8313333333333334,
+      "tp": 1472,
+      "fp": 3036,
+      "tn": 14964,
+      "fn": 528,
+      "classifier": "ExtraTrees",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.48676700000000006,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.3881,
+      "precision": 0.10562403697996918,
+      "recall": 0.6855,
+      "f1": 0.18304405874499333,
+      "auc": 0.5466445833333333,
+      "confusion_matrix": [
+        [
+          6391,
+          11609
+        ],
+        [
+          629,
+          1371
+        ]
+      ],
+      "b2_1_detection_rate": 0.6855,
+      "other_rejection_rate": 0.35505555555555557,
+      "tp": 1371,
+      "fp": 11609,
+      "tn": 6391,
+      "fn": 629,
+      "classifier": "LogReg",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.96555,
+      "precision": 0.9866369710467706,
+      "recall": 0.6645,
+      "f1": 0.7941440095608007,
+      "auc": 0.9913630833333333,
+      "confusion_matrix": [
+        [
+          17982,
+          18
+        ],
+        [
+          671,
+          1329
+        ]
+      ],
+      "b2_1_detection_rate": 0.6645,
+      "other_rejection_rate": 0.999,
+      "tp": 1329,
+      "fp": 18,
+      "tn": 17982,
+      "fn": 671,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9572,
+      "precision": 0.7262658227848101,
+      "recall": 0.918,
+      "f1": 0.8109540636042403,
+      "auc": 0.991551861111111,
+      "confusion_matrix": [
+        [
+          17308,
+          692
+        ],
+        [
+          164,
+          1836
+        ]
+      ],
+      "b2_1_detection_rate": 0.918,
+      "other_rejection_rate": 0.9615555555555556,
+      "tp": 1836,
+      "fp": 692,
+      "tn": 17308,
+      "fn": 164,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9798,
+      "precision": 0.8735955056179775,
+      "recall": 0.933,
+      "f1": 0.902321083172147,
+      "auc": 0.996900625,
+      "confusion_matrix": [
+        [
+          17730,
+          270
+        ],
+        [
+          134,
+          1866
+        ]
+      ],
+      "b2_1_detection_rate": 0.933,
+      "other_rejection_rate": 0.985,
+      "tp": 1866,
+      "fp": 270,
+      "tn": 17730,
+      "fn": 134,
+      "classifier": "Bagging_RF",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5390615277777778,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "mutual_info_k10",
+      "feature_selection": "mutual_info",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.9302,
+      "precision": 0.6018206338503035,
+      "recall": 0.8925,
+      "f1": 0.7188884414015304,
+      "auc": 0.977451861111111,
+      "confusion_matrix": [
+        [
+          16819,
+          1181
+        ],
+        [
+          215,
+          1785
+        ]
+      ],
+      "b2_1_detection_rate": 0.8925,
+      "other_rejection_rate": 0.9343888888888889,
+      "tp": 1785,
+      "fp": 1181,
+      "tn": 16819,
+      "fn": 215,
+      "classifier": "RF",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9209,
+      "precision": 0.9644444444444444,
+      "recall": 0.217,
+      "f1": 0.35428571428571426,
+      "auc": 0.964056388888889,
+      "confusion_matrix": [
+        [
+          17984,
+          16
+        ],
+        [
+          1566,
+          434
+        ]
+      ],
+      "b2_1_detection_rate": 0.217,
+      "other_rejection_rate": 0.9991111111111111,
+      "tp": 434,
+      "fp": 16,
+      "tn": 17984,
+      "fn": 1566,
+      "classifier": "GB",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.86055,
+      "precision": 0.3909919867366676,
+      "recall": 0.7075,
+      "f1": 0.5036483360028475,
+      "auc": 0.9079373055555555,
+      "confusion_matrix": [
+        [
+          15796,
+          2204
+        ],
+        [
+          585,
+          1415
+        ]
+      ],
+      "b2_1_detection_rate": 0.7075,
+      "other_rejection_rate": 0.8775555555555555,
+      "tp": 1415,
+      "fp": 2204,
+      "tn": 15796,
+      "fn": 585,
+      "classifier": "ExtraTrees",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.49941141666666666,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.3035,
+      "precision": 0.10265121236344257,
+      "recall": 0.7705,
+      "f1": 0.18116623559840112,
+      "auc": 0.5354523888888889,
+      "confusion_matrix": [
+        [
+          4529,
+          13471
+        ],
+        [
+          459,
+          1541
+        ]
+      ],
+      "b2_1_detection_rate": 0.7705,
+      "other_rejection_rate": 0.2516111111111111,
+      "tp": 1541,
+      "fp": 13471,
+      "tn": 4529,
+      "fn": 459,
+      "classifier": "LogReg",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9533,
+      "precision": 0.9397689768976898,
+      "recall": 0.5695,
+      "f1": 0.7092154420921544,
+      "auc": 0.9801140416666667,
+      "confusion_matrix": [
+        [
+          17927,
+          73
+        ],
+        [
+          861,
+          1139
+        ]
+      ],
+      "b2_1_detection_rate": 0.5695,
+      "other_rejection_rate": 0.9959444444444444,
+      "tp": 1139,
+      "fp": 73,
+      "tn": 17927,
+      "fn": 861,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.94705,
+      "precision": 0.6927488734125359,
+      "recall": 0.8455,
+      "f1": 0.7615401936500789,
+      "auc": 0.9806181111111111,
+      "confusion_matrix": [
+        [
+          17250,
+          750
+        ],
+        [
+          309,
+          1691
+        ]
+      ],
+      "b2_1_detection_rate": 0.8455,
+      "other_rejection_rate": 0.9583333333333334,
+      "tp": 1691,
+      "fp": 750,
+      "tn": 17250,
+      "fn": 309,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.96875,
+      "precision": 0.8556647697878945,
+      "recall": 0.827,
+      "f1": 0.8410882278159166,
+      "auc": 0.9917190833333334,
+      "confusion_matrix": [
+        [
+          17721,
+          279
+        ],
+        [
+          346,
+          1654
+        ]
+      ],
+      "b2_1_detection_rate": 0.827,
+      "other_rejection_rate": 0.9845,
+      "tp": 1654,
+      "fp": 279,
+      "tn": 17721,
+      "fn": 346,
+      "classifier": "Bagging_RF",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.7410597222222223,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "rfe_k10",
+      "feature_selection": "rfe",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.8699,
+      "precision": 0.43358340688437774,
+      "recall": 0.9825,
+      "f1": 0.6016533986527863,
+      "auc": 0.9785114305555555,
+      "confusion_matrix": [
+        [
+          15433,
+          2567
+        ],
+        [
+          35,
+          1965
+        ]
+      ],
+      "b2_1_detection_rate": 0.9825,
+      "other_rejection_rate": 0.8573888888888889,
+      "tp": 1965,
+      "fp": 2567,
+      "tn": 15433,
+      "fn": 35,
+      "classifier": "RF",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.91085,
+      "precision": 0.9822222222222222,
+      "recall": 0.1105,
+      "f1": 0.19865168539325842,
+      "auc": 0.9633075138888889,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1779,
+          221
+        ]
+      ],
+      "b2_1_detection_rate": 0.1105,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 221,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1779,
+      "classifier": "GB",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.75955,
+      "precision": 0.25987348264660626,
+      "recall": 0.76,
+      "f1": 0.3873104854121544,
+      "auc": 0.872779638888889,
+      "confusion_matrix": [
+        [
+          13671,
+          4329
+        ],
+        [
+          480,
+          1520
+        ]
+      ],
+      "b2_1_detection_rate": 0.76,
+      "other_rejection_rate": 0.7595,
+      "tp": 1520,
+      "fp": 4329,
+      "tn": 13671,
+      "fn": 480,
+      "classifier": "ExtraTrees",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4938382916666667,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.85385,
+      "precision": 0.15169811320754717,
+      "recall": 0.1005,
+      "f1": 0.12090225563909775,
+      "auc": 0.547163125,
+      "confusion_matrix": [
+        [
+          16876,
+          1124
+        ],
+        [
+          1799,
+          201
+        ]
+      ],
+      "b2_1_detection_rate": 0.1005,
+      "other_rejection_rate": 0.9375555555555556,
+      "tp": 201,
+      "fp": 1124,
+      "tn": 16876,
+      "fn": 1799,
+      "classifier": "LogReg",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9457,
+      "precision": 0.9271028037383178,
+      "recall": 0.496,
+      "f1": 0.6462540716612378,
+      "auc": 0.982250125,
+      "confusion_matrix": [
+        [
+          17922,
+          78
+        ],
+        [
+          1008,
+          992
+        ]
+      ],
+      "b2_1_detection_rate": 0.496,
+      "other_rejection_rate": 0.9956666666666667,
+      "tp": 992,
+      "fp": 78,
+      "tn": 17922,
+      "fn": 1008,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.94455,
+      "precision": 0.6675441895449417,
+      "recall": 0.8875,
+      "f1": 0.7619660871431637,
+      "auc": 0.9825451805555554,
+      "confusion_matrix": [
+        [
+          17116,
+          884
+        ],
+        [
+          225,
+          1775
+        ]
+      ],
+      "b2_1_detection_rate": 0.8875,
+      "other_rejection_rate": 0.9508888888888889,
+      "tp": 1775,
+      "fp": 884,
+      "tn": 17116,
+      "fn": 225,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.96885,
+      "precision": 0.8617971623751971,
+      "recall": 0.82,
+      "f1": 0.8403791954906482,
+      "auc": 0.9908690694444443,
+      "confusion_matrix": [
+        [
+          17737,
+          263
+        ],
+        [
+          360,
+          1640
+        ]
+      ],
+      "b2_1_detection_rate": 0.82,
+      "other_rejection_rate": 0.9853888888888889,
+      "tp": 1640,
+      "fp": 263,
+      "tn": 17737,
+      "fn": 360,
+      "classifier": "Bagging_RF",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.52994725,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "lasso_k10",
+      "feature_selection": "lasso",
+      "k": 10,
+      "n_features": 10,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.8709,
+      "precision": 0.43527580071174377,
+      "recall": 0.9785,
+      "f1": 0.6025246305418719,
+      "auc": 0.9780673055555555,
+      "confusion_matrix": [
+        [
+          15461,
+          2539
+        ],
+        [
+          43,
+          1957
+        ]
+      ],
+      "b2_1_detection_rate": 0.9785,
+      "other_rejection_rate": 0.8589444444444444,
+      "tp": 1957,
+      "fp": 2539,
+      "tn": 15461,
+      "fn": 43,
+      "classifier": "RF",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.90815,
+      "precision": 0.9553072625698324,
+      "recall": 0.0855,
+      "f1": 0.15695273061037174,
+      "auc": 0.9591410416666668,
+      "confusion_matrix": [
+        [
+          17992,
+          8
+        ],
+        [
+          1829,
+          171
+        ]
+      ],
+      "b2_1_detection_rate": 0.0855,
+      "other_rejection_rate": 0.9995555555555555,
+      "tp": 171,
+      "fp": 8,
+      "tn": 17992,
+      "fn": 1829,
+      "classifier": "GB",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.7327,
+      "precision": 0.22591743119266056,
+      "recall": 0.6895,
+      "f1": 0.3403257650542942,
+      "auc": 0.8297070277777778,
+      "confusion_matrix": [
+        [
+          13275,
+          4725
+        ],
+        [
+          621,
+          1379
+        ]
+      ],
+      "b2_1_detection_rate": 0.6895,
+      "other_rejection_rate": 0.7375,
+      "tp": 1379,
+      "fp": 4725,
+      "tn": 13275,
+      "fn": 621,
+      "classifier": "ExtraTrees",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.49726302777777776,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.57155,
+      "precision": 0.10432478014697025,
+      "recall": 0.433,
+      "f1": 0.16813901562955053,
+      "auc": 0.5265851388888889,
+      "confusion_matrix": [
+        [
+          10565,
+          7435
+        ],
+        [
+          1134,
+          866
+        ]
+      ],
+      "b2_1_detection_rate": 0.433,
+      "other_rejection_rate": 0.5869444444444445,
+      "tp": 866,
+      "fp": 7435,
+      "tn": 10565,
+      "fn": 1134,
+      "classifier": "LogReg",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.95715,
+      "precision": 0.9287321830457614,
+      "recall": 0.619,
+      "f1": 0.7428742874287428,
+      "auc": 0.9820177222222223,
+      "confusion_matrix": [
+        [
+          17905,
+          95
+        ],
+        [
+          762,
+          1238
+        ]
+      ],
+      "b2_1_detection_rate": 0.619,
+      "other_rejection_rate": 0.9947222222222222,
+      "tp": 1238,
+      "fp": 95,
+      "tn": 17905,
+      "fn": 762,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9476,
+      "precision": 0.7041166380789022,
+      "recall": 0.821,
+      "f1": 0.7580794090489381,
+      "auc": 0.9823105833333332,
+      "confusion_matrix": [
+        [
+          17310,
+          690
+        ],
+        [
+          358,
+          1642
+        ]
+      ],
+      "b2_1_detection_rate": 0.821,
+      "other_rejection_rate": 0.9616666666666667,
+      "tp": 1642,
+      "fp": 690,
+      "tn": 17310,
+      "fn": 358,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9813,
+      "precision": 0.9462129527991219,
+      "recall": 0.862,
+      "f1": 0.902145473574045,
+      "auc": 0.9966410555555555,
+      "confusion_matrix": [
+        [
+          17902,
+          98
+        ],
+        [
+          276,
+          1724
+        ]
+      ],
+      "b2_1_detection_rate": 0.862,
+      "other_rejection_rate": 0.9945555555555555,
+      "tp": 1724,
+      "fp": 98,
+      "tn": 17902,
+      "fn": 276,
+      "classifier": "Bagging_RF",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5388860833333333,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "fscore_k20",
+      "feature_selection": "fscore",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.958,
+      "precision": 0.7384868421052632,
+      "recall": 0.898,
+      "f1": 0.8104693140794224,
+      "auc": 0.9871228472222222,
+      "confusion_matrix": [
+        [
+          17364,
+          636
+        ],
+        [
+          204,
+          1796
+        ]
+      ],
+      "b2_1_detection_rate": 0.898,
+      "other_rejection_rate": 0.9646666666666667,
+      "tp": 1796,
+      "fp": 636,
+      "tn": 17364,
+      "fn": 204,
+      "classifier": "RF",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.939,
+      "precision": 0.9949238578680203,
+      "recall": 0.392,
+      "f1": 0.5624103299856528,
+      "auc": 0.9787900694444445,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1216,
+          784
+        ]
+      ],
+      "b2_1_detection_rate": 0.392,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 784,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1216,
+      "classifier": "GB",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.85215,
+      "precision": 0.37852246763137853,
+      "recall": 0.7455,
+      "f1": 0.5021047314362688,
+      "auc": 0.9138870138888888,
+      "confusion_matrix": [
+        [
+          15552,
+          2448
+        ],
+        [
+          509,
+          1491
+        ]
+      ],
+      "b2_1_detection_rate": 0.7455,
+      "other_rejection_rate": 0.864,
+      "tp": 1491,
+      "fp": 2448,
+      "tn": 15552,
+      "fn": 509,
+      "classifier": "ExtraTrees",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4862833888888889,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.3195,
+      "precision": 0.10451015124676387,
+      "recall": 0.767,
+      "f1": 0.18395491066075068,
+      "auc": 0.5449298055555556,
+      "confusion_matrix": [
+        [
+          4856,
+          13144
+        ],
+        [
+          466,
+          1534
+        ]
+      ],
+      "b2_1_detection_rate": 0.767,
+      "other_rejection_rate": 0.2697777777777778,
+      "tp": 1534,
+      "fp": 13144,
+      "tn": 4856,
+      "fn": 466,
+      "classifier": "LogReg",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.96175,
+      "precision": 0.980544747081712,
+      "recall": 0.63,
+      "f1": 0.7671232876712328,
+      "auc": 0.9888190833333332,
+      "confusion_matrix": [
+        [
+          17975,
+          25
+        ],
+        [
+          740,
+          1260
+        ]
+      ],
+      "b2_1_detection_rate": 0.63,
+      "other_rejection_rate": 0.9986111111111111,
+      "tp": 1260,
+      "fp": 25,
+      "tn": 17975,
+      "fn": 740,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9572,
+      "precision": 0.7411467116357504,
+      "recall": 0.879,
+      "f1": 0.8042086001829826,
+      "auc": 0.9895589444444446,
+      "confusion_matrix": [
+        [
+          17386,
+          614
+        ],
+        [
+          242,
+          1758
+        ]
+      ],
+      "b2_1_detection_rate": 0.879,
+      "other_rejection_rate": 0.9658888888888889,
+      "tp": 1758,
+      "fp": 614,
+      "tn": 17386,
+      "fn": 242,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.98605,
+      "precision": 0.9536109646810754,
+      "recall": 0.9045,
+      "f1": 0.9284064665127021,
+      "auc": 0.9982001666666666,
+      "confusion_matrix": [
+        [
+          17912,
+          88
+        ],
+        [
+          191,
+          1809
+        ]
+      ],
+      "b2_1_detection_rate": 0.9045,
+      "other_rejection_rate": 0.9951111111111111,
+      "tp": 1809,
+      "fp": 88,
+      "tn": 17912,
+      "fn": 191,
+      "classifier": "Bagging_RF",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.7061872222222221,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "mutual_info_k20",
+      "feature_selection": "mutual_info",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.9401,
+      "precision": 0.6668053244592346,
+      "recall": 0.8015,
+      "f1": 0.7279745685740237,
+      "auc": 0.9731348194444445,
+      "confusion_matrix": [
+        [
+          17199,
+          801
+        ],
+        [
+          397,
+          1603
+        ]
+      ],
+      "b2_1_detection_rate": 0.8015,
+      "other_rejection_rate": 0.9555,
+      "tp": 1603,
+      "fp": 801,
+      "tn": 17199,
+      "fn": 397,
+      "classifier": "RF",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.91705,
+      "precision": 0.9830028328611898,
+      "recall": 0.1735,
+      "f1": 0.29494262643433916,
+      "auc": 0.9695826111111111,
+      "confusion_matrix": [
+        [
+          17994,
+          6
+        ],
+        [
+          1653,
+          347
+        ]
+      ],
+      "b2_1_detection_rate": 0.1735,
+      "other_rejection_rate": 0.9996666666666667,
+      "tp": 347,
+      "fp": 6,
+      "tn": 17994,
+      "fn": 1653,
+      "classifier": "GB",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.743,
+      "precision": 0.2627682079177999,
+      "recall": 0.8695,
+      "f1": 0.4035739150614992,
+      "auc": 0.893176625,
+      "confusion_matrix": [
+        [
+          13121,
+          4879
+        ],
+        [
+          261,
+          1739
+        ]
+      ],
+      "b2_1_detection_rate": 0.8695,
+      "other_rejection_rate": 0.7289444444444444,
+      "tp": 1739,
+      "fp": 4879,
+      "tn": 13121,
+      "fn": 261,
+      "classifier": "ExtraTrees",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4936199722222222,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.3025,
+      "precision": 0.10388491116414744,
+      "recall": 0.7835,
+      "f1": 0.1834464996487942,
+      "auc": 0.5262914444444444,
+      "confusion_matrix": [
+        [
+          4483,
+          13517
+        ],
+        [
+          433,
+          1567
+        ]
+      ],
+      "b2_1_detection_rate": 0.7835,
+      "other_rejection_rate": 0.24905555555555556,
+      "tp": 1567,
+      "fp": 13517,
+      "tn": 4483,
+      "fn": 433,
+      "classifier": "LogReg",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.95295,
+      "precision": 0.9506382978723404,
+      "recall": 0.5585,
+      "f1": 0.7036220472440945,
+      "auc": 0.980300875,
+      "confusion_matrix": [
+        [
+          17942,
+          58
+        ],
+        [
+          883,
+          1117
+        ]
+      ],
+      "b2_1_detection_rate": 0.5585,
+      "other_rejection_rate": 0.9967777777777778,
+      "tp": 1117,
+      "fp": 58,
+      "tn": 17942,
+      "fn": 883,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.94455,
+      "precision": 0.6794200563834072,
+      "recall": 0.8435,
+      "f1": 0.7526210127146999,
+      "auc": 0.980630861111111,
+      "confusion_matrix": [
+        [
+          17204,
+          796
+        ],
+        [
+          313,
+          1687
+        ]
+      ],
+      "b2_1_detection_rate": 0.8435,
+      "other_rejection_rate": 0.9557777777777777,
+      "tp": 1687,
+      "fp": 796,
+      "tn": 17204,
+      "fn": 313,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.97715,
+      "precision": 0.950905902980713,
+      "recall": 0.8135,
+      "f1": 0.8768526003772568,
+      "auc": 0.9952895972222223,
+      "confusion_matrix": [
+        [
+          17916,
+          84
+        ],
+        [
+          373,
+          1627
+        ]
+      ],
+      "b2_1_detection_rate": 0.8135,
+      "other_rejection_rate": 0.9953333333333333,
+      "tp": 1627,
+      "fp": 84,
+      "tn": 17916,
+      "fn": 373,
+      "classifier": "Bagging_RF",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6814667499999999,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "rfe_k20",
+      "feature_selection": "rfe",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.85845,
+      "precision": 0.41287481652338015,
+      "recall": 0.9845,
+      "f1": 0.5817698330624907,
+      "auc": 0.9790453750000001,
+      "confusion_matrix": [
+        [
+          15200,
+          2800
+        ],
+        [
+          31,
+          1969
+        ]
+      ],
+      "b2_1_detection_rate": 0.9845,
+      "other_rejection_rate": 0.8444444444444444,
+      "tp": 1969,
+      "fp": 2800,
+      "tn": 15200,
+      "fn": 31,
+      "classifier": "RF",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9061,
+      "precision": 0.9692307692307692,
+      "recall": 0.063,
+      "f1": 0.11830985915492957,
+      "auc": 0.9553147916666667,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1874,
+          126
+        ]
+      ],
+      "b2_1_detection_rate": 0.063,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 126,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1874,
+      "classifier": "GB",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.7979,
+      "precision": 0.2681653042688465,
+      "recall": 0.5905,
+      "f1": 0.3688319800124922,
+      "auc": 0.8175380138888888,
+      "confusion_matrix": [
+        [
+          14777,
+          3223
+        ],
+        [
+          819,
+          1181
+        ]
+      ],
+      "b2_1_detection_rate": 0.5905,
+      "other_rejection_rate": 0.8209444444444445,
+      "tp": 1181,
+      "fp": 3223,
+      "tn": 14777,
+      "fn": 819,
+      "classifier": "ExtraTrees",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.50592675,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.83585,
+      "precision": 0.13068508923431202,
+      "recall": 0.1135,
+      "f1": 0.1214878244581215,
+      "auc": 0.5365608333333334,
+      "confusion_matrix": [
+        [
+          16490,
+          1510
+        ],
+        [
+          1773,
+          227
+        ]
+      ],
+      "b2_1_detection_rate": 0.1135,
+      "other_rejection_rate": 0.9161111111111111,
+      "tp": 227,
+      "fp": 1510,
+      "tn": 16490,
+      "fn": 1773,
+      "classifier": "LogReg",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9531,
+      "precision": 0.927536231884058,
+      "recall": 0.576,
+      "f1": 0.7106724244293646,
+      "auc": 0.9810107777777778,
+      "confusion_matrix": [
+        [
+          17910,
+          90
+        ],
+        [
+          848,
+          1152
+        ]
+      ],
+      "b2_1_detection_rate": 0.576,
+      "other_rejection_rate": 0.995,
+      "tp": 1152,
+      "fp": 90,
+      "tn": 17910,
+      "fn": 848,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9478,
+      "precision": 0.6932093775262732,
+      "recall": 0.8575,
+      "f1": 0.7666517657577112,
+      "auc": 0.9816478611111112,
+      "confusion_matrix": [
+        [
+          17241,
+          759
+        ],
+        [
+          285,
+          1715
+        ]
+      ],
+      "b2_1_detection_rate": 0.8575,
+      "other_rejection_rate": 0.9578333333333333,
+      "tp": 1715,
+      "fp": 759,
+      "tn": 17241,
+      "fn": 285,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9759,
+      "precision": 0.9523241954707986,
+      "recall": 0.799,
+      "f1": 0.8689505165851006,
+      "auc": 0.9952437083333333,
+      "confusion_matrix": [
+        [
+          17920,
+          80
+        ],
+        [
+          402,
+          1598
+        ]
+      ],
+      "b2_1_detection_rate": 0.799,
+      "other_rejection_rate": 0.9955555555555555,
+      "tp": 1598,
+      "fp": 80,
+      "tn": 17920,
+      "fn": 402,
+      "classifier": "Bagging_RF",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5388860833333333,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "lasso_k20",
+      "feature_selection": "lasso",
+      "k": 20,
+      "n_features": 20,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.93735,
+      "precision": 0.6499397832195906,
+      "recall": 0.8095,
+      "f1": 0.7209975506568693,
+      "auc": 0.9654834305555555,
+      "confusion_matrix": [
+        [
+          17128,
+          872
+        ],
+        [
+          381,
+          1619
+        ]
+      ],
+      "b2_1_detection_rate": 0.8095,
+      "other_rejection_rate": 0.9515555555555556,
+      "tp": 1619,
+      "fp": 872,
+      "tn": 17128,
+      "fn": 381,
+      "classifier": "RF",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9052,
+      "precision": 0.9642857142857143,
+      "recall": 0.054,
+      "f1": 0.10227272727272728,
+      "auc": 0.9751914722222222,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1892,
+          108
+        ]
+      ],
+      "b2_1_detection_rate": 0.054,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 108,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1892,
+      "classifier": "GB",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.75655,
+      "precision": 0.2863101444957545,
+      "recall": 0.961,
+      "f1": 0.4411798462068174,
+      "auc": 0.9305103055555555,
+      "confusion_matrix": [
+        [
+          13209,
+          4791
+        ],
+        [
+          78,
+          1922
+        ]
+      ],
+      "b2_1_detection_rate": 0.961,
+      "other_rejection_rate": 0.7338333333333333,
+      "tp": 1922,
+      "fp": 4791,
+      "tn": 13209,
+      "fn": 78,
+      "classifier": "ExtraTrees",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5030860833333333,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.57335,
+      "precision": 0.1064931935911336,
+      "recall": 0.442,
+      "f1": 0.1716338219590331,
+      "auc": 0.5303686111111111,
+      "confusion_matrix": [
+        [
+          10583,
+          7417
+        ],
+        [
+          1116,
+          884
+        ]
+      ],
+      "b2_1_detection_rate": 0.442,
+      "other_rejection_rate": 0.5879444444444445,
+      "tp": 884,
+      "fp": 7417,
+      "tn": 10583,
+      "fn": 1116,
+      "classifier": "LogReg",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9581,
+      "precision": 0.9368421052631579,
+      "recall": 0.623,
+      "f1": 0.7483483483483484,
+      "auc": 0.9860946666666668,
+      "confusion_matrix": [
+        [
+          17916,
+          84
+        ],
+        [
+          754,
+          1246
+        ]
+      ],
+      "b2_1_detection_rate": 0.623,
+      "other_rejection_rate": 0.9953333333333333,
+      "tp": 1246,
+      "fp": 84,
+      "tn": 17916,
+      "fn": 754,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.95085,
+      "precision": 0.6970166602092213,
+      "recall": 0.8995,
+      "f1": 0.7854180309975988,
+      "auc": 0.9863164444444444,
+      "confusion_matrix": [
+        [
+          17218,
+          782
+        ],
+        [
+          201,
+          1799
+        ]
+      ],
+      "b2_1_detection_rate": 0.8995,
+      "other_rejection_rate": 0.9565555555555556,
+      "tp": 1799,
+      "fp": 782,
+      "tn": 17218,
+      "fn": 201,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.979,
+      "precision": 0.963071512309496,
+      "recall": 0.8215,
+      "f1": 0.8866702644360497,
+      "auc": 0.9970168194444443,
+      "confusion_matrix": [
+        [
+          17937,
+          63
+        ],
+        [
+          357,
+          1643
+        ]
+      ],
+      "b2_1_detection_rate": 0.8215,
+      "other_rejection_rate": 0.9965,
+      "tp": 1643,
+      "fp": 63,
+      "tn": 17937,
+      "fn": 357,
+      "classifier": "Bagging_RF",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5388860833333333,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "fscore_k50",
+      "feature_selection": "fscore",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.95365,
+      "precision": 0.7519962423673086,
+      "recall": 0.8005,
+      "f1": 0.7754904335190118,
+      "auc": 0.980683625,
+      "confusion_matrix": [
+        [
+          17472,
+          528
+        ],
+        [
+          399,
+          1601
+        ]
+      ],
+      "b2_1_detection_rate": 0.8005,
+      "other_rejection_rate": 0.9706666666666667,
+      "tp": 1601,
+      "fp": 528,
+      "tn": 17472,
+      "fn": 399,
+      "classifier": "RF",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9322,
+      "precision": 0.9938650306748467,
+      "recall": 0.324,
+      "f1": 0.48868778280542985,
+      "auc": 0.977534875,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1352,
+          648
+        ]
+      ],
+      "b2_1_detection_rate": 0.324,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 648,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1352,
+      "classifier": "GB",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8317,
+      "precision": 0.35911716171617164,
+      "recall": 0.8705,
+      "f1": 0.5084696261682243,
+      "auc": 0.9433750833333333,
+      "confusion_matrix": [
+        [
+          14893,
+          3107
+        ],
+        [
+          259,
+          1741
+        ]
+      ],
+      "b2_1_detection_rate": 0.8705,
+      "other_rejection_rate": 0.8273888888888888,
+      "tp": 1741,
+      "fp": 3107,
+      "tn": 14893,
+      "fn": 259,
+      "classifier": "ExtraTrees",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.4813091388888889,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.47615,
+      "precision": 0.11118246032474086,
+      "recall": 0.606,
+      "f1": 0.18789241144097357,
+      "auc": 0.5534771944444444,
+      "confusion_matrix": [
+        [
+          8311,
+          9689
+        ],
+        [
+          788,
+          1212
+        ]
+      ],
+      "b2_1_detection_rate": 0.606,
+      "other_rejection_rate": 0.4617222222222222,
+      "tp": 1212,
+      "fp": 9689,
+      "tn": 8311,
+      "fn": 788,
+      "classifier": "LogReg",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.95845,
+      "precision": 0.9679743795036029,
+      "recall": 0.6045,
+      "f1": 0.7442289935364728,
+      "auc": 0.9855085972222223,
+      "confusion_matrix": [
+        [
+          17960,
+          40
+        ],
+        [
+          791,
+          1209
+        ]
+      ],
+      "b2_1_detection_rate": 0.6045,
+      "other_rejection_rate": 0.9977777777777778,
+      "tp": 1209,
+      "fp": 40,
+      "tn": 17960,
+      "fn": 791,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9526,
+      "precision": 0.719349457881568,
+      "recall": 0.8625,
+      "f1": 0.7844474761255116,
+      "auc": 0.9865365277777778,
+      "confusion_matrix": [
+        [
+          17327,
+          673
+        ],
+        [
+          275,
+          1725
+        ]
+      ],
+      "b2_1_detection_rate": 0.8625,
+      "other_rejection_rate": 0.9626111111111111,
+      "tp": 1725,
+      "fp": 673,
+      "tn": 17327,
+      "fn": 275,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9848,
+      "precision": 0.9711111111111111,
+      "recall": 0.874,
+      "f1": 0.92,
+      "auc": 0.9983471250000001,
+      "confusion_matrix": [
+        [
+          17948,
+          52
+        ],
+        [
+          252,
+          1748
+        ]
+      ],
+      "b2_1_detection_rate": 0.874,
+      "other_rejection_rate": 0.9971111111111111,
+      "tp": 1748,
+      "fp": 52,
+      "tn": 17948,
+      "fn": 252,
+      "classifier": "Bagging_RF",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.6029677916666667,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "mutual_info_k50",
+      "feature_selection": "mutual_info",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.9404,
+      "precision": 0.6688963210702341,
+      "recall": 0.8,
+      "f1": 0.7285974499089253,
+      "auc": 0.9772490416666667,
+      "confusion_matrix": [
+        [
+          17208,
+          792
+        ],
+        [
+          400,
+          1600
+        ]
+      ],
+      "b2_1_detection_rate": 0.8,
+      "other_rejection_rate": 0.956,
+      "tp": 1600,
+      "fp": 792,
+      "tn": 17208,
+      "fn": 400,
+      "classifier": "RF",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9231,
+      "precision": 0.9657258064516129,
+      "recall": 0.2395,
+      "f1": 0.3838141025641026,
+      "auc": 0.9649568888888889,
+      "confusion_matrix": [
+        [
+          17983,
+          17
+        ],
+        [
+          1521,
+          479
+        ]
+      ],
+      "b2_1_detection_rate": 0.2395,
+      "other_rejection_rate": 0.9990555555555556,
+      "tp": 479,
+      "fp": 17,
+      "tn": 17983,
+      "fn": 1521,
+      "classifier": "GB",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.8112,
+      "precision": 0.32175832998795667,
+      "recall": 0.8015,
+      "f1": 0.45918075050128904,
+      "auc": 0.9087308472222222,
+      "confusion_matrix": [
+        [
+          14621,
+          3379
+        ],
+        [
+          397,
+          1603
+        ]
+      ],
+      "b2_1_detection_rate": 0.8015,
+      "other_rejection_rate": 0.8122777777777778,
+      "tp": 1603,
+      "fp": 3379,
+      "tn": 14621,
+      "fn": 397,
+      "classifier": "ExtraTrees",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.48528780555555556,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.29065,
+      "precision": 0.10531770192369973,
+      "recall": 0.813,
+      "f1": 0.18647858248752797,
+      "auc": 0.5226767777777778,
+      "confusion_matrix": [
+        [
+          4187,
+          13813
+        ],
+        [
+          374,
+          1626
+        ]
+      ],
+      "b2_1_detection_rate": 0.813,
+      "other_rejection_rate": 0.2326111111111111,
+      "tp": 1626,
+      "fp": 13813,
+      "tn": 4187,
+      "fn": 374,
+      "classifier": "LogReg",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.95825,
+      "precision": 0.9324424647364514,
+      "recall": 0.628,
+      "f1": 0.7505228562892142,
+      "auc": 0.9776809722222222,
+      "confusion_matrix": [
+        [
+          17909,
+          91
+        ],
+        [
+          744,
+          1256
+        ]
+      ],
+      "b2_1_detection_rate": 0.628,
+      "other_rejection_rate": 0.9949444444444444,
+      "tp": 1256,
+      "fp": 91,
+      "tn": 17909,
+      "fn": 744,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9334,
+      "precision": 0.6233382570162481,
+      "recall": 0.844,
+      "f1": 0.7170773152081563,
+      "auc": 0.9784647777777777,
+      "confusion_matrix": [
+        [
+          16980,
+          1020
+        ],
+        [
+          312,
+          1688
+        ]
+      ],
+      "b2_1_detection_rate": 0.844,
+      "other_rejection_rate": 0.9433333333333334,
+      "tp": 1688,
+      "fp": 1020,
+      "tn": 16980,
+      "fn": 312,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9794,
+      "precision": 0.9726190476190476,
+      "recall": 0.817,
+      "f1": 0.8880434782608696,
+      "auc": 0.9970083333333335,
+      "confusion_matrix": [
+        [
+          17954,
+          46
+        ],
+        [
+          366,
+          1634
+        ]
+      ],
+      "b2_1_detection_rate": 0.817,
+      "other_rejection_rate": 0.9974444444444445,
+      "tp": 1634,
+      "fp": 46,
+      "tn": 17954,
+      "fn": 366,
+      "classifier": "Bagging_RF",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.7852696527777778,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "rfe_k50",
+      "feature_selection": "rfe",
+      "k": 50,
+      "n_features": 50,
+      "ensemble_type": "boosting"
+    },
+    {
+      "accuracy": 0.85845,
+      "precision": 0.41287481652338015,
+      "recall": 0.9845,
+      "f1": 0.5817698330624907,
+      "auc": 0.9790453750000001,
+      "confusion_matrix": [
+        [
+          15200,
+          2800
+        ],
+        [
+          31,
+          1969
+        ]
+      ],
+      "b2_1_detection_rate": 0.9845,
+      "other_rejection_rate": 0.8444444444444444,
+      "tp": 1969,
+      "fp": 2800,
+      "tn": 15200,
+      "fn": 31,
+      "classifier": "RF",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9061,
+      "precision": 0.9692307692307692,
+      "recall": 0.063,
+      "f1": 0.11830985915492957,
+      "auc": 0.9553147916666667,
+      "confusion_matrix": [
+        [
+          17996,
+          4
+        ],
+        [
+          1874,
+          126
+        ]
+      ],
+      "b2_1_detection_rate": 0.063,
+      "other_rejection_rate": 0.9997777777777778,
+      "tp": 126,
+      "fp": 4,
+      "tn": 17996,
+      "fn": 1874,
+      "classifier": "GB",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.7979,
+      "precision": 0.2681653042688465,
+      "recall": 0.5905,
+      "f1": 0.3688319800124922,
+      "auc": 0.8175380138888888,
+      "confusion_matrix": [
+        [
+          14777,
+          3223
+        ],
+        [
+          819,
+          1181
+        ]
+      ],
+      "b2_1_detection_rate": 0.5905,
+      "other_rejection_rate": 0.8209444444444445,
+      "tp": 1181,
+      "fp": 3223,
+      "tn": 14777,
+      "fn": 819,
+      "classifier": "ExtraTrees",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.50592675,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "MLP",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.83585,
+      "precision": 0.13068508923431202,
+      "recall": 0.1135,
+      "f1": 0.1214878244581215,
+      "auc": 0.5365608333333334,
+      "confusion_matrix": [
+        [
+          16490,
+          1510
+        ],
+        [
+          1773,
+          227
+        ]
+      ],
+      "b2_1_detection_rate": 0.1135,
+      "other_rejection_rate": 0.9161111111111111,
+      "tp": 227,
+      "fp": 1510,
+      "tn": 16490,
+      "fn": 1773,
+      "classifier": "LogReg",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "single"
+    },
+    {
+      "accuracy": 0.9531,
+      "precision": 0.927536231884058,
+      "recall": 0.576,
+      "f1": 0.7106724244293646,
+      "auc": 0.9810107777777778,
+      "confusion_matrix": [
+        [
+          17910,
+          90
+        ],
+        [
+          848,
+          1152
+        ]
+      ],
+      "b2_1_detection_rate": 0.576,
+      "other_rejection_rate": 0.995,
+      "tp": 1152,
+      "fp": 90,
+      "tn": 17910,
+      "fn": 848,
+      "classifier": "Voting_RF+ET+GB",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "voting"
+    },
+    {
+      "accuracy": 0.9478,
+      "precision": 0.6932093775262732,
+      "recall": 0.8575,
+      "f1": 0.7666517657577112,
+      "auc": 0.9816478611111112,
+      "confusion_matrix": [
+        [
+          17241,
+          759
+        ],
+        [
+          285,
+          1715
+        ]
+      ],
+      "b2_1_detection_rate": 0.8575,
+      "other_rejection_rate": 0.9578333333333333,
+      "tp": 1715,
+      "fp": 759,
+      "tn": 17241,
+      "fn": 285,
+      "classifier": "Stacking_4clf+LR",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "stacking"
+    },
+    {
+      "accuracy": 0.9759,
+      "precision": 0.9523241954707986,
+      "recall": 0.799,
+      "f1": 0.8689505165851006,
+      "auc": 0.9952437083333333,
+      "confusion_matrix": [
+        [
+          17920,
+          80
+        ],
+        [
+          402,
+          1598
+        ]
+      ],
+      "b2_1_detection_rate": 0.799,
+      "other_rejection_rate": 0.9955555555555555,
+      "tp": 1598,
+      "fp": 80,
+      "tn": 17920,
+      "fn": 402,
+      "classifier": "Bagging_RF",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "bagging"
+    },
+    {
+      "accuracy": 0.9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 0.5388860833333333,
+      "confusion_matrix": [
+        [
+          18000,
+          0
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "b2_1_detection_rate": 0.0,
+      "other_rejection_rate": 1.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 18000,
+      "fn": 2000,
+      "classifier": "AdaBoost",
+      "feature_set": "lasso_k50",
+      "feature_selection": "lasso",
+      "k": 50,
+      "n_features": 20,
+      "ensemble_type": "boosting"
+    }
+  ],
+  "best_configuration": {
+    "accuracy": 0.9798,
+    "precision": 0.8735955056179775,
+    "recall": 0.933,
+    "f1": 0.902321083172147,
+    "auc": 0.996900625,
+    "confusion_matrix": [
+      [
+        17730,
+        270
+      ],
+      [
+        134,
+        1866
+      ]
+    ],
+    "b2_1_detection_rate": 0.933,
+    "other_rejection_rate": 0.985,
+    "tp": 1866,
+    "fp": 270,
+    "tn": 17730,
+    "fn": 134,
+    "classifier": "Bagging_RF",
+    "feature_set": "mutual_info_k10",
+    "feature_selection": "mutual_info",
+    "k": 10,
+    "n_features": 10,
+    "ensemble_type": "bagging"
+  },
+  "stress_test": {},
+  "top_results_by_metric": {
+    "best_b2_1_detection": [
+      {
+        "accuracy": 0.85845,
+        "precision": 0.41287481652338015,
+        "recall": 0.9845,
+        "f1": 0.5817698330624907,
+        "auc": 0.9790453750000001,
+        "confusion_matrix": [
+          [
+            15200,
+            2800
+          ],
+          [
+            31,
+            1969
+          ]
+        ],
+        "b2_1_detection_rate": 0.9845,
+        "other_rejection_rate": 0.8444444444444444,
+        "tp": 1969,
+        "fp": 2800,
+        "tn": 15200,
+        "fn": 31,
+        "classifier": "RF",
+        "feature_set": "lasso_k20",
+        "feature_selection": "lasso",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.85845,
+        "precision": 0.41287481652338015,
+        "recall": 0.9845,
+        "f1": 0.5817698330624907,
+        "auc": 0.9790453750000001,
+        "confusion_matrix": [
+          [
+            15200,
+            2800
+          ],
+          [
+            31,
+            1969
+          ]
+        ],
+        "b2_1_detection_rate": 0.9845,
+        "other_rejection_rate": 0.8444444444444444,
+        "tp": 1969,
+        "fp": 2800,
+        "tn": 15200,
+        "fn": 31,
+        "classifier": "RF",
+        "feature_set": "lasso_k50",
+        "feature_selection": "lasso",
+        "k": 50,
+        "n_features": 20,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.8699,
+        "precision": 0.43358340688437774,
+        "recall": 0.9825,
+        "f1": 0.6016533986527863,
+        "auc": 0.9785114305555555,
+        "confusion_matrix": [
+          [
+            15433,
+            2567
+          ],
+          [
+            35,
+            1965
+          ]
+        ],
+        "b2_1_detection_rate": 0.9825,
+        "other_rejection_rate": 0.8573888888888889,
+        "tp": 1965,
+        "fp": 2567,
+        "tn": 15433,
+        "fn": 35,
+        "classifier": "RF",
+        "feature_set": "lasso_k10",
+        "feature_selection": "lasso",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.86065,
+        "precision": 0.4164366107453812,
+        "recall": 0.9805,
+        "f1": 0.5845878670442689,
+        "auc": 0.9752072916666668,
+        "confusion_matrix": [
+          [
+            15252,
+            2748
+          ],
+          [
+            39,
+            1961
+          ]
+        ],
+        "b2_1_detection_rate": 0.9805,
+        "other_rejection_rate": 0.8473333333333334,
+        "tp": 1961,
+        "fp": 2748,
+        "tn": 15252,
+        "fn": 39,
+        "classifier": "RF",
+        "feature_set": "fscore_k10",
+        "feature_selection": "fscore",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.8709,
+        "precision": 0.43527580071174377,
+        "recall": 0.9785,
+        "f1": 0.6025246305418719,
+        "auc": 0.9780673055555555,
+        "confusion_matrix": [
+          [
+            15461,
+            2539
+          ],
+          [
+            43,
+            1957
+          ]
+        ],
+        "b2_1_detection_rate": 0.9785,
+        "other_rejection_rate": 0.8589444444444444,
+        "tp": 1957,
+        "fp": 2539,
+        "tn": 15461,
+        "fn": 43,
+        "classifier": "RF",
+        "feature_set": "fscore_k20",
+        "feature_selection": "fscore",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.85685,
+        "precision": 0.4095577447076085,
+        "recall": 0.977,
+        "f1": 0.577167331265692,
+        "auc": 0.972597375,
+        "confusion_matrix": [
+          [
+            15183,
+            2817
+          ],
+          [
+            46,
+            1954
+          ]
+        ],
+        "b2_1_detection_rate": 0.977,
+        "other_rejection_rate": 0.8435,
+        "tp": 1954,
+        "fp": 2817,
+        "tn": 15183,
+        "fn": 46,
+        "classifier": "RF",
+        "feature_set": "fscore_k5",
+        "feature_selection": "fscore",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.8568,
+        "precision": 0.40916736753574434,
+        "recall": 0.973,
+        "f1": 0.576080521018354,
+        "auc": 0.9729961944444445,
+        "confusion_matrix": [
+          [
+            15190,
+            2810
+          ],
+          [
+            54,
+            1946
+          ]
+        ],
+        "b2_1_detection_rate": 0.973,
+        "other_rejection_rate": 0.8438888888888889,
+        "tp": 1946,
+        "fp": 2810,
+        "tn": 15190,
+        "fn": 54,
+        "classifier": "RF",
+        "feature_set": "rfe_k5",
+        "feature_selection": "rfe",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.88545,
+        "precision": 0.4650324441240086,
+        "recall": 0.9675,
+        "f1": 0.6281447816912838,
+        "auc": 0.9768275277777778,
+        "confusion_matrix": [
+          [
+            15774,
+            2226
+          ],
+          [
+            65,
+            1935
+          ]
+        ],
+        "b2_1_detection_rate": 0.9675,
+        "other_rejection_rate": 0.8763333333333333,
+        "tp": 1935,
+        "fp": 2226,
+        "tn": 15774,
+        "fn": 65,
+        "classifier": "RF",
+        "feature_set": "lasso_k5",
+        "feature_selection": "lasso",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.75655,
+        "precision": 0.2863101444957545,
+        "recall": 0.961,
+        "f1": 0.4411798462068174,
+        "auc": 0.9305103055555555,
+        "confusion_matrix": [
+          [
+            13209,
+            4791
+          ],
+          [
+            78,
+            1922
+          ]
+        ],
+        "b2_1_detection_rate": 0.961,
+        "other_rejection_rate": 0.7338333333333333,
+        "tp": 1922,
+        "fp": 4791,
+        "tn": 13209,
+        "fn": 78,
+        "classifier": "ExtraTrees",
+        "feature_set": "fscore_k50",
+        "feature_selection": "fscore",
+        "k": 50,
+        "n_features": 50,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9798,
+        "precision": 0.8735955056179775,
+        "recall": 0.933,
+        "f1": 0.902321083172147,
+        "auc": 0.996900625,
+        "confusion_matrix": [
+          [
+            17730,
+            270
+          ],
+          [
+            134,
+            1866
+          ]
+        ],
+        "b2_1_detection_rate": 0.933,
+        "other_rejection_rate": 0.985,
+        "tp": 1866,
+        "fp": 270,
+        "tn": 17730,
+        "fn": 134,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k10",
+        "feature_selection": "mutual_info",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "bagging"
+      }
+    ],
+    "best_other_rejection": [
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.5066913888888889,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "MLP",
+        "feature_set": "fscore_k5",
+        "feature_selection": "fscore",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.6423089861111111,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "AdaBoost",
+        "feature_set": "fscore_k5",
+        "feature_selection": "fscore",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "boosting"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.4868668055555555,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "MLP",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.6864418055555556,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "AdaBoost",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "boosting"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.4883240555555555,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "MLP",
+        "feature_set": "rfe_k5",
+        "feature_selection": "rfe",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.7359993333333332,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "AdaBoost",
+        "feature_set": "rfe_k5",
+        "feature_selection": "rfe",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "boosting"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.4883313888888889,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "MLP",
+        "feature_set": "lasso_k5",
+        "feature_selection": "lasso",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.6985892916666666,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "AdaBoost",
+        "feature_set": "lasso_k5",
+        "feature_selection": "lasso",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "boosting"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.5008833611111111,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "MLP",
+        "feature_set": "fscore_k10",
+        "feature_selection": "fscore",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "auc": 0.669373986111111,
+        "confusion_matrix": [
+          [
+            18000,
+            0
+          ],
+          [
+            2000,
+            0
+          ]
+        ],
+        "b2_1_detection_rate": 0.0,
+        "other_rejection_rate": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18000,
+        "fn": 2000,
+        "classifier": "AdaBoost",
+        "feature_set": "fscore_k10",
+        "feature_selection": "fscore",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "boosting"
+      }
+    ],
+    "best_combined": [
+      {
+        "accuracy": 0.9798,
+        "precision": 0.8735955056179775,
+        "recall": 0.933,
+        "f1": 0.902321083172147,
+        "auc": 0.996900625,
+        "confusion_matrix": [
+          [
+            17730,
+            270
+          ],
+          [
+            134,
+            1866
+          ]
+        ],
+        "b2_1_detection_rate": 0.933,
+        "other_rejection_rate": 0.985,
+        "tp": 1866,
+        "fp": 270,
+        "tn": 17730,
+        "fn": 134,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k10",
+        "feature_selection": "mutual_info",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.96895,
+        "precision": 0.7937792927141031,
+        "recall": 0.9315,
+        "f1": 0.8571428571428571,
+        "auc": 0.9949225555555555,
+        "confusion_matrix": [
+          [
+            17516,
+            484
+          ],
+          [
+            137,
+            1863
+          ]
+        ],
+        "b2_1_detection_rate": 0.9315,
+        "other_rejection_rate": 0.9731111111111111,
+        "tp": 1863,
+        "fp": 484,
+        "tn": 17516,
+        "fn": 137,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.98605,
+        "precision": 0.9536109646810754,
+        "recall": 0.9045,
+        "f1": 0.9284064665127021,
+        "auc": 0.9982001666666666,
+        "confusion_matrix": [
+          [
+            17912,
+            88
+          ],
+          [
+            191,
+            1809
+          ]
+        ],
+        "b2_1_detection_rate": 0.9045,
+        "other_rejection_rate": 0.9951111111111111,
+        "tp": 1809,
+        "fp": 88,
+        "tn": 17912,
+        "fn": 191,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k20",
+        "feature_selection": "mutual_info",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9572,
+        "precision": 0.7262658227848101,
+        "recall": 0.918,
+        "f1": 0.8109540636042403,
+        "auc": 0.991551861111111,
+        "confusion_matrix": [
+          [
+            17308,
+            692
+          ],
+          [
+            164,
+            1836
+          ]
+        ],
+        "b2_1_detection_rate": 0.918,
+        "other_rejection_rate": 0.9615555555555556,
+        "tp": 1836,
+        "fp": 692,
+        "tn": 17308,
+        "fn": 164,
+        "classifier": "Stacking_4clf+LR",
+        "feature_set": "mutual_info_k10",
+        "feature_selection": "mutual_info",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "stacking"
+      },
+      {
+        "accuracy": 0.9848,
+        "precision": 0.9711111111111111,
+        "recall": 0.874,
+        "f1": 0.92,
+        "auc": 0.9983471250000001,
+        "confusion_matrix": [
+          [
+            17948,
+            52
+          ],
+          [
+            252,
+            1748
+          ]
+        ],
+        "b2_1_detection_rate": 0.874,
+        "other_rejection_rate": 0.9971111111111111,
+        "tp": 1748,
+        "fp": 52,
+        "tn": 17948,
+        "fn": 252,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k50",
+        "feature_selection": "mutual_info",
+        "k": 50,
+        "n_features": 50,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.95635,
+        "precision": 0.7245914707054604,
+        "recall": 0.909,
+        "f1": 0.8063872255489022,
+        "auc": 0.9913097222222221,
+        "confusion_matrix": [
+          [
+            17309,
+            691
+          ],
+          [
+            182,
+            1818
+          ]
+        ],
+        "b2_1_detection_rate": 0.909,
+        "other_rejection_rate": 0.9616111111111111,
+        "tp": 1818,
+        "fp": 691,
+        "tn": 17309,
+        "fn": 182,
+        "classifier": "Stacking_4clf+LR",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "stacking"
+      },
+      {
+        "accuracy": 0.9543,
+        "precision": 0.7137795275590552,
+        "recall": 0.9065,
+        "f1": 0.7986784140969163,
+        "auc": 0.9883907361111111,
+        "confusion_matrix": [
+          [
+            17273,
+            727
+          ],
+          [
+            187,
+            1813
+          ]
+        ],
+        "b2_1_detection_rate": 0.9065,
+        "other_rejection_rate": 0.9596111111111111,
+        "tp": 1813,
+        "fp": 727,
+        "tn": 17273,
+        "fn": 187,
+        "classifier": "RF",
+        "feature_set": "mutual_info_k10",
+        "feature_selection": "mutual_info",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.95255,
+        "precision": 0.7045543012845465,
+        "recall": 0.905,
+        "f1": 0.7922959072007004,
+        "auc": 0.9870594166666665,
+        "confusion_matrix": [
+          [
+            17241,
+            759
+          ],
+          [
+            190,
+            1810
+          ]
+        ],
+        "b2_1_detection_rate": 0.905,
+        "other_rejection_rate": 0.9578333333333333,
+        "tp": 1810,
+        "fp": 759,
+        "tn": 17241,
+        "fn": 190,
+        "classifier": "RF",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.958,
+        "precision": 0.7384868421052632,
+        "recall": 0.898,
+        "f1": 0.8104693140794224,
+        "auc": 0.9871228472222222,
+        "confusion_matrix": [
+          [
+            17364,
+            636
+          ],
+          [
+            204,
+            1796
+          ]
+        ],
+        "b2_1_detection_rate": 0.898,
+        "other_rejection_rate": 0.9646666666666667,
+        "tp": 1796,
+        "fp": 636,
+        "tn": 17364,
+        "fn": 204,
+        "classifier": "RF",
+        "feature_set": "mutual_info_k20",
+        "feature_selection": "mutual_info",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "single"
+      },
+      {
+        "accuracy": 0.9813,
+        "precision": 0.9462129527991219,
+        "recall": 0.862,
+        "f1": 0.902145473574045,
+        "auc": 0.9966410555555555,
+        "confusion_matrix": [
+          [
+            17902,
+            98
+          ],
+          [
+            276,
+            1724
+          ]
+        ],
+        "b2_1_detection_rate": 0.862,
+        "other_rejection_rate": 0.9945555555555555,
+        "tp": 1724,
+        "fp": 98,
+        "tn": 17902,
+        "fn": 276,
+        "classifier": "Bagging_RF",
+        "feature_set": "fscore_k20",
+        "feature_selection": "fscore",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      }
+    ],
+    "best_f1": [
+      {
+        "accuracy": 0.98605,
+        "precision": 0.9536109646810754,
+        "recall": 0.9045,
+        "f1": 0.9284064665127021,
+        "auc": 0.9982001666666666,
+        "confusion_matrix": [
+          [
+            17912,
+            88
+          ],
+          [
+            191,
+            1809
+          ]
+        ],
+        "b2_1_detection_rate": 0.9045,
+        "other_rejection_rate": 0.9951111111111111,
+        "tp": 1809,
+        "fp": 88,
+        "tn": 17912,
+        "fn": 191,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k20",
+        "feature_selection": "mutual_info",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9848,
+        "precision": 0.9711111111111111,
+        "recall": 0.874,
+        "f1": 0.92,
+        "auc": 0.9983471250000001,
+        "confusion_matrix": [
+          [
+            17948,
+            52
+          ],
+          [
+            252,
+            1748
+          ]
+        ],
+        "b2_1_detection_rate": 0.874,
+        "other_rejection_rate": 0.9971111111111111,
+        "tp": 1748,
+        "fp": 52,
+        "tn": 17948,
+        "fn": 252,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k50",
+        "feature_selection": "mutual_info",
+        "k": 50,
+        "n_features": 50,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9798,
+        "precision": 0.8735955056179775,
+        "recall": 0.933,
+        "f1": 0.902321083172147,
+        "auc": 0.996900625,
+        "confusion_matrix": [
+          [
+            17730,
+            270
+          ],
+          [
+            134,
+            1866
+          ]
+        ],
+        "b2_1_detection_rate": 0.933,
+        "other_rejection_rate": 0.985,
+        "tp": 1866,
+        "fp": 270,
+        "tn": 17730,
+        "fn": 134,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k10",
+        "feature_selection": "mutual_info",
+        "k": 10,
+        "n_features": 10,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9813,
+        "precision": 0.9462129527991219,
+        "recall": 0.862,
+        "f1": 0.902145473574045,
+        "auc": 0.9966410555555555,
+        "confusion_matrix": [
+          [
+            17902,
+            98
+          ],
+          [
+            276,
+            1724
+          ]
+        ],
+        "b2_1_detection_rate": 0.862,
+        "other_rejection_rate": 0.9945555555555555,
+        "tp": 1724,
+        "fp": 98,
+        "tn": 17902,
+        "fn": 276,
+        "classifier": "Bagging_RF",
+        "feature_set": "fscore_k20",
+        "feature_selection": "fscore",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9794,
+        "precision": 0.9726190476190476,
+        "recall": 0.817,
+        "f1": 0.8880434782608696,
+        "auc": 0.9970083333333335,
+        "confusion_matrix": [
+          [
+            17954,
+            46
+          ],
+          [
+            366,
+            1634
+          ]
+        ],
+        "b2_1_detection_rate": 0.817,
+        "other_rejection_rate": 0.9974444444444445,
+        "tp": 1634,
+        "fp": 46,
+        "tn": 17954,
+        "fn": 366,
+        "classifier": "Bagging_RF",
+        "feature_set": "rfe_k50",
+        "feature_selection": "rfe",
+        "k": 50,
+        "n_features": 50,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.979,
+        "precision": 0.963071512309496,
+        "recall": 0.8215,
+        "f1": 0.8866702644360497,
+        "auc": 0.9970168194444443,
+        "confusion_matrix": [
+          [
+            17937,
+            63
+          ],
+          [
+            357,
+            1643
+          ]
+        ],
+        "b2_1_detection_rate": 0.8215,
+        "other_rejection_rate": 0.9965,
+        "tp": 1643,
+        "fp": 63,
+        "tn": 17937,
+        "fn": 357,
+        "classifier": "Bagging_RF",
+        "feature_set": "fscore_k50",
+        "feature_selection": "fscore",
+        "k": 50,
+        "n_features": 50,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.97715,
+        "precision": 0.950905902980713,
+        "recall": 0.8135,
+        "f1": 0.8768526003772568,
+        "auc": 0.9952895972222223,
+        "confusion_matrix": [
+          [
+            17916,
+            84
+          ],
+          [
+            373,
+            1627
+          ]
+        ],
+        "b2_1_detection_rate": 0.8135,
+        "other_rejection_rate": 0.9953333333333333,
+        "tp": 1627,
+        "fp": 84,
+        "tn": 17916,
+        "fn": 373,
+        "classifier": "Bagging_RF",
+        "feature_set": "rfe_k20",
+        "feature_selection": "rfe",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9759,
+        "precision": 0.9523241954707986,
+        "recall": 0.799,
+        "f1": 0.8689505165851006,
+        "auc": 0.9952437083333333,
+        "confusion_matrix": [
+          [
+            17920,
+            80
+          ],
+          [
+            402,
+            1598
+          ]
+        ],
+        "b2_1_detection_rate": 0.799,
+        "other_rejection_rate": 0.9955555555555555,
+        "tp": 1598,
+        "fp": 80,
+        "tn": 17920,
+        "fn": 402,
+        "classifier": "Bagging_RF",
+        "feature_set": "lasso_k20",
+        "feature_selection": "lasso",
+        "k": 20,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.9759,
+        "precision": 0.9523241954707986,
+        "recall": 0.799,
+        "f1": 0.8689505165851006,
+        "auc": 0.9952437083333333,
+        "confusion_matrix": [
+          [
+            17920,
+            80
+          ],
+          [
+            402,
+            1598
+          ]
+        ],
+        "b2_1_detection_rate": 0.799,
+        "other_rejection_rate": 0.9955555555555555,
+        "tp": 1598,
+        "fp": 80,
+        "tn": 17920,
+        "fn": 402,
+        "classifier": "Bagging_RF",
+        "feature_set": "lasso_k50",
+        "feature_selection": "lasso",
+        "k": 50,
+        "n_features": 20,
+        "ensemble_type": "bagging"
+      },
+      {
+        "accuracy": 0.96895,
+        "precision": 0.7937792927141031,
+        "recall": 0.9315,
+        "f1": 0.8571428571428571,
+        "auc": 0.9949225555555555,
+        "confusion_matrix": [
+          [
+            17516,
+            484
+          ],
+          [
+            137,
+            1863
+          ]
+        ],
+        "b2_1_detection_rate": 0.9315,
+        "other_rejection_rate": 0.9731111111111111,
+        "tp": 1863,
+        "fp": 484,
+        "tn": 17516,
+        "fn": 137,
+        "classifier": "Bagging_RF",
+        "feature_set": "mutual_info_k5",
+        "feature_selection": "mutual_info",
+        "k": 5,
+        "n_features": 5,
+        "ensemble_type": "bagging"
+      }
+    ]
+  }
+}

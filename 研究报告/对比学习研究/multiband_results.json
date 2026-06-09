@@ -1,0 +1,745 @@
+{
+  "metadata": {
+    "positive_dirs": [
+      "256pt_4ch_B2-1",
+      "256pt_4ch_B2-1_0526",
+      "256pt_4ch_B2-1_highPressure",
+      "256pt_4ch_B2-1_highTemp"
+    ],
+    "negative_dirs": [
+      "256pt_4ch_B2-2",
+      "256pt_4ch_B2-3",
+      "256pt_4ch_B2-4",
+      "256pt_4ch_B2-5",
+      "256pt_4ch_B2-6",
+      "256pt_4ch_B2-7",
+      "256pt_4ch_B2-8",
+      "256pt_4ch_B2-9",
+      "256pt_4ch_B2-10"
+    ],
+    "total_records": 10400,
+    "n_features": 58,
+    "band_definition": {
+      "ultra_low": [
+        0,
+        8
+      ],
+      "low": [
+        8,
+        16
+      ],
+      "mid_low": [
+        16,
+        32
+      ],
+      "mid": [
+        32,
+        64
+      ],
+      "high": [
+        64,
+        128
+      ]
+    }
+  },
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature": "high_ratio",
+      "importance": 0.05446931384175519
+    },
+    {
+      "rank": 2,
+      "feature": "high_freq_ratio",
+      "importance": 0.05383010502872479
+    },
+    {
+      "rank": 3,
+      "feature": "spectral_bandwidth",
+      "importance": 0.04614318089733741
+    },
+    {
+      "rank": 4,
+      "feature": "mid_mean",
+      "importance": 0.03781183688408149
+    },
+    {
+      "rank": 5,
+      "feature": "high_centroid",
+      "importance": 0.03757420403504641
+    },
+    {
+      "rank": 6,
+      "feature": "mid_low_mean",
+      "importance": 0.03460025121259775
+    },
+    {
+      "rank": 7,
+      "feature": "mid_density",
+      "importance": 0.033568038040360015
+    },
+    {
+      "rank": 8,
+      "feature": "mid_energy",
+      "importance": 0.033287732556803125
+    },
+    {
+      "rank": 9,
+      "feature": "high_entropy",
+      "importance": 0.03112370585024087
+    },
+    {
+      "rank": 10,
+      "feature": "mid_entropy",
+      "importance": 0.030474455903814507
+    },
+    {
+      "rank": 11,
+      "feature": "high_density",
+      "importance": 0.028021415228035446
+    },
+    {
+      "rank": 12,
+      "feature": "cross_band_entropy",
+      "importance": 0.027497298744020706
+    },
+    {
+      "rank": 13,
+      "feature": "total_energy",
+      "importance": 0.02663499200593946
+    },
+    {
+      "rank": 14,
+      "feature": "mid_centroid",
+      "importance": 0.02570361938285621
+    },
+    {
+      "rank": 15,
+      "feature": "high_energy",
+      "importance": 0.025222198458744082
+    },
+    {
+      "rank": 16,
+      "feature": "mid_low_density",
+      "importance": 0.024353516387576647
+    },
+    {
+      "rank": 17,
+      "feature": "total_mean",
+      "importance": 0.02351606233850466
+    },
+    {
+      "rank": 18,
+      "feature": "mid_low_energy",
+      "importance": 0.022584064769254272
+    },
+    {
+      "rank": 19,
+      "feature": "high_mean",
+      "importance": 0.019989188539264232
+    },
+    {
+      "rank": 20,
+      "feature": "mid_std",
+      "importance": 0.01815851616192341
+    }
+  ],
+  "subset_results": {
+    "all": {
+      "n_samples": 10400,
+      "n_positive": 3200,
+      "n_negative": 7200,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9142307692307692,
+          "precision": 0.9714052287581699,
+          "recall": 0.743125,
+          "f1": 0.8420679886685553,
+          "auc": 0.978167361111111,
+          "b21_identification_rate": 0.743125,
+          "other_rejection_rate": 0.9902777777777778,
+          "confusion_matrix": {
+            "TN": 7130,
+            "FP": 70,
+            "FN": 822,
+            "TP": 2378
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.6922115384615385,
+          "precision": 0.49557522123893805,
+          "recall": 0.0175,
+          "f1": 0.03380621792936915,
+          "auc": 0.69807890625,
+          "b21_identification_rate": 0.0175,
+          "other_rejection_rate": 0.9920833333333333,
+          "confusion_matrix": {
+            "TN": 7143,
+            "FP": 57,
+            "FN": 3144,
+            "TP": 56
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.6896153846153846,
+          "precision": 0.4351851851851852,
+          "recall": 0.029375,
+          "f1": 0.05503512880562061,
+          "auc": 0.6637388454861111,
+          "b21_identification_rate": 0.029375,
+          "other_rejection_rate": 0.9830555555555556,
+          "confusion_matrix": {
+            "TN": 7078,
+            "FP": 122,
+            "FN": 3106,
+            "TP": 94
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.743125,
+      "best_rejection": 0.9902777777777778,
+      "best_auc": 0.978167361111111
+    },
+    "on_only": {
+      "n_samples": 5200,
+      "n_positive": 1600,
+      "n_negative": 3600,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9244230769230769,
+          "precision": 0.9547852298417483,
+          "recall": 0.791875,
+          "f1": 0.865732832251452,
+          "auc": 0.9814848958333333,
+          "b21_identification_rate": 0.791875,
+          "other_rejection_rate": 0.9833333333333333,
+          "confusion_matrix": {
+            "TN": 3540,
+            "FP": 60,
+            "FN": 333,
+            "TP": 1267
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.6957692307692308,
+          "precision": 0.6323529411764706,
+          "recall": 0.026875,
+          "f1": 0.05155875299760192,
+          "auc": 0.6372486111111112,
+          "b21_identification_rate": 0.026875,
+          "other_rejection_rate": 0.9930555555555556,
+          "confusion_matrix": {
+            "TN": 3575,
+            "FP": 25,
+            "FN": 1557,
+            "TP": 43
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.6911538461538461,
+          "precision": 0.4673913043478261,
+          "recall": 0.026875,
+          "f1": 0.0508274231678487,
+          "auc": 0.6190083333333334,
+          "b21_identification_rate": 0.026875,
+          "other_rejection_rate": 0.9863888888888889,
+          "confusion_matrix": {
+            "TN": 3551,
+            "FP": 49,
+            "FN": 1557,
+            "TP": 43
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.791875,
+      "best_rejection": 0.9833333333333333,
+      "best_auc": 0.9814848958333333
+    },
+    "off_only": {
+      "n_samples": 5200,
+      "n_positive": 1600,
+      "n_negative": 3600,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9596153846153846,
+          "precision": 0.9793103448275862,
+          "recall": 0.8875,
+          "f1": 0.9311475409836065,
+          "auc": 0.993198263888889,
+          "b21_identification_rate": 0.8875,
+          "other_rejection_rate": 0.9916666666666667,
+          "confusion_matrix": {
+            "TN": 3570,
+            "FP": 30,
+            "FN": 180,
+            "TP": 1420
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.7990384615384616,
+          "precision": 0.68561872909699,
+          "recall": 0.640625,
+          "f1": 0.6623586429725363,
+          "auc": 0.8393315972222222,
+          "b21_identification_rate": 0.640625,
+          "other_rejection_rate": 0.8694444444444445,
+          "confusion_matrix": {
+            "TN": 3130,
+            "FP": 470,
+            "FN": 575,
+            "TP": 1025
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.7182692307692308,
+          "precision": 0.5435765009683667,
+          "recall": 0.52625,
+          "f1": 0.5347729437916799,
+          "auc": 0.7742046874999999,
+          "b21_identification_rate": 0.52625,
+          "other_rejection_rate": 0.8036111111111112,
+          "confusion_matrix": {
+            "TN": 2893,
+            "FP": 707,
+            "FN": 758,
+            "TP": 842
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.8875,
+      "best_rejection": 0.9916666666666667,
+      "best_auc": 0.993198263888889
+    },
+    "ch1_only": {
+      "n_samples": 5200,
+      "n_positive": 1600,
+      "n_negative": 3600,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9305769230769231,
+          "precision": 0.97544128933231,
+          "recall": 0.794375,
+          "f1": 0.875645883568722,
+          "auc": 0.9869816840277776,
+          "b21_identification_rate": 0.794375,
+          "other_rejection_rate": 0.9911111111111112,
+          "confusion_matrix": {
+            "TN": 3568,
+            "FP": 32,
+            "FN": 329,
+            "TP": 1271
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.693076923076923,
+          "precision": 0.5357142857142857,
+          "recall": 0.01875,
+          "f1": 0.036231884057971016,
+          "auc": 0.6069664930555555,
+          "b21_identification_rate": 0.01875,
+          "other_rejection_rate": 0.9927777777777778,
+          "confusion_matrix": {
+            "TN": 3574,
+            "FP": 26,
+            "FN": 1570,
+            "TP": 30
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.6875,
+          "precision": 0.37623762376237624,
+          "recall": 0.02375,
+          "f1": 0.04467960023515579,
+          "auc": 0.6566038194444445,
+          "b21_identification_rate": 0.02375,
+          "other_rejection_rate": 0.9825,
+          "confusion_matrix": {
+            "TN": 3537,
+            "FP": 63,
+            "FN": 1562,
+            "TP": 38
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.794375,
+      "best_rejection": 0.9911111111111112,
+      "best_auc": 0.9869816840277776
+    },
+    "ch2_only": {
+      "n_samples": 5200,
+      "n_positive": 1600,
+      "n_negative": 3600,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9011538461538462,
+          "precision": 0.9555369127516778,
+          "recall": 0.711875,
+          "f1": 0.8159025787965616,
+          "auc": 0.9680151909722222,
+          "b21_identification_rate": 0.711875,
+          "other_rejection_rate": 0.9852777777777778,
+          "confusion_matrix": {
+            "TN": 3547,
+            "FP": 53,
+            "FN": 461,
+            "TP": 1139
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.6911538461538461,
+          "precision": 0.43478260869565216,
+          "recall": 0.0125,
+          "f1": 0.024301336573511544,
+          "auc": 0.6116329861111112,
+          "b21_identification_rate": 0.0125,
+          "other_rejection_rate": 0.9927777777777778,
+          "confusion_matrix": {
+            "TN": 3574,
+            "FP": 26,
+            "FN": 1580,
+            "TP": 20
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.6894230769230769,
+          "precision": 0.38461538461538464,
+          "recall": 0.015625,
+          "f1": 0.03003003003003003,
+          "auc": 0.6387522569444445,
+          "b21_identification_rate": 0.015625,
+          "other_rejection_rate": 0.9888888888888889,
+          "confusion_matrix": {
+            "TN": 3560,
+            "FP": 40,
+            "FN": 1575,
+            "TP": 25
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.711875,
+      "best_rejection": 0.9852777777777778,
+      "best_auc": 0.9680151909722222
+    },
+    "on_ch1": {
+      "n_samples": 2600,
+      "n_positive": 800,
+      "n_negative": 1800,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9403846153846154,
+          "precision": 0.9561527581329562,
+          "recall": 0.845,
+          "f1": 0.8971466489714665,
+          "auc": 0.9842243055555556,
+          "b21_identification_rate": 0.845,
+          "other_rejection_rate": 0.9827777777777778,
+          "confusion_matrix": {
+            "TN": 1769,
+            "FP": 31,
+            "FN": 124,
+            "TP": 676
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.6942307692307692,
+          "precision": 0.5454545454545454,
+          "recall": 0.0375,
+          "f1": 0.07017543859649122,
+          "auc": 0.5961375,
+          "b21_identification_rate": 0.0375,
+          "other_rejection_rate": 0.9861111111111112,
+          "confusion_matrix": {
+            "TN": 1775,
+            "FP": 25,
+            "FN": 770,
+            "TP": 30
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.69,
+          "precision": 0.45,
+          "recall": 0.03375,
+          "f1": 0.06279069767441861,
+          "auc": 0.6139868055555555,
+          "b21_identification_rate": 0.03375,
+          "other_rejection_rate": 0.9816666666666667,
+          "confusion_matrix": {
+            "TN": 1767,
+            "FP": 33,
+            "FN": 773,
+            "TP": 27
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.845,
+      "best_rejection": 0.9827777777777778,
+      "best_auc": 0.9842243055555556
+    },
+    "on_ch2": {
+      "n_samples": 2600,
+      "n_positive": 800,
+      "n_negative": 1800,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9123076923076923,
+          "precision": 0.9333333333333333,
+          "recall": 0.77,
+          "f1": 0.8438356164383561,
+          "auc": 0.96804375,
+          "b21_identification_rate": 0.77,
+          "other_rejection_rate": 0.9755555555555555,
+          "confusion_matrix": {
+            "TN": 1756,
+            "FP": 44,
+            "FN": 184,
+            "TP": 616
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.69,
+          "precision": 0.42857142857142855,
+          "recall": 0.0225,
+          "f1": 0.04275534441805225,
+          "auc": 0.5900895833333334,
+          "b21_identification_rate": 0.0225,
+          "other_rejection_rate": 0.9866666666666667,
+          "confusion_matrix": {
+            "TN": 1776,
+            "FP": 24,
+            "FN": 782,
+            "TP": 18
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.6896153846153846,
+          "precision": 0.40540540540540543,
+          "recall": 0.01875,
+          "f1": 0.035842293906810034,
+          "auc": 0.5940048611111111,
+          "b21_identification_rate": 0.01875,
+          "other_rejection_rate": 0.9877777777777778,
+          "confusion_matrix": {
+            "TN": 1778,
+            "FP": 22,
+            "FN": 785,
+            "TP": 15
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.77,
+      "best_rejection": 0.9755555555555555,
+      "best_auc": 0.96804375
+    },
+    "off_ch1": {
+      "n_samples": 2600,
+      "n_positive": 800,
+      "n_negative": 1800,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.96,
+          "precision": 0.9754098360655737,
+          "recall": 0.8925,
+          "f1": 0.9321148825065274,
+          "auc": 0.9949222222222223,
+          "b21_identification_rate": 0.8925,
+          "other_rejection_rate": 0.99,
+          "confusion_matrix": {
+            "TN": 1782,
+            "FP": 18,
+            "FN": 86,
+            "TP": 714
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.796923076923077,
+          "precision": 0.683288409703504,
+          "recall": 0.63375,
+          "f1": 0.6575875486381323,
+          "auc": 0.8438659722222224,
+          "b21_identification_rate": 0.63375,
+          "other_rejection_rate": 0.8694444444444445,
+          "confusion_matrix": {
+            "TN": 1565,
+            "FP": 235,
+            "FN": 293,
+            "TP": 507
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.7226923076923077,
+          "precision": 0.5501905972045743,
+          "recall": 0.54125,
+          "f1": 0.5456836798991809,
+          "auc": 0.76931875,
+          "b21_identification_rate": 0.54125,
+          "other_rejection_rate": 0.8033333333333333,
+          "confusion_matrix": {
+            "TN": 1446,
+            "FP": 354,
+            "FN": 367,
+            "TP": 433
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.8925,
+      "best_rejection": 0.99,
+      "best_auc": 0.9949222222222223
+    },
+    "off_ch2": {
+      "n_samples": 2600,
+      "n_positive": 800,
+      "n_negative": 1800,
+      "classifier_results": [
+        {
+          "classifier": "RandomForest",
+          "accuracy": 0.9511538461538461,
+          "precision": 0.9800285306704708,
+          "recall": 0.85875,
+          "f1": 0.9153897401732178,
+          "auc": 0.9912447916666667,
+          "b21_identification_rate": 0.85875,
+          "other_rejection_rate": 0.9922222222222222,
+          "confusion_matrix": {
+            "TN": 1786,
+            "FP": 14,
+            "FN": 113,
+            "TP": 687
+          }
+        },
+        {
+          "classifier": "SVM_RBF",
+          "accuracy": 0.801923076923077,
+          "precision": 0.6928281461434371,
+          "recall": 0.64,
+          "f1": 0.6653671215074723,
+          "auc": 0.83689375,
+          "b21_identification_rate": 0.64,
+          "other_rejection_rate": 0.8738888888888889,
+          "confusion_matrix": {
+            "TN": 1573,
+            "FP": 227,
+            "FN": 288,
+            "TP": 512
+          }
+        },
+        {
+          "classifier": "LogisticRegression",
+          "accuracy": 0.7242307692307692,
+          "precision": 0.5530012771392082,
+          "recall": 0.54125,
+          "f1": 0.5470625394819962,
+          "auc": 0.7690874999999999,
+          "b21_identification_rate": 0.54125,
+          "other_rejection_rate": 0.8055555555555556,
+          "confusion_matrix": {
+            "TN": 1450,
+            "FP": 350,
+            "FN": 367,
+            "TP": 433
+          }
+        }
+      ],
+      "best_classifier": "RandomForest",
+      "best_b21_identification": 0.85875,
+      "best_rejection": 0.9922222222222222,
+      "best_auc": 0.9912447916666667
+    }
+  },
+  "summary": [
+    {
+      "subset": "all",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.743125,
+      "other_rejection": 0.9902777777777778,
+      "auc": 0.978167361111111
+    },
+    {
+      "subset": "on_only",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.791875,
+      "other_rejection": 0.9833333333333333,
+      "auc": 0.9814848958333333
+    },
+    {
+      "subset": "off_only",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.8875,
+      "other_rejection": 0.9916666666666667,
+      "auc": 0.993198263888889
+    },
+    {
+      "subset": "ch1_only",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.794375,
+      "other_rejection": 0.9911111111111112,
+      "auc": 0.9869816840277776
+    },
+    {
+      "subset": "ch2_only",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.711875,
+      "other_rejection": 0.9852777777777778,
+      "auc": 0.9680151909722222
+    },
+    {
+      "subset": "on_ch1",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.845,
+      "other_rejection": 0.9827777777777778,
+      "auc": 0.9842243055555556
+    },
+    {
+      "subset": "on_ch2",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.77,
+      "other_rejection": 0.9755555555555555,
+      "auc": 0.96804375
+    },
+    {
+      "subset": "off_ch1",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.8925,
+      "other_rejection": 0.99,
+      "auc": 0.9949222222222223
+    },
+    {
+      "subset": "off_ch2",
+      "best_classifier": "RandomForest",
+      "b21_identification": 0.85875,
+      "other_rejection": 0.9922222222222222,
+      "auc": 0.9912447916666667
+    }
+  ]
+}

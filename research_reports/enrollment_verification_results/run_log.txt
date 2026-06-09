@@ -1,0 +1,333 @@
+[0] Imports OK, starting data load...
+[1] Loading baseline data...
+  B2-1: loaded 49/49
+  B2-2: loaded 49/49
+  B2-3: loaded 48/48
+  B2-4: loaded 49/49
+  B2-5: loaded 48/48
+  B2-6: loaded 49/49
+  B2-7: loaded 49/49
+  B2-8: loaded 48/48
+  B2-9: loaded 49/49
+  B2-10: loaded 50/50
+  Total: 488 samples from 10 sensors
+    shape: (488, 4, 256, 128), classes: 10
+
+[1/16] OFF-SegMax-4D + euclidean (pca=False)
+    feature shape: (488, 4)
+    TPR=99.0% TNR=87.3% (0.3s)
+
+[2/16] OFF-SegMax-4D + cosine (pca=False)
+    feature shape: (488, 4)
+    TPR=96.4% TNR=82.0% (0.4s)
+
+[3/16] ON-SegMax-4D + euclidean (pca=False)
+    feature shape: (488, 4)
+    TPR=98.0% TNR=83.7% (0.3s)
+
+[4/16] ON-SegMax-4D + cosine (pca=False)
+    feature shape: (488, 4)
+    TPR=96.4% TNR=83.0% (0.4s)
+
+[5/16] ratios + euclidean (pca=False)
+    feature shape: (488, 420)
+    TPR=99.8% TNR=40.1% (0.4s)
+
+[6/16] ratios + cosine (pca=False)
+    feature shape: (488, 420)
+    TPR=99.7% TNR=79.1% (0.4s)
+
+[7/16] moments + euclidean (pca=False)
+    feature shape: (488, 36)
+    TPR=97.8% TNR=90.0% (0.3s)
+
+[8/16] moments + cosine (pca=False)
+    feature shape: (488, 36)
+    TPR=97.2% TNR=85.1% (0.4s)
+
+[9/16] shape + euclidean (pca=True)
+    feature shape: (488, 420)
+    TPR=99.8% TNR=78.6% (0.5s)
+
+[10/16] shape + cosine (pca=True)
+    feature shape: (488, 420)
+    TPR=99.6% TNR=82.3% (0.5s)
+
+[11/16] CH1-CH2-diff + euclidean (pca=False)
+    feature shape: (488, 210)
+    TPR=99.8% TNR=3.0% (0.3s)
+
+[12/16] CH1-CH2-diff + cosine (pca=False)
+    feature shape: (488, 210)
+    TPR=97.2% TNR=44.0% (0.4s)
+
+[13/16] ON+OFF-joint + euclidean (pca=True)
+    feature shape: (488, 210)
+    TPR=99.9% TNR=86.9% (0.4s)
+
+[14/16] ON+OFF-joint + cosine (pca=True)
+    feature shape: (488, 210)
+    TPR=99.8% TNR=90.6% (0.4s)
+
+[15/16] logspec-full + euclidean (pca=True)
+    feature shape: (488, 420)
+    TPR=99.8% TNR=92.3% (0.5s)
+
+[16/16] logspec-full + cosine (pca=True)
+    feature shape: (488, 420)
+    TPR=99.8% TNR=89.4% (0.5s)
+
+========================================================================================================================
+ENROLLMENT / VERIFICATION EXPERIMENT RESULTS
+========================================================================================================================
+Sensors: ['B2-1', 'B2-2', 'B2-3', 'B2-4', 'B2-5', 'B2-6', 'B2-7', 'B2-8', 'B2-9', 'B2-10']
+Method: 5-fold random, 5 enroll / verify per sensor
+Threshold: max(enrollment_distance) * 1.2
+========================================================================================================================
+
+--- OFF-SegMax-4D | metric=euclidean | dim=4 ---
+  Macro TPR (1-FRR): 98.96% +- 3.08%
+  Macro TNR (1-FAR): 87.35% +- 23.50%
+  Macro FAR: 12.65%  |  Macro FRR: 1.04%
+    B2-1: TPR=100.0%+-0.0%  TNR=99.5%+-0.7%
+    B2-2: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-3: TPR=99.2%+-1.7%  TNR=89.3%+-0.3%
+    B2-4: TPR=100.0%+-0.0%  TNR=94.1%+-2.1%
+    B2-5: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-6: TPR=96.0%+-6.2%  TNR=81.8%+-9.9%
+    B2-7: TPR=97.6%+-4.8%  TNR=89.5%+-0.5%
+    B2-8: TPR=100.0%+-0.0%  TNR=79.3%+-0.7%
+    B2-9: TPR=98.4%+-3.2%  TNR=100.0%+-0.0%
+    B2-10: TPR=98.4%+-2.0%  TNR=40.0%+-49.0%
+
+--- OFF-SegMax-4D | metric=cosine | dim=4 ---
+  Macro TPR (1-FRR): 96.42% +- 5.23%
+  Macro TNR (1-FAR): 82.03% +- 17.64%
+  Macro FAR: 17.97%  |  Macro FRR: 3.58%
+    B2-1: TPR=96.8%+-4.7%  TNR=75.4%+-5.2%
+    B2-2: TPR=94.4%+-7.8%  TNR=100.0%+-0.0%
+    B2-3: TPR=95.8%+-5.3%  TNR=78.3%+-0.4%
+    B2-4: TPR=96.0%+-8.0%  TNR=96.1%+-1.8%
+    B2-5: TPR=95.8%+-2.6%  TNR=99.1%+-0.5%
+    B2-6: TPR=97.6%+-2.0%  TNR=59.9%+-2.2%
+    B2-7: TPR=98.4%+-3.2%  TNR=77.7%+-0.7%
+    B2-8: TPR=94.2%+-5.7%  TNR=57.2%+-8.4%
+    B2-9: TPR=99.2%+-1.6%  TNR=98.5%+-0.4%
+    B2-10: TPR=96.0%+-4.4%  TNR=78.0%+-26.9%
+
+--- ON-SegMax-4D | metric=euclidean | dim=4 ---
+  Macro TPR (1-FRR): 97.97% +- 3.37%
+  Macro TNR (1-FAR): 83.70% +- 29.09%
+  Macro FAR: 16.30%  |  Macro FRR: 2.03%
+    B2-1: TPR=99.2%+-1.6%  TNR=91.2%+-2.4%
+    B2-2: TPR=100.0%+-0.0%  TNR=99.7%+-0.2%
+    B2-3: TPR=97.5%+-2.0%  TNR=94.3%+-2.5%
+    B2-4: TPR=98.4%+-3.2%  TNR=98.3%+-0.8%
+    B2-5: TPR=95.0%+-4.1%  TNR=91.9%+-2.9%
+    B2-6: TPR=98.4%+-2.0%  TNR=88.3%+-0.6%
+    B2-7: TPR=96.8%+-3.0%  TNR=94.1%+-3.0%
+    B2-8: TPR=100.0%+-0.0%  TNR=0.0%+-0.0%
+    B2-9: TPR=96.8%+-6.4%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=79.2%+-17.4%
+
+--- ON-SegMax-4D | metric=cosine | dim=4 ---
+  Macro TPR (1-FRR): 96.44% +- 5.64%
+  Macro TNR (1-FAR): 83.03% +- 29.28%
+  Macro FAR: 16.97%  |  Macro FRR: 3.56%
+    B2-1: TPR=96.8%+-4.7%  TNR=91.7%+-2.0%
+    B2-2: TPR=98.4%+-2.0%  TNR=99.5%+-0.3%
+    B2-3: TPR=93.3%+-6.8%  TNR=94.7%+-3.0%
+    B2-4: TPR=92.8%+-10.6%  TNR=98.4%+-0.4%
+    B2-5: TPR=97.5%+-5.0%  TNR=90.6%+-2.5%
+    B2-6: TPR=97.6%+-3.2%  TNR=88.0%+-1.9%
+    B2-7: TPR=96.0%+-2.5%  TNR=95.0%+-1.7%
+    B2-8: TPR=100.0%+-0.0%  TNR=0.0%+-0.0%
+    B2-9: TPR=94.4%+-6.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-3.2%  TNR=72.5%+-17.7%
+
+--- ratios | metric=euclidean | dim=420 ---
+  Macro TPR (1-FRR): 99.76% +- 0.95%
+  Macro TNR (1-FAR): 40.06% +- 29.04%
+  Macro FAR: 59.94%  |  Macro FRR: 0.24%
+    B2-1: TPR=100.0%+-0.0%  TNR=28.3%+-16.1%
+    B2-2: TPR=100.0%+-0.0%  TNR=43.9%+-13.1%
+    B2-3: TPR=100.0%+-0.0%  TNR=36.0%+-20.8%
+    B2-4: TPR=100.0%+-0.0%  TNR=37.8%+-13.8%
+    B2-5: TPR=100.0%+-0.0%  TNR=42.8%+-15.7%
+    B2-6: TPR=100.0%+-0.0%  TNR=28.0%+-13.5%
+    B2-7: TPR=100.0%+-0.0%  TNR=35.3%+-24.1%
+    B2-8: TPR=100.0%+-0.0%  TNR=4.7%+-8.9%
+    B2-9: TPR=100.0%+-0.0%  TNR=90.4%+-8.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=53.5%+-43.7%
+
+--- ratios | metric=cosine | dim=420 ---
+  Macro TPR (1-FRR): 99.68% +- 1.10%
+  Macro TNR (1-FAR): 79.05% +- 20.21%
+  Macro FAR: 20.95%  |  Macro FRR: 0.32%
+    B2-1: TPR=100.0%+-0.0%  TNR=69.8%+-5.7%
+    B2-2: TPR=99.2%+-1.6%  TNR=90.6%+-4.2%
+    B2-3: TPR=99.2%+-1.7%  TNR=69.2%+-12.8%
+    B2-4: TPR=100.0%+-0.0%  TNR=87.8%+-0.8%
+    B2-5: TPR=100.0%+-0.0%  TNR=98.7%+-1.3%
+    B2-6: TPR=100.0%+-0.0%  TNR=63.0%+-2.8%
+    B2-7: TPR=100.0%+-0.0%  TNR=73.1%+-9.6%
+    B2-8: TPR=100.0%+-0.0%  TNR=38.4%+-13.0%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=98.4%+-2.0%  TNR=99.8%+-0.4%
+
+--- moments | metric=euclidean | dim=36 ---
+  Macro TPR (1-FRR): 97.76% +- 3.50%
+  Macro TNR (1-FAR): 90.00% +- 23.12%
+  Macro FAR: 10.00%  |  Macro FRR: 2.24%
+    B2-1: TPR=99.2%+-1.6%  TNR=96.6%+-1.3%
+    B2-2: TPR=93.6%+-3.2%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=90.5%+-1.2%
+    B2-4: TPR=99.2%+-1.6%  TNR=100.0%+-0.0%
+    B2-5: TPR=99.2%+-1.7%  TNR=100.0%+-0.0%
+    B2-6: TPR=99.2%+-1.6%  TNR=99.3%+-0.5%
+    B2-7: TPR=96.0%+-0.0%  TNR=92.3%+-0.8%
+    B2-8: TPR=100.0%+-0.0%  TNR=21.4%+-2.0%
+    B2-9: TPR=99.2%+-1.6%  TNR=100.0%+-0.0%
+    B2-10: TPR=92.0%+-5.1%  TNR=100.0%+-0.0%
+
+--- moments | metric=cosine | dim=36 ---
+  Macro TPR (1-FRR): 97.18% +- 4.58%
+  Macro TNR (1-FAR): 85.11% +- 29.60%
+  Macro FAR: 14.89%  |  Macro FRR: 2.82%
+    B2-1: TPR=96.8%+-4.7%  TNR=99.7%+-0.5%
+    B2-2: TPR=94.4%+-7.8%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=90.2%+-1.0%
+    B2-4: TPR=94.4%+-3.2%  TNR=100.0%+-0.0%
+    B2-5: TPR=95.0%+-6.1%  TNR=100.0%+-0.0%
+    B2-6: TPR=99.2%+-1.6%  TNR=99.9%+-0.2%
+    B2-7: TPR=96.8%+-3.0%  TNR=92.7%+-1.6%
+    B2-8: TPR=100.0%+-0.0%  TNR=4.4%+-8.8%
+    B2-9: TPR=97.6%+-2.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-4.8%  TNR=64.1%+-18.0%
+
+--- shape | metric=euclidean | dim=32 ---
+  Macro TPR (1-FRR): 99.76% +- 0.95%
+  Macro TNR (1-FAR): 78.64% +- 29.34%
+  Macro FAR: 21.36%  |  Macro FRR: 0.24%
+    B2-1: TPR=100.0%+-0.0%  TNR=84.9%+-3.2%
+    B2-2: TPR=100.0%+-0.0%  TNR=86.8%+-0.7%
+    B2-3: TPR=100.0%+-0.0%  TNR=88.1%+-0.9%
+    B2-4: TPR=100.0%+-0.0%  TNR=86.7%+-0.5%
+    B2-5: TPR=100.0%+-0.0%  TNR=98.8%+-0.4%
+    B2-6: TPR=100.0%+-0.0%  TNR=81.1%+-0.5%
+    B2-7: TPR=100.0%+-0.0%  TNR=88.6%+-0.7%
+    B2-8: TPR=100.0%+-0.0%  TNR=11.4%+-9.9%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=60.0%+-49.0%
+
+--- shape | metric=cosine | dim=32 ---
+  Macro TPR (1-FRR): 99.60% +- 1.20%
+  Macro TNR (1-FAR): 82.30% +- 23.10%
+  Macro FAR: 17.70%  |  Macro FRR: 0.40%
+    B2-1: TPR=100.0%+-0.0%  TNR=85.6%+-2.8%
+    B2-2: TPR=100.0%+-0.0%  TNR=87.7%+-0.5%
+    B2-3: TPR=100.0%+-0.0%  TNR=88.5%+-0.4%
+    B2-4: TPR=99.2%+-1.6%  TNR=87.5%+-0.5%
+    B2-5: TPR=100.0%+-0.0%  TNR=99.9%+-0.2%
+    B2-6: TPR=100.0%+-0.0%  TNR=81.2%+-0.8%
+    B2-7: TPR=99.2%+-1.6%  TNR=89.0%+-0.2%
+    B2-8: TPR=100.0%+-0.0%  TNR=19.9%+-16.3%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=83.8%+-19.9%
+
+--- CH1-CH2-diff | metric=euclidean | dim=210 ---
+  Macro TPR (1-FRR): 99.84% +- 0.78%
+  Macro TNR (1-FAR): 2.95% +- 5.77%
+  Macro FAR: 97.05%  |  Macro FRR: 0.16%
+    B2-1: TPR=100.0%+-0.0%  TNR=2.1%+-1.4%
+    B2-2: TPR=100.0%+-0.0%  TNR=2.7%+-1.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=1.2%+-0.2%
+    B2-4: TPR=100.0%+-0.0%  TNR=1.3%+-0.9%
+    B2-5: TPR=100.0%+-0.0%  TNR=0.7%+-0.4%
+    B2-6: TPR=100.0%+-0.0%  TNR=1.3%+-0.5%
+    B2-7: TPR=100.0%+-0.0%  TNR=0.6%+-0.2%
+    B2-8: TPR=100.0%+-0.0%  TNR=0.0%+-0.0%
+    B2-9: TPR=100.0%+-0.0%  TNR=19.5%+-4.5%
+    B2-10: TPR=98.4%+-2.0%  TNR=0.3%+-0.4%
+
+--- CH1-CH2-diff | metric=cosine | dim=210 ---
+  Macro TPR (1-FRR): 97.24% +- 3.76%
+  Macro TNR (1-FAR): 43.97% +- 30.35%
+  Macro FAR: 56.03%  |  Macro FRR: 2.76%
+    B2-1: TPR=95.2%+-6.4%  TNR=57.3%+-20.2%
+    B2-2: TPR=99.2%+-1.6%  TNR=81.2%+-8.3%
+    B2-3: TPR=96.7%+-3.1%  TNR=35.0%+-7.1%
+    B2-4: TPR=98.4%+-2.0%  TNR=43.0%+-8.1%
+    B2-5: TPR=95.0%+-1.7%  TNR=22.5%+-15.1%
+    B2-6: TPR=97.6%+-3.2%  TNR=33.2%+-16.0%
+    B2-7: TPR=96.0%+-3.6%  TNR=31.7%+-12.5%
+    B2-8: TPR=97.5%+-5.0%  TNR=2.5%+-1.5%
+    B2-9: TPR=100.0%+-0.0%  TNR=99.2%+-0.5%
+    B2-10: TPR=96.8%+-3.0%  TNR=34.2%+-27.2%
+
+--- ON+OFF-joint | metric=euclidean | dim=32 ---
+  Macro TPR (1-FRR): 99.92% +- 0.56%
+  Macro TNR (1-FAR): 86.86% +- 27.50%
+  Macro FAR: 13.14%  |  Macro FRR: 0.08%
+    B2-1: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-2: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=91.9%+-0.6%
+    B2-4: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-5: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-6: TPR=100.0%+-0.0%  TNR=99.8%+-0.4%
+    B2-7: TPR=100.0%+-0.0%  TNR=90.5%+-1.6%
+    B2-8: TPR=100.0%+-0.0%  TNR=66.4%+-0.0%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=99.2%+-1.6%  TNR=20.0%+-40.0%
+
+--- ON+OFF-joint | metric=cosine | dim=32 ---
+  Macro TPR (1-FRR): 99.76% +- 0.95%
+  Macro TNR (1-FAR): 90.63% +- 17.74%
+  Macro FAR: 9.37%  |  Macro FRR: 0.24%
+    B2-1: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-2: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=89.5%+-0.6%
+    B2-4: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-5: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-6: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-7: TPR=100.0%+-0.0%  TNR=89.2%+-0.0%
+    B2-8: TPR=100.0%+-0.0%  TNR=44.3%+-0.2%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=83.3%+-20.4%
+
+--- logspec-full | metric=euclidean | dim=32 ---
+  Macro TPR (1-FRR): 99.76% +- 0.95%
+  Macro TNR (1-FAR): 92.30% +- 21.33%
+  Macro FAR: 7.70%  |  Macro FRR: 0.24%
+    B2-1: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-2: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=97.6%+-1.9%
+    B2-4: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-5: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-6: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-7: TPR=100.0%+-0.0%  TNR=99.1%+-0.3%
+    B2-8: TPR=100.0%+-0.0%  TNR=66.4%+-0.0%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=97.6%+-2.0%  TNR=60.0%+-49.0%
+
+--- logspec-full | metric=cosine | dim=32 ---
+  Macro TPR (1-FRR): 99.84% +- 0.78%
+  Macro TNR (1-FAR): 89.45% +- 19.53%
+  Macro FAR: 10.55%  |  Macro FRR: 0.16%
+    B2-1: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-2: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-3: TPR=100.0%+-0.0%  TNR=90.2%+-0.8%
+    B2-4: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-5: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-6: TPR=100.0%+-0.0%  TNR=99.9%+-0.2%
+    B2-7: TPR=100.0%+-0.0%  TNR=89.2%+-0.0%
+    B2-8: TPR=100.0%+-0.0%  TNR=39.9%+-9.0%
+    B2-9: TPR=100.0%+-0.0%  TNR=100.0%+-0.0%
+    B2-10: TPR=98.4%+-2.0%  TNR=75.2%+-20.2%
+
+[SAVED] d:\Project\FPGA_DATAtransFreq_0514\research_reports\enrollment_verification_results\results.json
+
+Best overall: logspec-full + euclidean (TPR=99.8%, TNR=92.3%)
+
+No feature view reached TPR>95% & TNR>95% for patent support.
+

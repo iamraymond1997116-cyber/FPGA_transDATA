@@ -1,0 +1,3787 @@
+{
+  "target_sensor": "B2-1",
+  "target_config": {
+    "sch": 2,
+    "is_off": 0,
+    "channel": "CH1"
+  },
+  "train_samples": 58,
+  "total_configs_tested": 72,
+  "configs_meeting_target": 11,
+  "top_results": [
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.01_bins16",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1549
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -115.7203
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -47.4906
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -70.6078
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -76.717
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.3653
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.5739
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -7.2209
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -49.028
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -19.1821
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -45.8866
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.7661
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -76.8893
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.005_bins16",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1728
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -115.7024
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -47.4726
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -70.5898
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -76.6991
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.3473
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.556
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -7.2029
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -49.0101
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -19.1642
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -45.8686
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.7482
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -76.8713
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.01_bins16",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1308
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -110.9402
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -44.2469
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -67.7331
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.7435
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.015
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -23.7873
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -7.2239
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -46.9229
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.3114
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -43.1466
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.5239
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -75.2183
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.005_bins16",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1427
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -110.9283
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -44.235
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -67.7212
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.7316
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.0031
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -23.7754
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -7.212
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -46.911
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.2995
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -43.1347
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.512
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -75.2064
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.01_bins24",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.0855
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -105.8423
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -77.1122
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.9626
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -102.615
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -31.6837
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22.9014
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -14.6848
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -71.5354
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.2564
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -35.662
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -36.2236
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -72.3796
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.005_bins24",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.0858
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -105.842
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -77.1119
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.9623
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -102.6147
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -31.6834
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22.9011
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -14.6845
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -71.5352
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.2561
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -35.6617
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -36.2233
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -72.3793
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.005_bins24",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1351
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -100.2898
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.1813
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -70.6319
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -97.9518
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -28.9453
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -21.8978
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -13.5065
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -68.9167
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.4281
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -32.7802
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -33.3554
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -68.3591
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.01_bins32",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1115
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -100.1989
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -36.2784
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -85.0974
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -55.5489
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -25.5891
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -18.3143
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.708
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -34.8946
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10.9913
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -29.8236
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.3117
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -78.3968
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n5_c0.005_bins32",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1181
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -100.1923
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -36.2719
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -85.0908
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -55.5424
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -25.5826
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -18.3077
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.7014
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -34.8881
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10.9847
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -29.817
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.3051
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -78.3902
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.01_bins32",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.0986
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -95.9487
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -35.6165
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -78.2231
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -52.7464
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.8221
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.9684
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.1595
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -33.194
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10.4334
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -28.7526
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -14.813
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -75.7525
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.005_bins32",
+      "b2_1_inlier_rate_pct": 100.0,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 100.0,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 100.0,
+          "mean_score": 0.1058
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -95.9415
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -35.6094
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -78.2159
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -52.7393
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.815
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.9613
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.1523
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -33.1868
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10.4262
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -28.7455
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -14.8059
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -75.7454
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.01_msauto_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1099
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0919
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0979
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0837
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0356
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0985
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1064
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1073
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0978
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0614
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0882
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1049
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1129
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_msauto_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.109
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0981
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1126
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1059
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0506
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1163
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1277
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1262
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1124
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0792
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1139
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1246
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1294
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_ms0.5_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.097
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0818
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0884
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0759
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0442
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0893
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0883
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0721
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0879
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0448
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0772
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.087
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0846
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.005_msauto_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1258
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0813
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0957
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.089
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0338
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0995
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1109
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1093
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0955
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0624
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.097
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1078
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1125
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_msauto_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1053
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1026
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1052
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0973
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0477
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1119
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1223
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1142
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1052
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0695
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.105
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1162
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1169
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_ms0.5_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1034
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0669
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0677
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0669
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0272
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0804
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0838
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0726
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0676
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0405
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.067
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0791
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0795
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.005_msauto_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1206
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0873
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0899
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0821
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0325
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0966
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.107
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.099
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.09
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0542
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0898
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.101
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1016
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n20_c0.01_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.2927
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -107.316
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -40.5112
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -61.6503
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -67.211
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -23.2613
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22.5801
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -7.0231
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -43.1408
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -16.0357
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -39.5879
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.3723
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -72.9295
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n20_c0.005_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.3339
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -107.2748
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -40.47
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -61.6091
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -67.1698
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -23.2202
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22.539
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -6.9819
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -43.0996
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.9946
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -39.5467
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.3311
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -72.8883
+        }
+      }
+    },
+    {
+      "model": "EllipticEnvelope",
+      "params": "EllipticEnvelope_c0.01_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 215.4772
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -5456220998318.784
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1294952797.2754
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20465745176.9604
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -42157147455.5468
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22013694.7676
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -162773785.2149
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1418390.9262
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -905415359.87
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -773284663.8795
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -3705345024.7345
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -284797883.1418
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1345525750.0782
+        }
+      }
+    },
+    {
+      "model": "EllipticEnvelope",
+      "params": "EllipticEnvelope_c0.005_bins16",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 254.4735
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -5456220998279.787
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1294952758.2791
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20465745137.9641
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -42157147416.5505
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -22013655.7713
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -162773746.2187
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1418351.9299
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -905415320.8737
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -773284624.8832
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -3705344985.7382
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -284797844.1455
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1345525711.0819
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.01_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0999
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1019
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1078
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1177
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0896
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1299
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1062
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1322
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1074
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0843
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1276
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1207
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1236
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.01_ms0.5_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0878
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0829
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0834
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0783
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0707
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0861
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0638
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0866
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0832
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0423
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0714
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0732
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0931
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.005_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1216
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0802
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0861
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.096
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0679
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1082
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0845
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1105
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0857
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0626
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1059
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.099
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1019
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.005_ms0.5_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1033
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0673
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0679
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0627
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0552
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0706
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0483
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0711
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0677
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0268
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0558
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0577
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0776
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0957
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1192
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1275
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1244
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.103
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1364
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1256
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1394
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1271
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0914
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.138
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1223
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.133
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_ms0.5_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0895
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0956
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0935
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0811
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0663
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0794
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0675
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0807
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0933
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0447
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0766
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0666
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0852
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.005_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1224
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0925
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1007
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0977
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0762
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1096
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0989
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1127
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1004
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0646
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1113
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0955
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1063
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1015
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1107
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1092
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1025
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0731
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1147
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1089
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.112
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1095
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0748
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1141
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1162
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_ms0.5_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0978
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0802
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0689
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.058
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0376
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0718
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.064
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0715
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0693
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0445
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0682
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0656
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0782
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.005_msauto_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1239
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0883
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0868
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0801
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0508
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0923
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0865
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0896
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0871
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0524
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0917
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0776
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0938
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n10_c0.01_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1035
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -100.3214
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.2128
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -70.6635
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -97.9833
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -28.9769
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -21.9294
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -13.5381
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -68.9483
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.4596
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -32.8118
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -33.3869
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -68.3906
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n20_c0.01_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.2633
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -96.6683
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -69.268
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -66.4583
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -92.2717
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -27.2641
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20.9915
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -12.4508
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -64.727
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -13.994
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -30.1707
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -31.065
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -66.5129
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n20_c0.005_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.317
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -96.6146
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -69.2143
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -66.4046
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -92.218
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -27.2104
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20.9378
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -12.3971
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -64.6733
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -13.9403
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -30.1171
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -31.0113
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -66.4592
+        }
+      }
+    },
+    {
+      "model": "EllipticEnvelope",
+      "params": "EllipticEnvelope_c0.01_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -8168870954978.499
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -141430764743.8421
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -38397430581.1397
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -407326186384.8376
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -543342805.6728
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -516893666.2693
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -116818288.9709
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20411689325.5065
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -969306794.534
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1610593338.6021
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10543155241.0245
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -884911559.1966
+        }
+      }
+    },
+    {
+      "model": "EllipticEnvelope",
+      "params": "EllipticEnvelope_c0.005_bins24",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -8168870954978.499
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -141430764743.8421
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -38397430581.1397
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -407326186384.8376
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -543342805.6728
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -516893666.2693
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -116818288.9709
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -20411689325.5065
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -969306794.534
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -1610593338.6021
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -10543155241.0245
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -884911559.1966
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.01_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0856
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1316
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1154
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0761
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0903
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1161
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1247
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.116
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1079
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0914
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1159
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1158
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1164
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.01_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0695
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1036
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0937
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0627
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0752
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0849
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0934
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0862
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0906
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0725
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0854
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0855
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0856
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.005_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1013
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1159
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0997
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0605
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0746
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1004
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.109
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1003
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0922
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0757
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1002
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1001
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1007
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n50_c0.005_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0762
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0969
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0871
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.056
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0686
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0783
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0868
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0795
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0839
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0658
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0787
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0788
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.079
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0912
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1236
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1258
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.107
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1106
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.126
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1355
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.118
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1101
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1052
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1255
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1208
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1269
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.01_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0783
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1017
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1051
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0743
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0828
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0915
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1053
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0882
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0942
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0834
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0918
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0903
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0919
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.005_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1069
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1079
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1101
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0913
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0949
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1103
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1198
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1022
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0944
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0895
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1098
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.105
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1112
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n100_c0.005_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0854
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0945
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.098
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0671
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0756
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0843
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0981
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.081
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.087
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0762
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0846
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0831
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0847
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0917
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1201
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1148
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1005
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0876
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1265
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.136
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1214
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1015
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1067
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1259
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1229
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1275
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.01_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0851
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0834
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0801
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0699
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0554
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0916
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0974
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0895
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0688
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0826
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0917
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0907
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0921
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.005_msauto_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1097
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1021
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0968
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0824
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0696
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1085
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.118
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1033
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0835
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0887
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1079
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1049
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.1095
+        }
+      }
+    },
+    {
+      "model": "IsolationForest",
+      "params": "IsolationForest_n200_c0.005_ms0.5_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.0982
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0704
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.067
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0569
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0423
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0785
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0844
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0765
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0557
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0695
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0786
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.0776
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -0.079
+        }
+      }
+    },
+    {
+      "model": "LocalOutlierFactor",
+      "params": "LocalOutlierFactor_n20_c0.01_bins32",
+      "b2_1_inlier_rate_pct": 98.28,
+      "avg_other_outlier_rate_pct": 100.0,
+      "combined_score": 99.14,
+      "per_sensor": {
+        "256pt_4ch_B2-1": {
+          "n_samples": 58,
+          "inlier_rate_pct": 98.28,
+          "mean_score": 0.1955
+        },
+        "256pt_4ch_B2-10": {
+          "n_samples": 63,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -92.6128
+        },
+        "256pt_4ch_B2-1_0526": {
+          "n_samples": 10,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -33.2774
+        },
+        "256pt_4ch_B2-1_highPressure": {
+          "n_samples": 14,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -74.8876
+        },
+        "256pt_4ch_B2-1_highTemp": {
+          "n_samples": 13,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -49.6386
+        },
+        "256pt_4ch_B2-2": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -24.1454
+        },
+        "256pt_4ch_B2-3": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -17.2903
+        },
+        "256pt_4ch_B2-4": {
+          "n_samples": 59,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -15.7233
+        },
+        "256pt_4ch_B2-5": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -31.2881
+        },
+        "256pt_4ch_B2-6": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -9.7533
+        },
+        "256pt_4ch_B2-7": {
+          "n_samples": 57,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -28.0497
+        },
+        "256pt_4ch_B2-8": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -14.4867
+        },
+        "256pt_4ch_B2-9": {
+          "n_samples": 58,
+          "inlier_rate_pct": 0.0,
+          "mean_score": -73.5912
+        }
+      }
+    }
+  ],
+  "best_result": {
+    "model": "LocalOutlierFactor",
+    "params": "LocalOutlierFactor_n5_c0.01_bins16",
+    "b2_1_inlier_rate_pct": 100.0,
+    "avg_other_outlier_rate_pct": 100.0,
+    "combined_score": 100.0,
+    "per_sensor": {
+      "256pt_4ch_B2-1": {
+        "n_samples": 58,
+        "inlier_rate_pct": 100.0,
+        "mean_score": 0.1549
+      },
+      "256pt_4ch_B2-10": {
+        "n_samples": 63,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -115.7203
+      },
+      "256pt_4ch_B2-1_0526": {
+        "n_samples": 10,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -47.4906
+      },
+      "256pt_4ch_B2-1_highPressure": {
+        "n_samples": 14,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -70.6078
+      },
+      "256pt_4ch_B2-1_highTemp": {
+        "n_samples": 13,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -76.717
+      },
+      "256pt_4ch_B2-2": {
+        "n_samples": 58,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -24.3653
+      },
+      "256pt_4ch_B2-3": {
+        "n_samples": 58,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -24.5739
+      },
+      "256pt_4ch_B2-4": {
+        "n_samples": 59,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -7.2209
+      },
+      "256pt_4ch_B2-5": {
+        "n_samples": 58,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -49.028
+      },
+      "256pt_4ch_B2-6": {
+        "n_samples": 57,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -19.1821
+      },
+      "256pt_4ch_B2-7": {
+        "n_samples": 57,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -45.8866
+      },
+      "256pt_4ch_B2-8": {
+        "n_samples": 58,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -17.7661
+      },
+      "256pt_4ch_B2-9": {
+        "n_samples": 58,
+        "inlier_rate_pct": 0.0,
+        "mean_score": -76.8893
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+vivado 2023.2
+python 3.10+
+verilator 5.0+
+powershell 5.1+

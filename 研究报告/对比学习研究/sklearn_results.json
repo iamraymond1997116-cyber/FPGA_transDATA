@@ -1,0 +1,7125 @@
+{
+  "summary": {
+    "total_samples": 621,
+    "positive_samples": 95,
+    "negative_samples": 526,
+    "total_runs": 208
+  },
+  "global_best": {
+    "accuracy": 1.0,
+    "tpr_b2_identification": 1.0,
+    "tnr_other_rejection": 1.0,
+    "confusion_matrix": [
+      [
+        526,
+        0
+      ],
+      [
+        0,
+        95
+      ]
+    ],
+    "tp": 95,
+    "fn": 0,
+    "tn": 526,
+    "fp": 0,
+    "feature_variant": "raw_128",
+    "classifier_family": "SVM-RBF",
+    "params": {
+      "C": 0.1,
+      "gamma": 0.1,
+      "kernel": "rbf",
+      "random_state": 42
+    }
+  },
+  "top_30_results": [
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    }
+  ],
+  "meeting_99_99": [
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    }
+  ],
+  "all_results": [
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "tpr_b2_identification": 1.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "tp": 95,
+      "fn": 0,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_128",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9894736842105263,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          1,
+          94
+        ]
+      ],
+      "tp": 94,
+      "fn": 1,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_128",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9789473684210527,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          2,
+          93
+        ]
+      ],
+      "tp": 93,
+      "fn": 2,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9789473684210527,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          2,
+          93
+        ]
+      ],
+      "tp": 93,
+      "fn": 2,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9789473684210527,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          2,
+          93
+        ]
+      ],
+      "tp": 93,
+      "fn": 2,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9919484702093397,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9919484702093397,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9919484702093397,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9919484702093397,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.968421052631579,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          3,
+          92
+        ]
+      ],
+      "tp": 92,
+      "fn": 3,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9578947368421052,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          4,
+          91
+        ]
+      ],
+      "tp": 91,
+      "fn": 4,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9578947368421052,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          4,
+          91
+        ]
+      ],
+      "tp": 91,
+      "fn": 4,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9473684210526315,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          5,
+          90
+        ]
+      ],
+      "tp": 90,
+      "fn": 5,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9903381642512077,
+      "tpr_b2_identification": 0.9473684210526315,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          5,
+          90
+        ]
+      ],
+      "tp": 90,
+      "fn": 5,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9473684210526315,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          5,
+          90
+        ]
+      ],
+      "tp": 90,
+      "fn": 5,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9473684210526315,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          5,
+          90
+        ]
+      ],
+      "tp": 90,
+      "fn": 5,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9473684210526315,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          5,
+          90
+        ]
+      ],
+      "tp": 90,
+      "fn": 5,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9368421052631579,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          6,
+          89
+        ]
+      ],
+      "tp": 89,
+      "fn": 6,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9887278582930756,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9871175523349437,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first16",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.9263157894736842,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          7,
+          88
+        ]
+      ],
+      "tp": 88,
+      "fn": 7,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9942965779467681,
+      "confusion_matrix": [
+        [
+          523,
+          3
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 523,
+      "fp": 3,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9942965779467681,
+      "confusion_matrix": [
+        [
+          523,
+          3
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 523,
+      "fp": 3,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9942965779467681,
+      "confusion_matrix": [
+        [
+          523,
+          3
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 523,
+      "fp": 3,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9885931558935361,
+      "confusion_matrix": [
+        [
+          520,
+          6
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 520,
+      "fp": 6,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9157894736842105,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          8,
+          87
+        ]
+      ],
+      "tp": 87,
+      "fn": 8,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9227053140096618,
+      "tpr_b2_identification": 0.9789473684210527,
+      "tnr_other_rejection": 0.9125475285171103,
+      "confusion_matrix": [
+        [
+          480,
+          46
+        ],
+        [
+          2,
+          93
+        ]
+      ],
+      "tp": 93,
+      "fn": 2,
+      "tn": 480,
+      "fp": 46,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9194847020933977,
+      "tpr_b2_identification": 0.9789473684210527,
+      "tnr_other_rejection": 0.908745247148289,
+      "confusion_matrix": [
+        [
+          478,
+          48
+        ],
+        [
+          2,
+          93
+        ]
+      ],
+      "tp": 93,
+      "fn": 2,
+      "tn": 478,
+      "fp": 48,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9855072463768116,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9838969404186796,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9942965779467681,
+      "confusion_matrix": [
+        [
+          523,
+          3
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 523,
+      "fp": 3,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9942965779467681,
+      "confusion_matrix": [
+        [
+          523,
+          3
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 523,
+      "fp": 3,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9742351046698873,
+      "tpr_b2_identification": 0.9052631578947369,
+      "tnr_other_rejection": 0.9866920152091255,
+      "confusion_matrix": [
+        [
+          519,
+          7
+        ],
+        [
+          9,
+          86
+        ]
+      ],
+      "tp": 86,
+      "fn": 9,
+      "tn": 519,
+      "fp": 7,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9923954372623575,
+      "confusion_matrix": [
+        [
+          522,
+          4
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 522,
+      "fp": 4,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 9,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.9904942965779467,
+      "confusion_matrix": [
+        [
+          521,
+          5
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 521,
+      "fp": 5,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 3,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9822866344605475,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9806763285024155,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "manhattan"
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9961977186311787,
+      "confusion_matrix": [
+        [
+          524,
+          2
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 524,
+      "fp": 2,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "raw_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "raw_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "raw_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8842105263157894,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          11,
+          84
+        ]
+      ],
+      "tp": 84,
+      "fn": 11,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "raw_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9677938808373591,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9847908745247148,
+      "confusion_matrix": [
+        [
+          518,
+          8
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 518,
+      "fp": 8,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "raw_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "raw_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "raw_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 20,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.961352657004831,
+      "tpr_b2_identification": 0.8736842105263158,
+      "tnr_other_rejection": 0.9771863117870723,
+      "confusion_matrix": [
+        [
+          514,
+          12
+        ],
+        [
+          12,
+          83
+        ]
+      ],
+      "tp": 83,
+      "fn": 12,
+      "tn": 514,
+      "fp": 12,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9790660225442834,
+      "tpr_b2_identification": 0.8631578947368421,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          13,
+          82
+        ]
+      ],
+      "tp": 82,
+      "fn": 13,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "metric": "euclidean"
+      }
+    },
+    {
+      "accuracy": 0.9565217391304348,
+      "tpr_b2_identification": 0.8631578947368421,
+      "tnr_other_rejection": 0.973384030418251,
+      "confusion_matrix": [
+        [
+          512,
+          14
+        ],
+        [
+          13,
+          82
+        ]
+      ],
+      "tp": 82,
+      "fn": 13,
+      "tn": 512,
+      "fp": 14,
+      "feature_variant": "raw_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9565217391304348,
+      "tpr_b2_identification": 0.8631578947368421,
+      "tnr_other_rejection": 0.973384030418251,
+      "confusion_matrix": [
+        [
+          512,
+          14
+        ],
+        [
+          13,
+          82
+        ]
+      ],
+      "tp": 82,
+      "fn": 13,
+      "tn": 512,
+      "fp": 14,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "DecisionTree",
+      "params": {
+        "max_depth": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9130434782608695,
+      "tpr_b2_identification": 0.8631578947368421,
+      "tnr_other_rejection": 0.9220532319391636,
+      "confusion_matrix": [
+        [
+          485,
+          41
+        ],
+        [
+          13,
+          82
+        ]
+      ],
+      "tp": 82,
+      "fn": 13,
+      "tn": 485,
+      "fp": 41,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9114331723027376,
+      "tpr_b2_identification": 0.8631578947368421,
+      "tnr_other_rejection": 0.9201520912547528,
+      "confusion_matrix": [
+        [
+          484,
+          42
+        ],
+        [
+          13,
+          82
+        ]
+      ],
+      "tp": 82,
+      "fn": 13,
+      "tn": 484,
+      "fp": 42,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9774557165861514,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9082125603864735,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 0.9182509505703422,
+      "confusion_matrix": [
+        [
+          483,
+          43
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 483,
+      "fp": 43,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9049919484702094,
+      "tpr_b2_identification": 0.8526315789473684,
+      "tnr_other_rejection": 0.9144486692015209,
+      "confusion_matrix": [
+        [
+          481,
+          45
+        ],
+        [
+          14,
+          81
+        ]
+      ],
+      "tp": 81,
+      "fn": 14,
+      "tn": 481,
+      "fp": 45,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8421052631578947,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          15,
+          80
+        ]
+      ],
+      "tp": 80,
+      "fn": 15,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.9758454106280193,
+      "tpr_b2_identification": 0.8421052631578947,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          15,
+          80
+        ]
+      ],
+      "tp": 80,
+      "fn": 15,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1000,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "raw_128",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "log1p_128",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "raw_first32",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "raw_first16",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "raw_first8",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.7037037037037037,
+      "tpr_b2_identification": 0.8947368421052632,
+      "tnr_other_rejection": 0.6692015209125475,
+      "confusion_matrix": [
+        [
+          352,
+          174
+        ],
+        [
+          10,
+          85
+        ]
+      ],
+      "tp": 85,
+      "fn": 10,
+      "tn": 352,
+      "fp": 174,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "GaussianNB",
+      "params": {}
+    },
+    {
+      "accuracy": 0.8341384863123994,
+      "tpr_b2_identification": 0.3894736842105263,
+      "tnr_other_rejection": 0.9144486692015209,
+      "confusion_matrix": [
+        [
+          481,
+          45
+        ],
+        [
+          58,
+          37
+        ]
+      ],
+      "tp": 37,
+      "fn": 58,
+      "tn": 481,
+      "fp": 45,
+      "feature_variant": "raw_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8325281803542673,
+      "tpr_b2_identification": 0.3894736842105263,
+      "tnr_other_rejection": 0.9125475285171103,
+      "confusion_matrix": [
+        [
+          480,
+          46
+        ],
+        [
+          58,
+          37
+        ]
+      ],
+      "tp": 37,
+      "fn": 58,
+      "tn": 480,
+      "fp": 46,
+      "feature_variant": "raw_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8325281803542673,
+      "tpr_b2_identification": 0.3894736842105263,
+      "tnr_other_rejection": 0.9125475285171103,
+      "confusion_matrix": [
+        [
+          480,
+          46
+        ],
+        [
+          58,
+          37
+        ]
+      ],
+      "tp": 37,
+      "fn": 58,
+      "tn": 480,
+      "fp": 46,
+      "feature_variant": "raw_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.822866344605475,
+      "tpr_b2_identification": 0.3684210526315789,
+      "tnr_other_rejection": 0.9049429657794676,
+      "confusion_matrix": [
+        [
+          476,
+          50
+        ],
+        [
+          60,
+          35
+        ]
+      ],
+      "tp": 35,
+      "fn": 60,
+      "tn": 476,
+      "fp": 50,
+      "feature_variant": "log1p_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.822866344605475,
+      "tpr_b2_identification": 0.3684210526315789,
+      "tnr_other_rejection": 0.9049429657794676,
+      "confusion_matrix": [
+        [
+          476,
+          50
+        ],
+        [
+          60,
+          35
+        ]
+      ],
+      "tp": 35,
+      "fn": 60,
+      "tn": 476,
+      "fp": 50,
+      "feature_variant": "log1p_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.822866344605475,
+      "tpr_b2_identification": 0.3684210526315789,
+      "tnr_other_rejection": 0.9049429657794676,
+      "confusion_matrix": [
+        [
+          476,
+          50
+        ],
+        [
+          60,
+          35
+        ]
+      ],
+      "tp": 35,
+      "fn": 60,
+      "tn": 476,
+      "fp": 50,
+      "feature_variant": "log1p_128",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8631239935587761,
+      "tpr_b2_identification": 0.10526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          85,
+          10
+        ]
+      ],
+      "tp": 10,
+      "fn": 85,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8631239935587761,
+      "tpr_b2_identification": 0.10526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          85,
+          10
+        ]
+      ],
+      "tp": 10,
+      "fn": 85,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8373590982286635,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8373590982286635,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8373590982286635,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9828897338403042,
+      "confusion_matrix": [
+        [
+          517,
+          9
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 517,
+      "fp": 9,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8341384863123994,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9790874524714829,
+      "confusion_matrix": [
+        [
+          515,
+          11
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 515,
+      "fp": 11,
+      "feature_variant": "raw_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8341384863123994,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9790874524714829,
+      "confusion_matrix": [
+        [
+          515,
+          11
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 515,
+      "fp": 11,
+      "feature_variant": "raw_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8341384863123994,
+      "tpr_b2_identification": 0.031578947368421054,
+      "tnr_other_rejection": 0.9790874524714829,
+      "confusion_matrix": [
+        [
+          515,
+          11
+        ],
+        [
+          92,
+          3
+        ]
+      ],
+      "tp": 3,
+      "fn": 92,
+      "tn": 515,
+      "fp": 11,
+      "feature_variant": "raw_first32",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8486312399355878,
+      "tpr_b2_identification": 0.010526315789473684,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          94,
+          1
+        ]
+      ],
+      "tp": 1,
+      "fn": 94,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first32",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 100,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "raw_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 0.1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 1,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "SVM-RBF",
+      "params": {
+        "C": 10,
+        "gamma": 0.01,
+        "kernel": "rbf",
+        "random_state": 42
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8470209339774557,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 1.0,
+      "confusion_matrix": [
+        [
+          526,
+          0
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 526,
+      "fp": 0,
+      "feature_variant": "log1p_first8",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    },
+    {
+      "accuracy": 0.8454106280193237,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "svd"
+      }
+    },
+    {
+      "accuracy": 0.8454106280193237,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "lsqr"
+      }
+    },
+    {
+      "accuracy": 0.8454106280193237,
+      "tpr_b2_identification": 0.0,
+      "tnr_other_rejection": 0.9980988593155894,
+      "confusion_matrix": [
+        [
+          525,
+          1
+        ],
+        [
+          95,
+          0
+        ]
+      ],
+      "tp": 0,
+      "fn": 95,
+      "tn": 525,
+      "fp": 1,
+      "feature_variant": "log1p_first16",
+      "classifier_family": "LDA",
+      "params": {
+        "solver": "eigen"
+      }
+    }
+  ]
+}
