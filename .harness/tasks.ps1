@@ -71,7 +71,10 @@ function Run-SubScript {
         if (-not (Test-Path $pythonPath)) { $pythonPath = "python" }
         & $pythonPath $Path $ExtraArgs
     } else {
-        & powershell.exe -ExecutionPolicy Bypass -File $Path $ExtraArgs
+        # powershell.exe not always in PATH on all systems; use full system path
+        $psExe = if (Get-Command "powershell.exe" -ErrorAction SilentlyContinue) { "powershell.exe" }
+                 else { "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" }
+        & $psExe -ExecutionPolicy Bypass -File $Path $ExtraArgs
     }
     $ec = $LASTEXITCODE
     if ($ec -ne 0) { Write-Log "$([IO.Path]::GetFileName($Path)) exited with code $ec" "ERROR" }

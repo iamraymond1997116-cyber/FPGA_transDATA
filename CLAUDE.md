@@ -1,63 +1,42 @@
-# FPGA_transDATA
+# CLAUDE.md
 
-## 通信规则
+本文件为 Claude Code 操作此仓库的顶层指引。详细内容见下级文件。
 
-- **第一句话永远是"好的老大"，保持精简**
-- **用简洁中文思考与交流，不废话不填充**
+## 一句话
 
-## 编码原则
+FPGA 瞬态响应采集项目（Artix-7 XC7A200T），通过传感器上/下电瞬态信号提取 PUF 指纹。
 
-- 需求不明确时先问，不猜
-- 用最简单的改动满足需求，不建无用抽象
-- 改精准，不改无关代码
-- 可验证才叫完成，跑过才有结论
-- 不确定时列出选项，不默默选
-
-## 仓库结构
+## 架构全景
 
 ```
-.harness/   — 工作流入口（tasks.ps1）
-.claude/    — 配置
-.omc/       — OMC 状态
-AGENTS.md   — 路由规则
-
-PUF_dataTransFreq_v60_capture/   ← 主项目
-├── rtl/          — Verilog 源码
-├── sim/          — 仿真
-├── scripts/      — 构建/烧录/捕获
-├── constraints/  — XDC
-├── doc/          — 文档
-└── logs/analysis/ — 分析结果
-
-研究报告/   — 8 份报告
-专利/       — 8 份专利
-research_reports/ — 实验结果
+电源控制 → 传感器瞬态 → ADC 采集 → BRAM 存储 → UART 输出 → PC 解析
 ```
 
-## 会话启动
+5 种采集模式（FULL / PCUT / NCUT / EXTR / FCYC）自动循环，每帧 128 点双通道。
 
-1. 跑 `.\.harness\init.ps1`（若 init 失败先修再继续）
-2. 跑 `.\.harness\tasks.ps1 check`
-3. 读 `PROGRESS.md`
-4. 读 `.harness/lessons.md` + `.harness/omc.md`
-
-## 常用命令
+## 核心操作
 
 ```powershell
-.\.harness\tasks.ps1 check      # 环境+lint+sim
-.\.harness\tasks.ps1 build      # 构建
-.\.harness\tasks.ps1 program    # 烧录
-.\.harness\tasks.ps1 capture    # 捕获
-.\.harness\tasks.ps1 status     # 状态
-.\.harness\tasks.ps1 clean      # 清理
+.\.harness\tasks.ps1 check      # 环境 + lint + sim 全量检查
+.\.harness\tasks.ps1 build      # Vivado 构建 bitstream
+.\.harness\tasks.ps1 program    # JTAG 烧录 SRAM
+.\.harness\tasks.ps1 capture    # UART 捕获
 ```
 
-## 规则
+## 关键文件路径
 
-- RTL 改动先列点等确认，重大变更前必须问
-- 探索、阻塞任务必须派子 agent，不污染主上下文
-- 严格走 harness 流程，不跳步骤
-- 文件路径用绝对路径
-- 代码注释用英文
-- 项目详情见 `PUF_dataTransFreq_v60_capture/CLAUDE.md`
-- 多会话交接用 `.harness/session-handoff.md`
+| 用途 | 路径 |
+|:---|:---|
+| 主项目 CLAUDE.md | `PUF_dataTransFreq_v60_capture/CLAUDE.md` |
+| 硬性约束规则 | `.harness/lessons.md` |
+| OMC 调度规则 | `.harness/omc.md` |
+| 会话启动引导 | `.harness/session_bootstrap.md` |
+| 功能蓝图 | `.harness/feature_list.json` |
+| 进度追踪 | `PUF_dataTransFreq_v60_capture/PROGRESS.md` |
+
+## 约定
+
+- RTL 改动必须先列改动点，等确认后再改
+- 每次 RTL/脚本改动后出具 QA 报告到 `.harness/qa/`
+- 详细模块说明、硬件 pinout、UART 帧格式见 `PUF_dataTransFreq_v60_capture/CLAUDE.md`
+- 会话启动顺序：`init.ps1` → 读 PROGRESS.md → 读 lessons.md → `tasks.ps1 check`

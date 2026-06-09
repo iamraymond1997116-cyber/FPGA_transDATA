@@ -15,7 +15,7 @@ module tb_uart_ascii_stream;
     wire txd;
     wire busy;
 
-    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT)) dut (
+    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT), .VERSION_MAJOR(8'd6), .VERSION_MINOR(8'd3)) dut (
         .clk(clk),
         .rst_n(rst_n),
         .send(send),
@@ -77,7 +77,7 @@ module tb_uart_ascii_stream;
         uart_recv_byte(b); expect_byte(b, "V", "hdr V");
         uart_recv_byte(b); expect_byte(b, "6", "hdr 6");
         uart_recv_byte(b); expect_byte(b, ".", "hdr dot");
-        uart_recv_byte(b); expect_byte(b, "0", "hdr zero");
+        uart_recv_byte(b); expect_byte(b, "3", "hdr minor");  // V6.3
         uart_recv_byte(b); expect_byte(b, ",", "hdr comma");
         uart_recv_byte(b); expect_byte(b, "M", "hdr M");
         uart_recv_byte(b); expect_byte(b, "O", "hdr O");

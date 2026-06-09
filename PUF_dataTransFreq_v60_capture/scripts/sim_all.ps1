@@ -238,14 +238,14 @@ foreach ($tb in $tbFiles) {
             $logContent = Get-Content "xsim_stdout.log" -ErrorAction SilentlyContinue -Raw
         }
         $hasPass = $logContent -match "passed|PASS|\[PASS\]"
-        $hasFatal = $logContent -match 'FATAL|ERROR|\$fatal'
+        $hasFatal = $logContent -match '\bFATAL\b|\bERROR\b|\$fatal'
 
         if ($ec -eq 0 -and $hasPass -and -not $hasFatal) {
             Write-Host "  [PASS] $tbName" -ForegroundColor Green
             $pass++
         } else {
             Write-Host "  [FAIL] $tbName (exit=$ec)" -ForegroundColor Red
-            $lines = $logContent -split "`r?`n" | Where-Object { $_ -match "FATAL|ERROR|Assertion" } | Select-Object -First 3
+            $lines = $logContent -split "`r?`n" | Where-Object { $_ -match '\bFATAL\b|\bERROR\b|\bAssertion\b' } | Select-Object -First 3
             $lines | ForEach-Object { Write-Host "         $_" -ForegroundColor DarkGray }
             $fail++
         }
