@@ -69,41 +69,50 @@ def main():
 
     print(f"Sensor: {args.sensor or 'N/A'}  Target: {args.frames} frames  Timeout: {args.timeout}s")
 
-    ser = serial.Serial(args.port, args.baud, timeout=0.005)
+    ser = serial.Serial(args.port, args.baud, timeout=0.01)
     ser.set_buffer_size(rx_size=256 * 1024)
 
     frames = []
     errors = []
     deadline = time.time() + args.timeout
     pending = []
+    buf = b""
     recv_bytes = 0
     t0 = time.time()
 
     try:
         while len(frames) < args.frames and time.time() < deadline:
-            line = ser.read_until(b"\n")
-            if not line:
+            chunk = ser.read(ser.in_waiting or 65536)
+            if not chunk:
                 continue
-            recv_bytes += len(line)
-            try:
-                line_str = line.decode("ascii").strip()
-            except UnicodeDecodeError:
-                continue
-            if not line_str:
-                continue
+            buf += chunk
+            recv_bytes += len(chunk)
+            # Safety: prevent unbounded buffer growth on corrupted data
+            if len(buf) > 256 * 1024:
+                buf = buf[-65536:]
 
-            if line_str.startswith("V6."):
-                pending = [line_str]
-            elif pending:
-                pending.append(line_str)
-                if len(pending) == 3:
-                    frame, err = parse_frame(pending)
-                    if err:
-                        errors.append(err)
-                    else:
-                        frame["_ts"] = dt.datetime.now().isoformat()
-                        frames.append(frame)
-                    pending = []
+            # Process complete lines from buffer
+            while b"\n" in buf:
+                line_bytes, buf = buf.split(b"\n", 1)
+                line_str = line_bytes.decode("ascii", errors="replace").strip()
+                if not line_str:
+                    continue
+
+                if line_str.startswith("V6."):
+                    pending = [line_str]
+                elif pending:
+                    pending.append(line_str)
+                    if len(pending) == 3:
+                        frame, err = parse_frame(pending)
+                        if err:
+                            errors.append(err)
+                        else:
+                            frame["_ts"] = dt.datetime.now().isoformat()
+                            frames.append(frame)
+                            if len(frames) >= args.frames:
+                                buf = b""
+                                break
+                        pending = []
 
             n = len(frames)
             if n > 0 and n % 50 == 0:

@@ -1,0 +1,11 @@
+{
+  "silhouette": -0.1364,
+  "centroid_acc": 0.75,
+  "intra_mean": 3.2999,
+  "inter_mean": 4.7506,
+  "inter_intra_ratio": 1.44,
+  "n_samples": 400,
+  "n_features": 832,
+  "method": "condition_normalized_multi_transform_nca",
+  "mode": "FULL"
+}

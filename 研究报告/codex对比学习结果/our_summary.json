@@ -1,0 +1,11 @@
+{
+  "n_files": 400,
+  "n_features": 406,
+  "lda_dim_x": 0.0,
+  "lda_dim_y": 1.0,
+  "silhouette": 0.3863324860420261,
+  "centroid_acc": 0.84,
+  "same_mean_distance": 0.30368361118478154,
+  "different_mean_distance": 1.8750554828712476,
+  "distance_ratio": 6.1743716611831365
+}

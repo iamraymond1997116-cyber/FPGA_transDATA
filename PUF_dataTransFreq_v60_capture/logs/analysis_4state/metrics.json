@@ -1,0 +1,13 @@
+{
+  "silhouette": 0.3224,
+  "acc": 1.0,
+  "intra": 1.5429,
+  "inter": 21.3043,
+  "ratio": 13.81,
+  "best_dims": [
+    0,
+    1
+  ],
+  "n_features": 2980,
+  "mode": "all_5_cross"
+}

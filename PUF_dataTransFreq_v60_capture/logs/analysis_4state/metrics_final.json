@@ -1,0 +1,14 @@
+{
+  "silhouette": 0.3499,
+  "acc": 1.0,
+  "intra": 1.5744,
+  "inter": 24.4585,
+  "ratio": 15.54,
+  "best_dims": [
+    0,
+    1
+  ],
+  "n_samples": 40,
+  "n_features": 200,
+  "method": "file_level_condnorm_pca_lda"
+}

@@ -1,0 +1,35 @@
+{
+  "NCUT": {
+    "n_files": 40,
+    "n_features": 914,
+    "lda_dim_x": 0.0,
+    "lda_dim_y": 1.0,
+    "silhouette": 0.03111972868013436,
+    "centroid_acc": 0.675,
+    "same_mean_distance": 0.37325033212438574,
+    "different_mean_distance": 1.8366889047249577,
+    "distance_ratio": 4.920796437785781
+  },
+  "PCUT": {
+    "n_files": 40,
+    "n_features": 914,
+    "lda_dim_x": 1.0,
+    "lda_dim_y": 2.0,
+    "silhouette": 0.023328501008057702,
+    "centroid_acc": 0.625,
+    "same_mean_distance": 0.8723830104169223,
+    "different_mean_distance": 1.8312627312445988,
+    "distance_ratio": 2.0991499254064077
+  },
+  "FULL": {
+    "n_files": 40,
+    "n_features": 914,
+    "lda_dim_x": 0.0,
+    "lda_dim_y": 1.0,
+    "silhouette": 0.15404544900409317,
+    "centroid_acc": 0.725,
+    "same_mean_distance": 0.29670096381346106,
+    "different_mean_distance": 1.7846977318186048,
+    "distance_ratio": 6.015139650623608
+  }
+}

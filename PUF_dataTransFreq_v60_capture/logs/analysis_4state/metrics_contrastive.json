@@ -1,0 +1,19 @@
+{
+  "silhouette": -0.1632,
+  "centroid_acc": 0.85,
+  "intra_mean": 3.1364,
+  "inter_mean": 4.7149,
+  "inter_intra_ratio": 1.5,
+  "n_samples": 400,
+  "n_features": 584,
+  "transforms": [
+    "fft_mag",
+    "fft_phase",
+    "hilbert_env",
+    "inst_freq",
+    "cross_spec",
+    "transfer_func",
+    "autocorr",
+    "time_stats"
+  ]
+}
