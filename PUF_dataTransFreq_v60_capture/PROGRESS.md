@@ -1,38 +1,32 @@
-# PROGRESS
+﻿# PROGRESS
 
 ## Last Updated
-2026-06-09
-
-## Migration Note
-This is a clean repository migrated from `FPGA_DATAtransFreq_0514`.
-Only the V6.3 capture project was ported — old V5.x FFT/classification code was left behind.
+2026-06-16
 
 ## Current State
 
-V6.3 Multi-Mode Transient Capture, built and verified on hardware:
+V6.3 Multi-Mode Transient Capture, built and verified on hardware.
 
-- **5 capture modes** (auto-cycling): FULL → PCUT → NCUT → EXTR → FCYC
-- 128-point dual-channel raw capture
-- UART 1 Mbps ASCII frame output
-- LCD: version + mode display only
-- Bitstream generated and hardware-tested (multiple capture logs)
+### Latest: 10-sensor × 4-condition dataset (0612)
+- **40 CSV files, 8000 frames** (10 sensors × 4 conditions × 200 frames × 5 modes)
+- B2-1 ~ B2-10 collected under NTNP/NTHP/HTNP/HTHP conditions
+- NCUT confirmed as golden mode (best SNR for sensor identification)
+- Key hardware findings: B2-4 CH2 channel unstable, B2-10 NTNP/HTNP baseline ~21000 (sensor characteristic)
+- Analysis pipeline established: CMR→FFT→LDA with condition normalization
+- Silhouette ~0.62 (file-level), Ratio ~26x (NCUT mode)
 
-### Verified capture runs (v63_*):
-- `v63_preactive` / `v63_safe` / `v63_nodiscard` — latest hardware captures
-- `v62_verify` / `v62_7pt` — V6.2 verification
-- Analysis: contrastive learning, t-SNE, PCA visualizations in `logs/analysis/`
-
-## Next Steps
-
-1. Re-run `build_v60.tcl` in this new workspace to regenerate bitstream
-2. Program board and verify UART ASCII frames
-3. Continue capture experiments and analysis
+### Collection workflow refined
+- Per-capture stability check (frmVar < 10, peak ~11000)
+- Per-sensor full validation before switching
+- Background subagent validation
+- Power cable quality monitoring
 
 ## 会话记录
 
 | 日期 | 目标 | 完成内容 | 验证 | 提交 |
 |:---|:---|:---|:---|:---|
-| | | | | |
+| 2026-06-11 | 0611旧数据集采集 | 10传感器×4条件×50帧 | 部分数据因电源线问题异常 | -- |
+| 2026-06-12 | 0612新数据集采集+分析 | 10传感器×4条件×200帧+质量工具+参考风格分析 | 40文件8000帧, B2-4 CH2硬件问题 | 6127098 / 28700f7 |
 
 ## Key Files
 
@@ -45,3 +39,6 @@ V6.3 Multi-Mode Transient Capture, built and verified on hardware:
 | `scripts/build_v60.tcl` | Vivado build script |
 | `scripts/capture_ascii_v60.py` | UART capture parser |
 | `.harness/tasks.ps1` | Harness entry point |
+| `logs/0612_4state_10sensers/` | Current valid dataset (40 CSVs, 8000 frames) |
+| `scripts/reproduce_reference.py` | Reference-style LDA analysis |
+| `scripts/check_all_stability.py` | Data quality checker |
