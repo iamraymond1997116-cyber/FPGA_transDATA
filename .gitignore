@@ -9,3 +9,7 @@ __pycache__/
 *.o
 *.d
 *.wdb
+*.rej
+
+# Capture outputs (root-level smoke tests)
+/logs/
