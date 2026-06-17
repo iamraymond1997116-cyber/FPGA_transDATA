@@ -39,7 +39,7 @@ module transient_puf_v60_top (
 );
 
     localparam [7:0] VERSION_MAJOR = 8'd6;
-    localparam [7:0] VERSION_MINOR = 8'd4;
+    localparam [7:0] VERSION_MINOR = 8'd5;
 
     // ── Mode encoding (3-bit) ──
     localparam [2:0] MODE_FULL        = 3'd0;
@@ -89,6 +89,9 @@ module transient_puf_v60_top (
     wire capture_buffer_we;
 
     reg [7:0] uart_txn_counter = 8'd0;
+    reg [15:0] sample_id = 16'd0;  // V6.5: incremented after FCYC frame is fully sent.
+    reg        sample_id_pending = 1'b0;  // V6.5: set at FCYC capture_done, cleared after increment.
+    wire [2:0] mode_idx = capture_mode;  // V6.5: mode position inside sample, 0..4.
     reg uart_send = 1'b0;
     reg uart_busy_seen = 1'b0;
     wire uart_busy;
@@ -211,6 +214,8 @@ module transient_puf_v60_top (
         .rst_n(system_reset_n),
         .send(uart_send),
         .mode(capture_mode),
+        .sample_id(sample_id),
+        .mode_idx(mode_idx),
         .txn_id(uart_txn_counter),
         .sensor_power(sensor_power),
         .raw_ch1_data(uart_read_ch1),
@@ -229,6 +234,7 @@ module transient_puf_v60_top (
             mode_select    <= MODE_FULL;
             capture_mode   <= MODE_FULL;
             uart_txn_counter <= 8'd0;
+            sample_id <= 16'd0;
             capture_req    <= 1'b1;
             capture_done_d <= 1'b0;
             uart_busy_seen <= 1'b1;    // first trigger skips busy check
@@ -240,6 +246,11 @@ module transient_puf_v60_top (
                 uart_send <= 1'b1;
                 uart_txn_counter <= uart_txn_counter + 8'd1;
                 capture_req <= 1'b1;
+                // V6.5: mark FCYC completion — sample_id will advance when the
+                // next capture starts (after FCYC UART frame is fully sent), so
+                // all five frames in the sample share the same sample_id.
+                if (capture_mode == MODE_FULL_CYCLE)
+                    sample_id_pending <= 1'b1;
                 // Cycle through 5 modes: 0→1→2→3→4→0→...
                 mode_select <= (mode_select == MODE_MAX) ? MODE_FULL : mode_select + 3'd1;
                 uart_busy_seen <= 1'b0;
@@ -251,6 +262,11 @@ module transient_puf_v60_top (
 
             // Start next capture after UART finishes
             if (!uart_busy && capture_req && !capture_start && uart_busy_seen) begin
+                // V6.5: advance sample_id after the previous FCYC frame is fully sent.
+                if (sample_id_pending) begin
+                    sample_id <= sample_id + 16'd1;
+                    sample_id_pending <= 1'b0;
+                end
                 capture_mode <= mode_select;
                 capture_start <= 1'b1;
                 capture_req <= 1'b0;
