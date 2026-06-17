@@ -20,6 +20,7 @@ module tb_trigger_chain;
     // ============================================================
     wire sensor_power;
     wire power_on_pulse;
+    wire capture_trigger;
     /* verilator lint_off UNUSEDSIGNAL */
     wire power_off_pulse;
     /* verilator lint_on UNUSEDSIGNAL */
@@ -53,12 +54,15 @@ module tb_trigger_chain;
     // ============================================================
     // Top-level FSM registers (mirrors transient_puf_v60_top.v:194-226)
     // ============================================================
-    reg mode_select     = 1'b0;
+    reg [2:0] mode_select = 3'd0;
     reg [2:0] capture_mode = 3'd0;
     reg capture_start   = 1'b0;
     reg capture_req     = 1'b1;
     reg capture_done_d  = 1'b0;
     reg [7:0] uart_txn_counter = 8'd0;
+    reg [15:0] sample_id = 16'd0;
+    reg        sample_id_pending = 1'b0;
+    wire [2:0] mode_idx = capture_mode;
     reg uart_send       = 1'b0;
     reg uart_busy_seen  = 1'b1;  // first trigger skips UART-busy gate
 
@@ -104,6 +108,7 @@ module tb_trigger_chain;
         .sample_tick(capture_buffer_we),
         .sensor_power(sensor_power),
         .power_on_pulse(power_on_pulse),
+        .capture_trigger(capture_trigger),
         .power_off_pulse(power_off_pulse)
     );
 
@@ -116,7 +121,7 @@ module tb_trigger_chain;
         .adc_valid(adc_valid),
         .adc_ch1(adc_ch1),
         .adc_ch2(adc_ch2),
-        .trigger(power_on_pulse),
+        .trigger(capture_trigger),
         .capture_done(capture_done),
         .buffer_addr(capture_buffer_addr),
         .buffer_ch1_data(capture_buffer_ch1_data),
@@ -132,6 +137,8 @@ module tb_trigger_chain;
         .rst_n(rst_n),
         .send(uart_send),
         .mode(capture_mode),
+        .sample_id(sample_id),
+        .mode_idx(mode_idx),
         .txn_id(uart_txn_counter),
         .sensor_power(sensor_power),
         .raw_ch1_data(uart_read_ch1),
@@ -156,9 +163,10 @@ module tb_trigger_chain;
     // ============================================================
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            mode_select     <= 1'b0;
-            capture_mode <= 1'b0;
+            mode_select <= 3'd0;
+            capture_mode <= 3'd0;
             uart_txn_counter <= 8'd0;
+            sample_id <= 16'd0;
             capture_req     <= 1'b1;
             capture_done_d  <= 1'b0;
             uart_busy_seen  <= 1'b1;
@@ -172,7 +180,9 @@ module tb_trigger_chain;
                 uart_send <= 1'b1;
                 uart_txn_counter <= uart_txn_counter + 8'd1;
                 capture_req <= 1'b1;
-                mode_select <= ~mode_select;
+                if (capture_mode == 3'd4)
+                    sample_id_pending <= 1'b1;
+                mode_select <= (mode_select == 3'd4) ? 3'd0 : mode_select + 3'd1;
                 uart_busy_seen <= 1'b0;
             end
 
@@ -180,6 +190,10 @@ module tb_trigger_chain;
                 uart_busy_seen <= 1'b1;
 
             if (!uart_busy && capture_req && !capture_start && uart_busy_seen) begin
+                if (sample_id_pending) begin
+                    sample_id <= sample_id + 16'd1;
+                    sample_id_pending <= 1'b0;
+                end
                 capture_mode <= mode_select;
                 capture_start <= 1'b1;
                 capture_req <= 1'b0;
@@ -271,15 +285,14 @@ module tb_trigger_chain;
             ST_WAIT_START: begin
                 if (capture_start) begin
                     $display("capture_start fired (capture_start_seen=%0d)", capture_start_seen);
+                    $display("Waiting for capture_trigger (power controller ready)...");
                     test_state <= ST_PROPAGATE1;
-                    wait_cnt <= 2;
                 end
             end
 
             ST_PROPAGATE1: begin
-                wait_cnt <= wait_cnt - 1;
-                if (wait_cnt == 0) begin
-                    $display("Feeding 128 ADC samples (mode=%0d)...", capture_mode);
+                if (capture_trigger) begin
+                    $display("capture_trigger fired, feeding 128 ADC samples (mode=%0d)...", capture_mode);
                     adc_valid <= 1'b1;
                     adc_feed_cnt <= 0;
                     test_state <= ST_FEED_ADC;
@@ -319,7 +332,7 @@ module tb_trigger_chain;
                 if (!uart_busy) begin
                     $display("uart_busy went LOW at cycle %0d (UART done)", total_cycles);
                     cycle_num <= cycle_num + 1;
-                    if (cycle_num < 2) begin  // we want 3 cycles total (0,1,2)
+                    if (cycle_num < 5) begin  // six captures cover one full 5-mode sample plus next FULL
                         $display("------------------------------------------------------------------------");
                         $display("=== Cycle %0d: waiting for capture_start ===", cycle_num + 1);
                         test_state <= ST_WAIT_START;
@@ -335,38 +348,44 @@ module tb_trigger_chain;
                 $display("VERIFICATION RESULTS");
                 $display("================================================================================");
 
-                if (capture_done_seen !== 3) begin
-                    $display("FAIL: capture_done_seen=%0d (expected 3)", capture_done_seen);
+                if (capture_done_seen !== 6) begin
+                    $display("FAIL: capture_done_seen=%0d (expected 6)", capture_done_seen);
                     $finish;
                 end
-                $display("PASS: capture_done_seen=%0d (expected 3)", capture_done_seen);
+                $display("PASS: capture_done_seen=%0d (expected 6)", capture_done_seen);
 
-                if (capture_start_seen !== 3) begin
-                    $display("FAIL: capture_start_seen=%0d (expected 3)", capture_start_seen);
+                if (capture_start_seen !== 6) begin
+                    $display("FAIL: capture_start_seen=%0d (expected 6)", capture_start_seen);
                     $finish;
                 end
-                $display("PASS: capture_start_seen=%0d (expected 3)", capture_start_seen);
+                $display("PASS: capture_start_seen=%0d (expected 6)", capture_start_seen);
 
                 if (txn_errors !== 0) begin
                     $display("FAIL: TXN errors=%0d", txn_errors);
                     $finish;
                 end
-                if (uart_txn_counter !== 3) begin
-                    $display("FAIL: uart_txn_counter=%0d (expected 3)", uart_txn_counter);
+                if (uart_txn_counter !== 6) begin
+                    $display("FAIL: uart_txn_counter=%0d (expected 6)", uart_txn_counter);
                     $finish;
                 end
-                $display("PASS: uart_txn_counter=%0d (expected 3), TXN errors=%0d",
+                $display("PASS: uart_txn_counter=%0d (expected 6), TXN errors=%0d",
                          uart_txn_counter, txn_errors);
 
                 if (mode_toggles_ok !== 1) begin
                     $display("FAIL: MODE did not toggle correctly");
                     $finish;
                 end
-                if (mode_select !== 1'b1) begin
-                    $display("FAIL: mode_select=%0d (expected 1 after 3 cycles)", mode_select);
+                if (mode_select !== 3'd1) begin
+                    $display("FAIL: mode_select=%0d (expected 1 after 6 captures)", mode_select);
                     $finish;
                 end
-                $display("PASS: mode_select=%0d (expected 1 after 3 cycles)", mode_select);
+                $display("PASS: mode_select=%0d (expected 1 after 6 captures)", mode_select);
+
+                if (sample_id !== 16'd1) begin
+                    $display("FAIL: sample_id=%0d (expected 1 after one complete FCYC)", sample_id);
+                    $finish;
+                end
+                $display("PASS: sample_id=%0d (increments once per 5-mode sample)", sample_id);
 
                 if (premature_fires !== 0) begin
                     $display("FAIL: premature_fires=%0d", premature_fires);

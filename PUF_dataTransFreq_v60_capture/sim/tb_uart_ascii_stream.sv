@@ -7,6 +7,8 @@ module tb_uart_ascii_stream;
     reg rst_n = 1'b0;
     reg send = 1'b0;
     reg [2:0] mode = 3'd0;
+    reg [15:0] sample_id = 16'd12;
+    reg [2:0] mode_idx = 3'd0;
     reg [7:0] txn_id = 8'h3C;
     reg sensor_power = 1'b0;
     reg signed [15:0] raw_ch1_data = 16'sh1234;
@@ -15,11 +17,13 @@ module tb_uart_ascii_stream;
     wire txd;
     wire busy;
 
-    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT), .VERSION_MAJOR(8'd6), .VERSION_MINOR(8'd4)) dut (
+    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT), .VERSION_MAJOR(8'd6), .VERSION_MINOR(8'd5)) dut (
         .clk(clk),
         .rst_n(rst_n),
         .send(send),
         .mode(mode),
+        .sample_id(sample_id),
+        .mode_idx(mode_idx),
         .txn_id(txn_id),
         .sensor_power(sensor_power),
         .raw_ch1_data(raw_ch1_data),
@@ -73,17 +77,28 @@ module tb_uart_ascii_stream;
         @(posedge clk);
         send = 1'b0;
 
-        // Header: V6.0,MODE=FULL,SPWR=1,TXN=3C\n (29 bytes)
+        // Header: V6.5,SID=00012,MID=0,FULL,SPWR=1,TXN=3C\n
         uart_recv_byte(b); expect_byte(b, "V", "hdr V");
         uart_recv_byte(b); expect_byte(b, "6", "hdr 6");
         uart_recv_byte(b); expect_byte(b, ".", "hdr dot");
-        uart_recv_byte(b); expect_byte(b, "4", "hdr minor");  // V6.4
-        uart_recv_byte(b); expect_byte(b, ",", "hdr comma");
-        uart_recv_byte(b); expect_byte(b, "M", "hdr M");
-        uart_recv_byte(b); expect_byte(b, "O", "hdr O");
-        uart_recv_byte(b); expect_byte(b, "D", "hdr D");
-        uart_recv_byte(b); expect_byte(b, "E", "hdr E");
-        uart_recv_byte(b); expect_byte(b, "=", "hdr eq");
+        uart_recv_byte(b); expect_byte(b, "5", "hdr minor");
+        uart_recv_byte(b); expect_byte(b, ",", "hdr comma 0");
+        uart_recv_byte(b); expect_byte(b, "S", "sid S");
+        uart_recv_byte(b); expect_byte(b, "I", "sid I");
+        uart_recv_byte(b); expect_byte(b, "D", "sid D");
+        uart_recv_byte(b); expect_byte(b, "=", "sid eq");
+        uart_recv_byte(b); expect_byte(b, "0", "sid d0");
+        uart_recv_byte(b); expect_byte(b, "0", "sid d1");
+        uart_recv_byte(b); expect_byte(b, "0", "sid d2");
+        uart_recv_byte(b); expect_byte(b, "1", "sid d3");
+        uart_recv_byte(b); expect_byte(b, "2", "sid d4");
+        uart_recv_byte(b); expect_byte(b, ",", "sid comma");
+        uart_recv_byte(b); expect_byte(b, "M", "mid M");
+        uart_recv_byte(b); expect_byte(b, "I", "mid I");
+        uart_recv_byte(b); expect_byte(b, "D", "mid D");
+        uart_recv_byte(b); expect_byte(b, "=", "mid eq");
+        uart_recv_byte(b); expect_byte(b, "0", "mid value");
+        uart_recv_byte(b); expect_byte(b, ",", "mid comma");
         uart_recv_byte(b); expect_byte(b, "F", "mode F");
         uart_recv_byte(b); expect_byte(b, "U", "mode U");
         uart_recv_byte(b); expect_byte(b, "L", "mode L");
