@@ -1,4 +1,4 @@
-# FPGA_transDATA V6.3
+# FPGA_transDATA V6.5
 
 Multi-Mode Transient Capture for sensor PUF fingerprinting (Artix-7 XC7A200T).
 

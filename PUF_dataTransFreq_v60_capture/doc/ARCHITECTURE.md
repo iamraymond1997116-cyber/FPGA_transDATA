@@ -24,16 +24,18 @@ sensor_power_control  →  transient_capture  →  capture_uart_streamer
 ## UART 帧格式
 
 ```
-V6.3,MODE=FULL,SPWR=0,TXN=01\n
+V6.5,SID=00000,MID=0,FULL,SPWR=0,TXN=01\n
 CH1,RAW,128,<128×4-hex>\n
 CH2,RAW,128,<128×4-hex>\n
+说明：SID 是 sample_id，5 个模式 FULL/PCUT/NCUT/EXTR/FCYC 共享同一个 SID；MID 是 sample 内模式索引 0..4。
+
 ```
 
 ## 模块清单
 
 | 模块 | 文件 | 功能 |
 |:---|:---|:---|
-| Top | `transient_puf_v60_top.v` | 顶层状态机，5 模式自动循环 |
+| Top | `transient_puf_v60_top.v` | 顶层状态机，5 模式自动循环，V6.5 sample_id/mode_idx 分组 |
 | Power | `sensor_power_control.v` | 5 模式电源时序控制 |
 | Capture | `transient_capture.v` | 128 点双通道采集控制 |
 | UART | `capture_uart_streamer.v` | ASCII 帧组包+发送 |

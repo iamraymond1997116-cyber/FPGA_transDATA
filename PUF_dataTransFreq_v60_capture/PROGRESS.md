@@ -5,7 +5,7 @@
 
 ## Current State
 
-V6.3 Multi-Mode Transient Capture, built and verified on hardware.
+V6.5 cycle-format patch prepared: UART header carries sample_id/mode_idx so each FULL→PCUT→NCUT→EXTR→FCYC group is explicit.
 
 ### Latest: 10-sensor × 4-condition dataset (0612)
 - **40 CSV files, 8000 frames** (10 sensors × 4 conditions × 200 frames × 5 modes)
@@ -32,7 +32,7 @@ V6.3 Multi-Mode Transient Capture, built and verified on hardware.
 
 | File | Description |
 |:---|:---|
-| `rtl/transient_puf_v60_top.v` | Top-level, V6.3, 5-mode state machine |
+| `rtl/transient_puf_v60_top.v` | Top-level, V6.5, 5-mode state machine + sample_id/mode_idx |
 | `rtl/sensor_power_control.v` | 5-mode power sequencing |
 | `rtl/capture_uart_streamer.v` | ASCII UART frame output |
 | `rtl/transient_capture.v` | 128-point dual-channel capture |
