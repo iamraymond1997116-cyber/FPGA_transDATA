@@ -1,18 +1,31 @@
 ﻿# PROGRESS
 
 ## Last Updated
-2026-06-16
+2026-06-18
 
 ## Roadmap
 
 | 版本 | 范围 | 状态 |
 |:---|:---|:---|
-| V6.5 | UART 帧加 SID/MID（cycle-aware）；PC 端数据格式重构（sensor/condition 入列、丢半截、ADC 饱和、session 元数据、ADC binary 存储等 13 项） | 🚧 进行中 |
-| **V6.6** | **UART 传输 binary 化**（动 RTL 帧格式，去 ASCII hex，~5x 提速到 ~290 fps） | 📅 已规划 |
+| V6.5 | UART 帧加 SID/MID（cycle-aware）+ PC 端 13 项数据格式重构 | ✅ 完成（上板验证通过）|
+| **V6.6** | **UART 传输 binary 化**（动 RTL 帧格式，去 ASCII hex，~5x 提速到 ~290 fps）| 📅 下一步 |
 
 ## Current State
 
-V6.5 cycle-format patch prepared: UART header carries sample_id/mode_idx so each FULL→PCUT→NCUT→EXTR→FCYC group is explicit.
+V6.5 cycle-aware capture + PC pipeline 完整就绪：
+- RTL：UART 头加 `SID=NNNNN,MID=N`，sample_id 在 FCYC 完成后递增（pending flag 防 race）
+- PC：CSV 元数据 + `.npy` 二进制 payload + `session.json` 元数据 + 边界 trim + ADC 饱和标记 + UUID 命名 + 批量 `--glob` 后处理 + `manifest.json`
+- 文档：`doc/DATA_FORMAT.md` 权威字段参考（任何分析任务的入口）
+
+### V6.5 验证记录
+
+| 检查 | 结果 |
+|:---|:---|
+| `tasks.ps1 check`（env+lint+sim） | ✅ 0 Error |
+| `tasks.ps1 build`（V6.5 bitstream） | ✅ WNS=3.155ns |
+| `tasks.ps1 program`（JTAG SRAM） | ✅ |
+| 采集 10/20/15 sample 多轮 | ✅ parse_errors=0 |
+| 批量 post_process 14 sample | ✅ valid=14/14 |
 
 ### Latest: 10-sensor × 4-condition dataset (0612)
 - **40 CSV files, 8000 frames** (10 sensors × 4 conditions × 200 frames × 5 modes)
