@@ -1,7 +1,7 @@
 ﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
-    Standard initialization for FPGA_transDATA V6.3 harness.
+    Standard initialization for FPGA_transDATA V6.4 harness.
 .DESCRIPTION
     Run this when starting a new session or after a long break.
     Checks environment, reports project status, ensures clean restart path.
@@ -15,7 +15,7 @@ $projectRoot = Split-Path -Parent $scriptDir
 $subProjectRoot = Join-Path $projectRoot "PUF_dataTransFreq_v60_capture"
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  FPGA_transDATA V6.3 — Session Init" -ForegroundColor Cyan
+Write-Host "  FPGA_transDATA V6.4 — Session Init" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # 0. Harness state initialization
