@@ -23,6 +23,8 @@ CH1,RAW,128,<128×4-hex>\n
 CH2,RAW,128,<128×4-hex>\n
 ```
 
+> **数据格式权威参考**：[doc/DATA_FORMAT.md](doc/DATA_FORMAT.md) — 所有分析任务的字段含义、CSV/npy/npz 结构、命名规范、黄金分析路径都在这里。
+
 ### 硬件规格
 - FPGA：XC7A200T-2FBG484 (Artix-7)
 - 开发板：ALINX AX7203 / AX7203B
