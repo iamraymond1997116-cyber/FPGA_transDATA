@@ -3,6 +3,13 @@
 ## Last Updated
 2026-06-16
 
+## Roadmap
+
+| 版本 | 范围 | 状态 |
+|:---|:---|:---|
+| V6.5 | UART 帧加 SID/MID（cycle-aware）；PC 端数据格式重构（sensor/condition 入列、丢半截、ADC 饱和、session 元数据、ADC binary 存储等 13 项） | 🚧 进行中 |
+| **V6.6** | **UART 传输 binary 化**（动 RTL 帧格式，去 ASCII hex，~5x 提速到 ~290 fps） | 📅 已规划 |
+
 ## Current State
 
 V6.5 cycle-format patch prepared: UART header carries sample_id/mode_idx so each FULL→PCUT→NCUT→EXTR→FCYC group is explicit.
