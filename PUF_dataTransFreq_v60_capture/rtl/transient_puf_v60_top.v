@@ -39,7 +39,7 @@ module transient_puf_v60_top (
 );
 
     localparam [7:0] VERSION_MAJOR = 8'd6;
-    localparam [7:0] VERSION_MINOR = 8'd5;
+    localparam [7:0] VERSION_MINOR = 8'd6;
 
     // ── Mode encoding (3-bit) ──
     localparam [2:0] MODE_FULL        = 3'd0;

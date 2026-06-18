@@ -1,5 +1,10 @@
 `timescale 1ns / 1ps
 
+// V6.6 frame: each line ends with *XX (CRC8 of line payload, poly=0x07).
+// Header payload: "V6.6,SID=00012,MID=0,FULL,SPWR=1,TXN=3C" -> CRC=0x33
+// CH1 payload   : "CH1,RAW,128,1234,...,1234"               -> CRC=0xE0
+// CH2 payload   : "CH2,RAW,128,5678,...,5678"               -> CRC=0xB6
+
 module tb_uart_ascii_stream;
     localparam integer CLKS_PER_BIT = 4;
 
@@ -17,7 +22,7 @@ module tb_uart_ascii_stream;
     wire txd;
     wire busy;
 
-    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT), .VERSION_MAJOR(8'd6), .VERSION_MINOR(8'd5)) dut (
+    capture_uart_streamer #(.CLKS_PER_BIT(CLKS_PER_BIT), .VERSION_MAJOR(8'd6), .VERSION_MINOR(8'd6)) dut (
         .clk(clk),
         .rst_n(rst_n),
         .send(send),
@@ -77,11 +82,11 @@ module tb_uart_ascii_stream;
         @(posedge clk);
         send = 1'b0;
 
-        // Header: V6.5,SID=00012,MID=0,FULL,SPWR=1,TXN=3C\n
+        // Header payload: V6.6,SID=00012,MID=0,FULL,SPWR=1,TXN=3C
         uart_recv_byte(b); expect_byte(b, "V", "hdr V");
         uart_recv_byte(b); expect_byte(b, "6", "hdr 6");
         uart_recv_byte(b); expect_byte(b, ".", "hdr dot");
-        uart_recv_byte(b); expect_byte(b, "5", "hdr minor");
+        uart_recv_byte(b); expect_byte(b, "6", "hdr minor");
         uart_recv_byte(b); expect_byte(b, ",", "hdr comma 0");
         uart_recv_byte(b); expect_byte(b, "S", "sid S");
         uart_recv_byte(b); expect_byte(b, "I", "sid I");
@@ -117,8 +122,13 @@ module tb_uart_ascii_stream;
         uart_recv_byte(b); expect_byte(b, "=", "txn eq");
         uart_recv_byte(b); expect_byte(b, "3", "txn high");
         uart_recv_byte(b); expect_byte(b, "C", "txn low");
+        // Header CRC trailer: *33\n
+        uart_recv_byte(b); expect_byte(b, "*", "hdr crc star");
+        uart_recv_byte(b); expect_byte(b, "3", "hdr crc hi");
+        uart_recv_byte(b); expect_byte(b, "3", "hdr crc lo");
         uart_recv_byte(b); expect_byte(b, 8'h0A, "hdr nl");
 
+        // CH1 prefix
         uart_recv_byte(b); expect_byte(b, "C", "ch1 C");
         uart_recv_byte(b); expect_byte(b, "H", "ch1 H");
         uart_recv_byte(b); expect_byte(b, "1", "ch1 1");
@@ -140,8 +150,13 @@ module tb_uart_ascii_stream;
                 uart_recv_byte(b); expect_byte(b, ",", "ch1 sample comma");
             end
         end
+        // CH1 CRC trailer: *E0\n
+        uart_recv_byte(b); expect_byte(b, "*", "ch1 crc star");
+        uart_recv_byte(b); expect_byte(b, "E", "ch1 crc hi");
+        uart_recv_byte(b); expect_byte(b, "0", "ch1 crc lo");
         uart_recv_byte(b); expect_byte(b, 8'h0A, "ch1 nl");
 
+        // CH2 prefix
         uart_recv_byte(b); expect_byte(b, "C", "ch2 C");
         uart_recv_byte(b); expect_byte(b, "H", "ch2 H");
         uart_recv_byte(b); expect_byte(b, "2", "ch2 2");
@@ -163,9 +178,13 @@ module tb_uart_ascii_stream;
                 uart_recv_byte(b); expect_byte(b, ",", "ch2 sample comma");
             end
         end
+        // CH2 CRC trailer: *B6\n
+        uart_recv_byte(b); expect_byte(b, "*", "ch2 crc star");
+        uart_recv_byte(b); expect_byte(b, "B", "ch2 crc hi");
+        uart_recv_byte(b); expect_byte(b, "6", "ch2 crc lo");
         uart_recv_byte(b); expect_byte(b, 8'h0A, "ch2 nl");
 
-        $display("PASS: ASCII UART frame looks correct");
+        $display("PASS: V6.6 ASCII UART frame with CRC8 trailers");
         $finish;
     end
 

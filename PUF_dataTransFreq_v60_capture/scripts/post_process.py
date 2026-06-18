@@ -38,7 +38,7 @@ def hex_to_int16(v):
 
 def tags_from_filename(path: pathlib.Path) -> Tuple[Optional[str], Optional[str]]:
     """Fallback when CSV has no sensor_id/condition columns."""
-    m = re.search(r"v6[05]_(B2-\d+)_(NTNP|NTHP|HTNP|HTHP)_", path.name)
+    m = re.search(r"v6[0-9]_(B2-\d+)_(NTNP|NTHP|HTNP|HTHP)_", path.name)
     return (m.group(1), m.group(2)) if m else (None, None)
 
 

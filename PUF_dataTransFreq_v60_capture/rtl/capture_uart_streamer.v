@@ -1,10 +1,13 @@
 // ============================================================================
 // capture_uart_streamer — UART ASCII frame output for V6.x multi-mode capture
 //
-// Frame format (29 bytes header + CH1/CH2 raw 128×4-hex + \n):
-//   V6.5,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX\n
-//   CH1,RAW,128,...\n
-//   CH2,RAW,128,...\n
+// V6.6 frame format (each line ends with *XX where XX = CRC8 of line payload):
+//   V6.6,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX*HH\n
+//   CH1,RAW,128,...*HH\n
+//   CH2,RAW,128,...*HH\n
+//
+// CRC8: poly=0x07 (CRC-8/CCITT), init=0x00, no reflect, no xor-out.
+// CRC covers every byte of the line up to (and not including) the '*'.
 //
 // Mode names (4-char):
 //   FULL — MODE_FULL         : ON@0, OFF@64
@@ -20,7 +23,7 @@
 module capture_uart_streamer #(
     parameter integer CLKS_PER_BIT = 9,
     parameter [7:0] VERSION_MAJOR = 8'd6,
-    parameter [7:0] VERSION_MINOR = 8'd5
+    parameter [7:0] VERSION_MINOR = 8'd6
 ) (
     input  wire        clk,
     input  wire        rst_n,
@@ -43,15 +46,19 @@ module capture_uart_streamer #(
     localparam [3:0] ST_LATCH_ADDR = 4'd3;  // set BRAM address
     localparam [3:0] ST_SAMPLE     = 4'd4;
     localparam [3:0] ST_WAIT_ACK   = 4'd5;
+    localparam [3:0] ST_LINE_END   = 4'd6;  // emit *XX\n + reset CRC
     localparam [3:0] ST_DONE       = 4'd7;
     localparam [3:0] ST_LATCH_DATA = 4'd8;  // capture BRAM data (1 cycle after addr)
 
     reg [3:0] state = ST_IDLE;
     reg [3:0] return_state = ST_IDLE;
+    reg [3:0] line_end_next = ST_IDLE;  // where to go after the trailing *XX\n
     reg [7:0] idx = 8'd0;
+    reg [1:0] line_end_idx = 2'd0;
     reg [6:0] sample_idx = 7'd0;
     reg [2:0] nibble_idx = 3'd0;
     reg [7:0] tx_data_reg = 8'd0;
+    reg [7:0] crc8 = 8'h00;
     reg tx_start = 1'b0;
     reg channel_sel = 1'b0;
     reg [15:0] sample_latch = 16'sd0;
@@ -123,15 +130,35 @@ module capture_uart_streamer #(
         end
     endfunction
 
+    // CRC-8/CCITT, poly=0x07, init=0x00, no reflect, no xor-out.
+    // Verified: crc8_step(0x00, "1") = 0x07.
+    function [7:0] crc8_step;
+        input [7:0] cur;
+        input [7:0] data;
+        reg [7:0] c;
+        integer i;
+        begin
+            c = cur ^ data;
+            for (i = 0; i < 8; i = i + 1) begin
+                if (c[7]) c = {c[6:0], 1'b0} ^ 8'h07;
+                else      c = {c[6:0], 1'b0};
+            end
+            crc8_step = c;
+        end
+    endfunction
+
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= ST_IDLE;
             return_state <= ST_IDLE;
+            line_end_next <= ST_IDLE;
             idx <= 8'd0;
+            line_end_idx <= 2'd0;
             sample_idx <= 7'd0;
             nibble_idx <= 3'd0;
             raw_addr <= 7'd0;
             tx_data_reg <= 8'd0;
+            crc8 <= 8'h00;
             tx_start <= 1'b0;
             channel_sel <= 1'b0;
             sample_latch <= 16'sd0;
@@ -147,15 +174,16 @@ module capture_uart_streamer #(
                         nibble_idx <= 3'd0;
                         raw_addr <= 7'd0;
                         channel_sel <= 1'b0;
+                        crc8 <= 8'h00;
+                        line_end_idx <= 2'd0;
                         state <= ST_HDR;
                     end
                 end
 
-                // ── Header: V6.5,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX\n ──
+                // ── Header: V6.6,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX (38 payload bytes, then *XX\n) ──
                 ST_HDR: begin
                     if (!tx_busy) begin
-                        // header layout (40 bytes total):
-                        // V6.5,SID=00000,MID=0,FULL,SPWR=1,TXN=3C\n
+                        // 38 header payload bytes (idx 0..37); *XX\n appended in ST_LINE_END.
                         case (idx)
                             8'd0:  tx_data_reg <= "V";
                             8'd1:  tx_data_reg <= 8'd48 + VERSION_MAJOR[3:0];
@@ -195,16 +223,57 @@ module capture_uart_streamer #(
                             8'd35: tx_data_reg <= "N";
                             8'd36: tx_data_reg <= "=";
                             8'd37: tx_data_reg <= hex_digit(txn_id[7:4]);
-                            8'd38: tx_data_reg <= hex_digit(txn_id[3:0]);
-                            8'd39: tx_data_reg <= 8'h0A;
-                            default: tx_data_reg <= 8'h0A;
+                            default: tx_data_reg <= hex_digit(txn_id[3:0]);
                         endcase
                         tx_start <= 1'b1;
+                        // CRC update for the byte we just queued — same expression as case above.
+                        case (idx)
+                            8'd0:  crc8 <= crc8_step(crc8, "V");
+                            8'd1:  crc8 <= crc8_step(crc8, 8'd48 + VERSION_MAJOR[3:0]);
+                            8'd2:  crc8 <= crc8_step(crc8, ".");
+                            8'd3:  crc8 <= crc8_step(crc8, 8'd48 + VERSION_MINOR[3:0]);
+                            8'd4:  crc8 <= crc8_step(crc8, ",");
+                            8'd5:  crc8 <= crc8_step(crc8, "S");
+                            8'd6:  crc8 <= crc8_step(crc8, "I");
+                            8'd7:  crc8 <= crc8_step(crc8, "D");
+                            8'd8:  crc8 <= crc8_step(crc8, "=");
+                            8'd9:  crc8 <= crc8_step(crc8, dec_digit5(sample_id, 3'd0));
+                            8'd10: crc8 <= crc8_step(crc8, dec_digit5(sample_id, 3'd1));
+                            8'd11: crc8 <= crc8_step(crc8, dec_digit5(sample_id, 3'd2));
+                            8'd12: crc8 <= crc8_step(crc8, dec_digit5(sample_id, 3'd3));
+                            8'd13: crc8 <= crc8_step(crc8, dec_digit5(sample_id, 3'd4));
+                            8'd14: crc8 <= crc8_step(crc8, ",");
+                            8'd15: crc8 <= crc8_step(crc8, "M");
+                            8'd16: crc8 <= crc8_step(crc8, "I");
+                            8'd17: crc8 <= crc8_step(crc8, "D");
+                            8'd18: crc8 <= crc8_step(crc8, "=");
+                            8'd19: crc8 <= crc8_step(crc8, 8'd48 + {5'd0, mode_idx});
+                            8'd20: crc8 <= crc8_step(crc8, ",");
+                            8'd21: crc8 <= crc8_step(crc8, mode_b3);
+                            8'd22: crc8 <= crc8_step(crc8, mode_b2);
+                            8'd23: crc8 <= crc8_step(crc8, mode_b1);
+                            8'd24: crc8 <= crc8_step(crc8, mode_b0);
+                            8'd25: crc8 <= crc8_step(crc8, ",");
+                            8'd26: crc8 <= crc8_step(crc8, "S");
+                            8'd27: crc8 <= crc8_step(crc8, "P");
+                            8'd28: crc8 <= crc8_step(crc8, "W");
+                            8'd29: crc8 <= crc8_step(crc8, "R");
+                            8'd30: crc8 <= crc8_step(crc8, "=");
+                            8'd31: crc8 <= crc8_step(crc8, sensor_power ? "1" : "0");
+                            8'd32: crc8 <= crc8_step(crc8, ",");
+                            8'd33: crc8 <= crc8_step(crc8, "T");
+                            8'd34: crc8 <= crc8_step(crc8, "X");
+                            8'd35: crc8 <= crc8_step(crc8, "N");
+                            8'd36: crc8 <= crc8_step(crc8, "=");
+                            8'd37: crc8 <= crc8_step(crc8, hex_digit(txn_id[7:4]));
+                            default: crc8 <= crc8_step(crc8, hex_digit(txn_id[3:0]));
+                        endcase
                         return_state <= ST_HDR;
                         state <= ST_WAIT_ACK;
-                        if (idx == 8'd39) begin
+                        if (idx == 8'd38) begin
                             idx <= 8'd0;
-                            return_state <= ST_PREFIX;
+                            line_end_next <= ST_PREFIX;
+                            return_state <= ST_LINE_END;
                             state <= ST_WAIT_ACK;
                         end else begin
                             idx <= idx + 8'd1;
@@ -227,10 +296,23 @@ module capture_uart_streamer #(
                             8'd8:  tx_data_reg <= "1";
                             8'd9:  tx_data_reg <= "2";
                             8'd10: tx_data_reg <= "8";
-                            8'd11: tx_data_reg <= ",";
-                            default: tx_data_reg <= 8'h0A;
+                            default: tx_data_reg <= ",";
                         endcase
                         tx_start <= 1'b1;
+                        case (idx)
+                            8'd0:  crc8 <= crc8_step(crc8, "C");
+                            8'd1:  crc8 <= crc8_step(crc8, "H");
+                            8'd2:  crc8 <= crc8_step(crc8, channel_sel ? "2" : "1");
+                            8'd3:  crc8 <= crc8_step(crc8, ",");
+                            8'd4:  crc8 <= crc8_step(crc8, "R");
+                            8'd5:  crc8 <= crc8_step(crc8, "A");
+                            8'd6:  crc8 <= crc8_step(crc8, "W");
+                            8'd7:  crc8 <= crc8_step(crc8, ",");
+                            8'd8:  crc8 <= crc8_step(crc8, "1");
+                            8'd9:  crc8 <= crc8_step(crc8, "2");
+                            8'd10: crc8 <= crc8_step(crc8, "8");
+                            default: crc8 <= crc8_step(crc8, ",");
+                        endcase
                         return_state <= ST_PREFIX;
                         state <= ST_WAIT_ACK;
                         if (idx == 8'd11) begin
@@ -264,6 +346,7 @@ module capture_uart_streamer #(
                     if (!tx_busy) begin
                         if (nibble_idx < 3'd4) begin
                             tx_data_reg <= nibble_char(sample_latch, nibble_idx[1:0]);
+                            crc8 <= crc8_step(crc8, nibble_char(sample_latch, nibble_idx[1:0]));
                             tx_start <= 1'b1;
                             return_state <= ST_SAMPLE;
                             state <= ST_WAIT_ACK;
@@ -271,29 +354,51 @@ module capture_uart_streamer #(
                         end else begin
                             // All 4 nibbles sent
                             if (sample_idx == 7'd127) begin
-                                // Last sample → newline and done with channel
-                                tx_data_reg <= 8'h0A;
-                                tx_start <= 1'b1;
+                                // Last sample of channel → jump to *XX\n trailer
                                 sample_idx <= 7'd0;
                                 nibble_idx <= 3'd0;
                                 if (channel_sel == 1'b0) begin
-                                    // CH1 done → do CH2
+                                    // CH1 done → after trailer go back to ST_PREFIX for CH2
                                     channel_sel <= 1'b1;
-                                    return_state <= ST_PREFIX;
+                                    line_end_next <= ST_PREFIX;
                                 end else begin
-                                    // CH2 done → all done
-                                    return_state <= ST_DONE;
+                                    // CH2 done → after trailer all done
+                                    line_end_next <= ST_DONE;
                                 end
-                                state <= ST_WAIT_ACK;
+                                idx <= 8'd0;
+                                state <= ST_LINE_END;
                             end else begin
                                 // Not last sample → comma separator
-                                tx_data_reg <= 8'h2C;
+                                tx_data_reg <= ",";
+                                crc8 <= crc8_step(crc8, ",");
                                 tx_start <= 1'b1;
                                 return_state <= ST_LATCH_ADDR;
                                 state <= ST_WAIT_ACK;
                                 sample_idx <= sample_idx + 7'd1;
                                 nibble_idx <= 3'd0;
                             end
+                        end
+                    end
+                end
+
+                // ── Emit *XX\n then reset CRC and jump to line_end_next ──
+                ST_LINE_END: begin
+                    if (!tx_busy) begin
+                        case (line_end_idx)
+                            2'd0: tx_data_reg <= "*";
+                            2'd1: tx_data_reg <= hex_digit(crc8[7:4]);
+                            2'd2: tx_data_reg <= hex_digit(crc8[3:0]);
+                            default: tx_data_reg <= 8'h0A;  // \n
+                        endcase
+                        tx_start <= 1'b1;
+                        return_state <= ST_LINE_END;
+                        state <= ST_WAIT_ACK;
+                        if (line_end_idx == 2'd3) begin
+                            line_end_idx <= 2'd0;
+                            crc8 <= 8'h00;  // reset for next line
+                            return_state <= line_end_next;
+                        end else begin
+                            line_end_idx <= line_end_idx + 2'd1;
                         end
                     end
                 end
