@@ -259,6 +259,7 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 
 | 版本 | 范围 |
 |:---|:---|
-| V6.6 | UART 传输 binary 化（动 RTL，去 ASCII hex，~5x 提速）|
+| V6.6 | ASCII 协议加固：行级 CRC8 + 帧序号校验（保持人类可读，加可靠性）|
+| V6.7+ | UART 传输 binary 化（待评估，仅在真有吞吐瓶颈时启动）|
 
 详见 `PROGRESS.md` Roadmap 段。

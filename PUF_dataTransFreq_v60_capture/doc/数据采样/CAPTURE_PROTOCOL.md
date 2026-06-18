@@ -88,9 +88,11 @@ python scripts/check_all_stability.py --sensor B2-1
 
 ---
 
-## 3. 协议级可靠性（V6.5 加固项）
+## 3. 协议级可靠性（V6.6 加固项）
 
-### 3.1 R1 — 行级 CRC8（计划中）
+> V6.5 协议头（`V6.5,SID=...`）保持不变；V6.6 仅在每行尾部追加 `*XX` CRC8，**人类仍可读**。
+
+### 3.1 R1 — 行级 CRC8（RTL + PC，V6.6 实现）
 
 每行 ASCII 末尾加 `*XX\n`：
 ```
@@ -99,18 +101,19 @@ CH1,RAW,128,1234,...,9ABC*B7
 CH2,RAW,128,1234,...,9ABC*9D
 ```
 
-- RTL 端：UART streamer 同步算 CRC8（~50 LUT）
+- RTL 端：UART streamer 同步算 CRC8，行尾发完 `*XX` 再 `\n`（~50 LUT，每帧 +12 字节）
 - PC 端：解析时校验，错则丢帧并写 `_errors.log`
 - 检测率：单字符 hex 翻转 100%，多字符翻转 ~99.6%
+- 兼容：检测到行末无 `*` 自动走旧路径（V6.5 ASCII / 0612 数据集）
 
-### 3.2 R3 — 帧序号严格校验（计划中）
+### 3.2 R3 — 帧序号严格校验（纯 PC，V6.6 实现）
 
 PC 端在 `_samples.csv` 多三列：
 - `txn_gap` — TXN 是否连续 +1（含 0xFF→0x00 滚转）
 - `sid_monotonic` — SID 是否单调递增
 - `mid_strict_order` — sample 内 5 帧 MID 是否严格 0→4
 
-任一失败 → `valid=0`。
+任一失败 → `valid=0`。**纯 PC 改动，无须 RTL/build/program**。
 
 ### 3.3 现有内置防线（V6.5 已有）
 

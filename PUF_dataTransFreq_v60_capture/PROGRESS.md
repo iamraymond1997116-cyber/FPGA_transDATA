@@ -8,7 +8,10 @@
 | 版本 | 范围 | 状态 |
 |:---|:---|:---|
 | V6.5 | UART 帧加 SID/MID（cycle-aware）+ PC 端 13 项数据格式重构 | ✅ 完成（上板验证通过）|
-| **V6.6** | **UART 传输 binary 化**（动 RTL 帧格式，去 ASCII hex，~5x 提速到 ~290 fps）| 📅 下一步 |
+| **V6.6** | **ASCII 协议加固**：R1 行级 CRC8（RTL+PC）+ R3 帧序号校验（PC）| 📅 下一步 |
+| V6.7+ | UART 传输 binary 化（动 RTL 帧格式，~5x 提速）| 🔮 待评估 |
+
+> V6.6 决策依据：当前 8 秒/100 sample 已可接受，binary 化提速 4.7x 但**整体流程**只快 ~16%（人工换传感器是瓶颈）。优先做可靠性（CRC + 序号校验），binary 推迟到真有吞吐瓶颈再做。
 
 ## Current State
 
