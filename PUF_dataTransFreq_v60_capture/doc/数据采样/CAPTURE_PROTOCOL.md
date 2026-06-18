@@ -49,73 +49,101 @@ NTNP → NTHP → HTNP → HTHP
 
 ## 2. 采集质量校验
 
-### 2.1 每采一次必须校验
+### 2.1 每采一次必须校验（采完那条命令立即看终端）
 
-采完一个 CSV 后立即检查：
+V6.6 采集脚本采完会直接打印这些数字。**任何一个非零都意味着这个 CSV 不能用，立刻重采。**
 
-| 指标 | 正常值 | 异常值 | 含义 |
+| 指标 | 正常值 | 异常值 | 含义 / 触发条件 |
 |:---|---:|---:|:---|
-| `parse_errors` | 0 | > 0 | UART 解析失败（丢字节/编码错）|
-| `sample_errors` | 0 | > 0 | sample 不完整（缺 mode/重复/乱序）|
-| `saturated_total` | 0~5 | > 50 | ADC 落在 ±0x7FFF 边界次数（饱和）|
-| 帧间波动 frmVar | < 10 | > 10 | 帧与帧之间的信号不稳定 |
-| CH1/CH2 峰值 | ~11000 | < 1000 | 传感器无供电/断路 |
-| CH1/CH2 峰值 | ~11000 | > 22000 | 电源虚接/接触不良（异常翻倍）|
+| `parse_errors` | 0 | > 0 | UART 行 **CRC8 不匹配**（V6.6 R1）或字段格式错。原始字节进 `_errors.log` |
+| `sample_errors` | 0 | > 0 | sample 不完整 / 顺序错（V6.6 R3 `txn_gap_ok` / `mid_strict_order` / `sid_monotonic` 任一失败）|
+| `saturated` | 0 ~ 5 | > 50 | ADC 落在 ±0x7FFF 边界次数（饱和）|
+| `samples kept` | ≈ `--samples` | 显著少 | `boundary_dropped + sample_errors` 太多 |
+| 帧间波动 frmVar | < 10 | > 10 | 信号不稳（电源虚接 / 温压未稳）|
+| CH1/CH2 峰值 | ~11000 | < 1000 | 传感器无供电 / 断路 |
+| CH1/CH2 峰值 | ~11000 | > 22000 | 电源虚接 / 接触不良（异常翻倍）|
 
-校验工具：
+如果 `parse_errors > 0`：打开 `<stem>_errors.log` 看具体哪几行 CRC 出错；通常是 UART 物理层问题，重接线或重启板子再试。
+如果 `sample_errors > 0`：打开 `<stem>_samples.csv`，看哪几行 `valid=0`，三列 `txn_gap_ok` / `mid_strict_order` / `sid_monotonic` 哪个是 0 就知道根因。
+
+### 2.2 整轮采完做完整性扫描
+
+10 传感器 × 4 条件采完后，跑一次全量扫描确认没漏：
+
 ```powershell
 python scripts/check_all_stability.py     # 全量稳定性扫描
 python scripts/find_bad_data.py           # 定位异常文件
 ```
 
-### 2.2 每个传感器 4 条件采完做完整性检查
+或者直接看 `processed/manifest.json`（`post_process.py --glob` 产出）：
 
 ```powershell
-python scripts/check_all_stability.py --sensor B2-1
+python scripts/post_process.py --glob "logs/<dataset>/v66_*.csv" --out-dir logs/<dataset>/processed
 ```
 
-确认 4 个文件全部 OK 再换下一个传感器。
+`manifest.json` 字段：
+
+| 字段 | 含义 |
+|:---|:---|
+| `total_samples` | 整轮 sample 总数 |
+| `total_valid` | 通过 V6.6 全部校验的 sample 数 |
+| `files[].valid / .samples` | 每个文件单独的有效率 |
+| `files[].saturated` | 每个文件 ADC 饱和总数 |
+
+**理想状态**：`total_valid == total_samples`，每个文件 `valid == samples`。
+**异常状态**：任何 `valid < samples` → 看对应的 `_samples.csv` 找根因 → 决定重采还是丢弃。
 
 ### 2.3 异常处理决策表
 
-| 现象 | 含义 | 动作 |
+| 现象 | 可能根因 | 动作 |
 |:---|:---|:---|
 | FLAT（峰值 < 1000） | 传感器未供电 | 检查电源线，重采 |
 | UNSTABLE（frmVar > 10） | 电源线虚接 / 接触不良 | 重接电源线，重采 |
 | 单通道异常（CH1 OK / CH2 不稳） | 通道硬件问题 | 标记后分析仅用正常通道（如 B2-4 仅 CH1）|
+| `parse_errors > 0` 持续出现 | UART 物理层（接线 / 干扰）| 检查 USB 线、重启板子 |
+| `parse_errors` 偶发 1~2 次 | 单次电平干扰 | V6.6 CRC 已挡住该帧，无须重采 |
+| `sample_errors > 0`（mid_strict_order=0）| FPGA 状态机异常 | 检查 RTL 是否被改坏，重新 program |
+| `sample_errors > 0`（txn_gap_ok=0）| UART 丢字节 / 缓冲溢出 | 重启板子，看是否 PC 端 buffer 太小 |
+| `sample_errors > 0`（sid_monotonic=0）| 多次 capture 帧混合 | 应该不会发生；若发生上报 |
 | `boundary_dropped_samples > 5` | 采集起停时间偏差大 | 不影响分析（自动 trim），无须重采 |
 | `saturated_total > 50` | ADC 饱和频繁 | 检查信号链路、传感器接线 |
 
 ---
 
-## 3. 协议级可靠性（V6.6 加固项）
+## 3. 协议级可靠性（V6.6 已实现）
 
-> V6.5 协议头（`V6.5,SID=...`）保持不变；V6.6 仅在每行尾部追加 `*XX` CRC8，**人类仍可读**。
+> V6.6 帧头版本号 `V6.6`，每行尾部追加 `*XX` CRC8 trailer（**人类仍可读**）。
+> 兼容：解析端检测无 `*` 自动走旧路径（V6.5 / V6.0~V6.4 / 0612 数据集）。
 
-### 3.1 R1 — 行级 CRC8（RTL + PC，V6.6 实现）
+### 3.1 R1 — 行级 CRC8
 
-每行 ASCII 末尾加 `*XX\n`：
+每行 ASCII 末尾加 `*XX\n`，XX = 该行 payload（不含 `*XX\n`）的 CRC8：
+
 ```
-V6.5,SID=00012,MID=0,FULL,SPWR=1,TXN=3C*A4
-CH1,RAW,128,1234,...,9ABC*B7
-CH2,RAW,128,1234,...,9ABC*9D
+V6.6,SID=00012,MID=0,FULL,SPWR=1,TXN=3C*33
+CH1,RAW,128,1234,...,1234*E0
+CH2,RAW,128,5678,...,5678*B6
 ```
 
-- RTL 端：UART streamer 同步算 CRC8，行尾发完 `*XX` 再 `\n`（~50 LUT，每帧 +12 字节）
-- PC 端：解析时校验，错则丢帧并写 `_errors.log`
-- 检测率：单字符 hex 翻转 100%，多字符翻转 ~99.6%
-- 兼容：检测到行末无 `*` 自动走旧路径（V6.5 ASCII / 0612 数据集）
+- 算法：CRC-8/CCITT，poly=`0x07`，init=`0x00`，无反射、无 xor-out
+- RTL 实现：`capture_uart_streamer.v` 内 `crc8_step()` 函数，行尾发 `*XX\n` 后重置
+- PC 校验：解析时算 CRC，不匹配整帧丢弃 + 写 `_errors.log`
+- 检测率：单字符翻转 100%，多字符翻转 ~99.6%
+- Overhead：每行 +3 字节（`*XX`），每帧 +9 字节（约 0.7%）
 
-### 3.2 R3 — 帧序号严格校验（纯 PC，V6.6 实现）
+### 3.2 R3 — 帧序号严格校验（纯 PC）
 
-PC 端在 `_samples.csv` 多三列：
-- `txn_gap` — TXN 是否连续 +1（含 0xFF→0x00 滚转）
-- `sid_monotonic` — SID 是否单调递增
-- `mid_strict_order` — sample 内 5 帧 MID 是否严格 0→4
+`_samples.csv` 多三列 + 一个汇总 `valid`：
 
-任一失败 → `valid=0`。**纯 PC 改动，无须 RTL/build/program**。
+| 列 | 校验内容 |
+|:---|:---|
+| `txn_gap_ok` | sample 内 5 帧 TXN 严格 +1（含 0xFF→0x00 滚转）|
+| `mid_strict_order` | 5 帧 MID 严格 0→4 |
+| `sid_monotonic` | 当前 sample_id 大于上一个 |
 
-### 3.3 现有内置防线（V6.5 已有）
+任一失败 → `valid=0`。无须 RTL/build/program。
+
+### 3.3 现有内置防线（V6.5 已有，仍生效）
 
 - 边界半截 sample 自动丢弃（`--no-trim` 关闭）
 - ADC 饱和计数（`saturated` 列）
@@ -188,7 +216,8 @@ y_cond   = d["condition"][mask]
 ## 6. 快速决策树
 
 **采前**：检查 COM5、温压稳定、电源线接好。
-**采时**：每个 CSV 跑完看 `parse_errors=0` + `sample_errors=0`。
+**采时**：每个 CSV 跑完看终端 `parse_errors=0` + `sample_errors=0`。任一非零→看 `_errors.log` / `_samples.csv` 找根因，重采。
 **换传感器前**：跑 `check_all_stability.py --sensor <id>` 全 OK 再走。
-**采完整批**：跑 `post_process.py --glob` 生成 `all_dataset.npz` + `manifest.json`。
+**采完整批**：跑 `post_process.py --glob` 生成 `all_dataset.npz` + `manifest.json`，确认 `total_valid == total_samples`。
+**整体异常扫描**：看 `manifest.json` 里有没有 `valid < samples` 的文件，对应 `_samples.csv` 里看 `txn_gap_ok` / `mid_strict_order` / `sid_monotonic` 哪列出问题。
 **分析时**：先 `valid=1` 过滤 → 取 NCUT → CMR→FFT→LDA。

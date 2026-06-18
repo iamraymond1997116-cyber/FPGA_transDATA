@@ -38,14 +38,32 @@ CH1,RAW,128,XXXX,XXXX,...,XXXX
 CH2,RAW,128,XXXX,XXXX,...,XXXX
 ```
 
+### V6.6（当前）— 加 CRC8 行尾
+
+```
+V6.6,SID=NNNNN,MID=N,MODE,SPWR=N,TXN=NN*HH
+CH1,RAW,128,XXXX,XXXX,...,XXXX*HH
+CH2,RAW,128,XXXX,XXXX,...,XXXX*HH
+```
+
+每行末尾的 `*HH` 是该行 payload 的 **CRC8**（poly=0x07，init=0x00，无反射）。
+解析端不匹配整帧丢弃。详见 [CAPTURE_PROTOCOL.md §3](CAPTURE_PROTOCOL.md#3-协议级可靠性v66-已实现)。
+
+### V6.5（兼容）— 同 V6.6 但无 `*HH`
+
+```
+V6.5,SID=NNNNN,MID=N,MODE,SPWR=N,TXN=NN
+```
+
 | 字段 | 含义 | 取值 |
 |:---|:---|:---|
-| `V6.5` | 协议版本 | 固定 |
+| `V6.6` / `V6.5` | 协议版本 | 固定 |
 | `SID=NNNNN` | sample_id，5 位十进制 | 0..65535 |
 | `MID=N` | mode_idx，sample 内位置 | 0..4 |
 | `MODE` | 模式名 | `FULL`/`PCUT`/`NCUT`/`EXTR`/`FCYC` |
 | `SPWR=N` | sensor power 状态 | `0`=ON, `1`=OFF |
 | `TXN=NN` | 全局事务号 | `00`..`FF` hex（8-bit 滚） |
+| `*HH` | 行 CRC8（仅 V6.6+）| `00`..`FF` hex |
 | `XXXX` | ADC 16-bit 有符号，4-hex 大写 | 例 `1A4F` / `FF3C` |
 
 **MID ↔ Mode**：
@@ -77,7 +95,7 @@ CH2,RAW,128,...
 | 列 | 类型 | 含义 |
 |:---|:---|:---|
 | `pc_time_iso` | string | PC 接收时刻（含微秒）|
-| `protocol` | string | `V65_RAW` 或 `V60_RAW` |
+| `protocol` | string | `V66_RAW` / `V65_RAW` / `V60_RAW` |
 | `sensor_id` | string | 采集时 `--sensor` 参数（例 `B2-1`）|
 | `condition` | string | 采集时 `--condition` 参数（例 `NTNP`）|
 | `sample_id` | int | 完整 sample 序号 |
@@ -85,7 +103,7 @@ CH2,RAW,128,...
 | `mode` | string | 模式名（与 mode_idx 一致冗余，方便人读）|
 | `saturated` | int | 该帧 256 个 ADC 值中落在 0x7FFE/7FFF/8000/8001 的个数 |
 
-**注意**：V6.5 已**不再**有 `type`/`spwr`/`txn`/`CH1_xxx`/`CH2_xxx` 列（旧数据集仍有）。ADC payload 在配套 `.npy`。
+**注意**：V6.5+ 已**不再**有 `type`/`spwr`/`txn`/`CH1_xxx`/`CH2_xxx` 列（V6.0~V6.4 仍有）。ADC payload 在配套 `.npy`。
 
 ---
 
@@ -118,13 +136,18 @@ full_diff = X[:, 0, 0, :] - X[:, 0, 1, :] # FULL 的 CH1-CH2 差分
 | 列 | 含义 |
 |:---|:---|
 | `sample_id` | sample 序号 |
-| `valid` | 1=完整 5 帧 | 0=有缺失/重复/顺序错 |
-| `order_ok` | 1=MID 严格 0→4 | 0=乱序 |
+| `valid` | 1=通过所有校验 \| 0=任一校验失败 |
+| `order_ok` | 1=MID 严格 0→4 \| 0=乱序（同 mid_strict_order）|
 | `frame_count` | 实际帧数（应为 5）|
-| `missing_mode_idx` | 缺失的 MID（管道分隔，如 `0|1`）|
+| `missing_mode_idx` | 缺失的 MID（管道分隔，如 `0\|1`）|
 | `duplicate_mode_idx` | 重复的 MID |
 | `saturated_total` | 该 sample 5 帧的 saturated 之和 |
-| `modes` | 实际收到的模式名顺序（如 `FULL|PCUT|NCUT|EXTR|FCYC`）|
+| `txn_gap_ok` | **R3** — sample 内 5 帧 TXN 严格 +1 |
+| `mid_strict_order` | **R3** — sample 内 MID 严格 0→4 |
+| `sid_monotonic` | **R3** — 当前 sample_id > 上一个 |
+| `modes` | 实际收到的模式名顺序（如 `FULL\|PCUT\|NCUT\|EXTR\|FCYC`）|
+
+**`valid`** = 完整 5 帧 ∧ 无缺失 ∧ 无重复 ∧ MID 严格 ∧ TXN 连续 ∧ SID 单调。
 
 **默认采集行为**：首尾半截 sample 已被 `--no-trim` 反向开关丢弃（`session.json` 的 `boundary_dropped_sample_ids` 记录被丢的 SID）。
 
@@ -198,16 +221,16 @@ ncut_ch1 = d["X"][mask, 2, 0, :]   # 一行抽出黄金模式 CH1
 ## 9. 文件命名规范
 
 ```
-v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
+v66_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 ```
 
-例：`v65_B2-1_NTNP_20260617_172823_7a3251.csv`
+例：`v66_B2-1_NTNP_20260618_092000_a3f2b1.csv`
 
 - `uuid6`：6 字符随机后缀，防同秒级文件冲突
 - 4 个产物（`.csv` / `.npy` / `_samples.csv` / `_session.json`）共享前缀
 - 仅在出现解析失败时多一个 `_errors.log`
 
-**Legacy 文件名**（0612 旧数据集）：`v60_<sensor>_<condition>_<timestamp>.csv`，post_process 用文件名正则回填。
+**历史前缀**：`v65_*`（V6.5 cycle-aware）/ `v60_*`（V6.0~V6.4 legacy）。post_process 全部支持。
 
 ---
 
@@ -219,8 +242,8 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 | ADC | AD7606，16-bit 有符号，±5V 双极性，200 kSPS |
 | 时钟 | 200 MHz 差分晶振 → 像素时钟 ~18.18 MHz |
 | UART | 1 Mbps，8N1（PC 端 921600 baud 兼容）|
-| 帧率 | ~62 fps（限于 ASCII hex；V6.6 binary 化目标 ~290 fps）|
-| 1 帧字节 | ~1334 bytes |
+| 帧率 | ~62 fps（V6.6 ASCII + CRC8）|
+| 1 帧字节 | ~1343 bytes（V6.6 含 9 字节 CRC trailer）|
 | 1 sample 时间 | ~80 ms（5 帧）|
 
 ---
@@ -233,10 +256,11 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 
 ## 12. 历史版本对照
 
-| 版本 | UART 帧 | CSV schema | 分析就绪 |
-|:---|:---|:---|:---|
-| V6.0~V6.4 | `V6.X,MODE=...,SPWR=,TXN=` | 含 type/txn/spwr + 256 hex 列 | post_process 自动 legacy 识别 |
-| **V6.5** | `V6.5,SID=,MID=,...,SPWR=,TXN=` | sensor_id/condition 入列；payload 移到 .npy | 默认快路径 |
+| 版本 | UART 帧 | CSV schema | CRC | 分析就绪 |
+|:---|:---|:---|:---|:---|
+| V6.0~V6.4 | `V6.X,MODE=...,SPWR=,TXN=` | 含 type/txn/spwr + 256 hex 列 | ❌ | post_process 自动 legacy 识别 |
+| V6.5 | `V6.5,SID=,MID=,...,SPWR=,TXN=` | sensor_id/condition 入列；payload 移到 .npy | ❌ | 快路径 |
+| **V6.6** | `V6.6,SID=,MID=,...,SPWR=,TXN=*HH` | 同 V6.5 + 行尾 `*HH` CRC8 | ✅ | 快路径 |
 
 **已知数据质量问题**：每批数据集自带 README 列出（如 `logs/0612_4state_10sensers/README.md`）。
 
@@ -246,20 +270,21 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 
 | 文件 | 角色 |
 |:---|:---|
-| `scripts/capture_ascii_v60.py` | 采集 + 写四件套；含 `--test` 自测 |
+| `scripts/capture_ascii_v60.py` | 采集 + 写四件套；含 V6.6 CRC 校验 + R3 序号检查 + `--test` 自测 |
 | `scripts/post_process.py` | CSV/npy → npz；含 `--glob` 批量 |
-| `rtl/capture_uart_streamer.v` | FPGA 端 UART 帧组装（V6.5 头）|
+| `rtl/capture_uart_streamer.v` | FPGA 端 UART 帧组装 + 行级 CRC8 |
 | `rtl/transient_puf_v60_top.v` | sample_id 计数 + mode_idx 输出 |
-| `sim/tb_uart_ascii_stream.sv` | 帧格式 testbench |
+| `sim/tb_uart_ascii_stream.sv` | 帧格式 testbench（含 CRC 断言）|
 | `doc/V65_CYCLE_FORMAT_HANDOFF.md` | V6.5 实施 handoff（历史快照）|
 
 ---
 
 ## 14. 路标
 
-| 版本 | 范围 |
-|:---|:---|
-| V6.6 | ASCII 协议加固：行级 CRC8 + 帧序号校验（保持人类可读，加可靠性）|
-| V6.7+ | UART 传输 binary 化（待评估，仅在真有吞吐瓶颈时启动）|
+| 版本 | 范围 | 状态 |
+|:---|:---|:---|
+| V6.5 | cycle-aware（SID/MID）+ PC 13 项重构 | ✅ |
+| **V6.6** | ASCII 协议加固：行级 CRC8 + 帧序号校验 | ✅ |
+| V6.7+ | UART 传输 binary 化 | 🔮 待评估 |
 
 详见 `PROGRESS.md` Roadmap 段。
