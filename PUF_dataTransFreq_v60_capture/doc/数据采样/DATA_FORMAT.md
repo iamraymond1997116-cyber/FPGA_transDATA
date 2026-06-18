@@ -225,17 +225,9 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 
 ---
 
-## 11. 黄金分析路径（推荐起点）
+## 11. 分析路径
 
-1. 用 `post_process.py --glob` 把 CSV 批量转 npz
-2. 索引 `mask = (condition matches) & (valid == 1)`
-3. 取 `X[mask, 2, :, :]`（黄金模式 NCUT）
-4. CH1-CH2 共模抑制差分（CMR）
-5. FFT 取低频 bin
-6. 条件归一化：减去同条件所有传感器的均值
-7. 用 sensor_id 监督做 LDA 投影
-
-参考代码：`logs/0612_4state_10sensers/README.md` 第 5 节。
+→ 详见 [CAPTURE_PROTOCOL.md §4](CAPTURE_PROTOCOL.md#4-黄金分析路径)（黄金模式 NCUT、CMR→FFT→LDA 流水线、推荐索引代码）。
 
 ---
 
@@ -246,11 +238,7 @@ v65_<sensor>_<condition>_<YYYYMMDD>_<HHMMSS>_<uuid6>.<ext>
 | V6.0~V6.4 | `V6.X,MODE=...,SPWR=,TXN=` | 含 type/txn/spwr + 256 hex 列 | post_process 自动 legacy 识别 |
 | **V6.5** | `V6.5,SID=,MID=,...,SPWR=,TXN=` | sensor_id/condition 入列；payload 移到 .npy | 默认快路径 |
 
-**已知数据质量问题**（来自 0612 数据集，仍适用）：
-
-- B2-4 CH2 通道硬件不稳，仅用 CH1
-- B2-7 HTHP CH2 帧间波动 11.9（略超阈值 10，可用）
-- B2-10 NTNP/HTNP 基线 ~21000（传感器自身特性，非异常）
+**已知数据质量问题**：每批数据集自带 README 列出（如 `logs/0612_4state_10sensers/README.md`）。
 
 ---
 

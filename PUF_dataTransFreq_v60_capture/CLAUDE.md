@@ -23,7 +23,9 @@ CH1,RAW,128,<128×4-hex>\n
 CH2,RAW,128,<128×4-hex>\n
 ```
 
-> **数据格式权威参考**：[doc/DATA_FORMAT.md](doc/DATA_FORMAT.md) — 所有分析任务的字段含义、CSV/npy/npz 结构、命名规范、黄金分析路径都在这里。
+> **数据 & 采集文档**（`doc/数据采样/`）：
+> - [DATA_FORMAT.md](doc/数据采样/DATA_FORMAT.md) — 字段/shape/命名规范（写分析代码读这里）
+> - [CAPTURE_PROTOCOL.md](doc/数据采样/CAPTURE_PROTOCOL.md) — 采集流程、质量校验、黄金分析路径（采数据/分析数据读这里）
 
 ### 硬件规格
 - FPGA：XC7A200T-2FBG484 (Artix-7)
