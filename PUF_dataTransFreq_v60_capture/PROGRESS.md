@@ -8,17 +8,20 @@
 | 版本 | 范围 | 状态 |
 |:---|:---|:---|
 | V6.5 | UART 帧加 SID/MID（cycle-aware）+ PC 端 13 项数据格式重构 | ✅ 完成（上板验证通过）|
-| **V6.6** | **ASCII 协议加固**：R1 行级 CRC8（RTL+PC）+ R3 帧序号校验（PC）| 📅 下一步 |
-| V6.7+ | UART 传输 binary 化（动 RTL 帧格式，~5x 提速）| 🔮 待评估 |
-
-> V6.6 决策依据：当前 8 秒/100 sample 已可接受，binary 化提速 4.7x 但**整体流程**只快 ~16%（人工换传感器是瓶颈）。优先做可靠性（CRC + 序号校验），binary 推迟到真有吞吐瓶颈再做。
+| **V6.6** | **ASCII 协议加固**：R1 行级 CRC8（RTL+PC）+ R3 帧序号校验（PC）| ✅ 完成 |
+| V6.7+ | UART 传输 binary 化（待评估，仅在真有吞吐瓶颈时启动）| 🔮 待评估 |
 
 ## Current State
 
-V6.5 cycle-aware capture + PC pipeline 完整就绪：
-- RTL：UART 头加 `SID=NNNNN,MID=N`，sample_id 在 FCYC 完成后递增（pending flag 防 race）
-- PC：CSV 元数据 + `.npy` 二进制 payload + `session.json` 元数据 + 边界 trim + ADC 饱和标记 + UUID 命名 + 批量 `--glob` 后处理 + `manifest.json`
-- 文档：`doc/DATA_FORMAT.md` 权威字段参考（任何分析任务的入口）
+V6.6 ASCII 加固完成：
+- **R1 CRC8**：每行 ASCII payload 末尾追加 `*HH`（CRC-8/CCITT，poly=0x07）。RTL `capture_uart_streamer.v` 加 `crc8_step()` 同步累计；PC `capture_ascii_v60.py` 解析时校验，不匹配整帧丢弃 → `_errors.log`。每帧 +9 字节（0.7% overhead）。
+- **R3 序号校验**：纯 PC 改动。`_samples.csv` 多三列 `txn_gap_ok` / `mid_strict_order` / `sid_monotonic`。任一失败 → `valid=0`。
+- 兼容：parser 检测到无 `*` 自动走 V6.5/V6.0~V6.4 旧路径，0612 数据集仍可后处理。
+
+V6.5 cycle-aware capture + PC pipeline（V6.5 完成时已跑通，此处沿用）：
+- RTL：UART 头加 `SID=NNNNN,MID=N`，sample_id 在 FCYC 完成后递增
+- PC：CSV 元数据 + `.npy` payload + `session.json` + 边界 trim + ADC 饱和 + UUID + 批量 `--glob` + `manifest.json`
+- 文档：`doc/数据采样/{DATA_FORMAT,CAPTURE_PROTOCOL}.md`
 
 ### V6.5 验证记录
 
