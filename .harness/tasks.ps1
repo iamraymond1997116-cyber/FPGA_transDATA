@@ -2,7 +2,7 @@
 # encoding: utf-8
 <#
 .SYNOPSIS
-    Unified harness for FPGA_transDATA V6.3.
+    Unified harness for FPGA_transDATA V6.4.
 .DESCRIPTION
     All dev operations go through this script.
     Usage: .\.harness\tasks.ps1 <command> [options]
@@ -293,7 +293,7 @@ switch ($Command) {
     }
 
     "status" {
-        Write-Host "--- FPGA_transDATA V6.3 ---" -ForegroundColor Cyan
+        Write-Host "--- FPGA_transDATA V6.4 ---" -ForegroundColor Cyan
         Write-Host ("  Version:  " + (Get-Version))
         Write-Host ("  RTL hash: " + (Get-RtlHash))
         $rtlCnt = (Get-ChildItem (Join-Path $subProjectRoot "rtl") -Filter "*.v").Count
@@ -340,7 +340,7 @@ switch ($Command) {
 
     default {
         Write-Host @"
-FPGA_transDATA V6.3 Harness
+FPGA_transDATA V6.4 Harness
 
 Usage: .\.harness\tasks.ps1 <command>
 

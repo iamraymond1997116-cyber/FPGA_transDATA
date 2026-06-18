@@ -1,4 +1,4 @@
-# OMC 项目扩展 — FPGA_transDATA V6.3
+# OMC 项目扩展 — FPGA_transDATA V6.4
 
 项目级 oh-my-claudecode 调度规则。
 

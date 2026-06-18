@@ -29,6 +29,7 @@ module transient_puf_v60_top_test (
     capture_uart_streamer #(.CLKS_PER_BIT(10)) streamer (
         .clk(pixel_clk), .rst_n(1'b1),
         .send(uart_send), .mode(3'd0),
+        .sample_id(16'd0), .mode_idx(3'd0),
         .txn_id(uart_txn), .sensor_power(uart_spwr),
         .raw_ch1_data(ch1_data), .raw_ch2_data(ch2_data),
         .raw_addr(uart_raw_addr),

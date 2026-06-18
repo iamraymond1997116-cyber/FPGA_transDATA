@@ -9,3 +9,10 @@ __pycache__/
 *.o
 *.d
 *.wdb
+*.rej
+
+# Capture outputs (root-level smoke tests)
+/logs/
+
+# Harness auto-generated state
+PUF_dataTransFreq_v60_capture/.harness/state/env.json

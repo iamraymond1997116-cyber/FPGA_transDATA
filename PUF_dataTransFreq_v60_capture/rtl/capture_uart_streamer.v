@@ -2,7 +2,7 @@
 // capture_uart_streamer — UART ASCII frame output for V6.x multi-mode capture
 //
 // Frame format (29 bytes header + CH1/CH2 raw 128×4-hex + \n):
-//   V6.0,MODE=XXXX,SPWR=X,TXN=XX\n
+//   V6.5,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX\n
 //   CH1,RAW,128,...\n
 //   CH2,RAW,128,...\n
 //
@@ -20,12 +20,14 @@
 module capture_uart_streamer #(
     parameter integer CLKS_PER_BIT = 9,
     parameter [7:0] VERSION_MAJOR = 8'd6,
-    parameter [7:0] VERSION_MINOR = 8'd1
+    parameter [7:0] VERSION_MINOR = 8'd5
 ) (
     input  wire        clk,
     input  wire        rst_n,
     input  wire        send,
     input  wire [2:0]  mode,
+    input  wire [15:0] sample_id,
+    input  wire [2:0]  mode_idx,
     input  wire [7:0]  txn_id,
     input  wire        sensor_power,
     input  wire signed [15:0] raw_ch1_data,
@@ -105,6 +107,22 @@ module capture_uart_streamer #(
         end
     endfunction
 
+    function [7:0] dec_digit5;
+        input [15:0] value;
+        input [2:0] pos;
+        reg [15:0] q;
+        begin
+            case (pos)
+                3'd0: q = value / 16'd10000;
+                3'd1: q = (value / 16'd1000) % 16'd10;
+                3'd2: q = (value / 16'd100) % 16'd10;
+                3'd3: q = (value / 16'd10) % 16'd10;
+                default: q = value % 16'd10;
+            endcase
+            dec_digit5 = 8'd48 + q[3:0];
+        end
+    endfunction
+
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= ST_IDLE;
@@ -133,50 +151,58 @@ module capture_uart_streamer #(
                     end
                 end
 
-                // ── Header: V6.0,MODE=XXXX,SPWR=X,TXN=XX\n ──
+                // ── Header: V6.5,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX\n ──
                 ST_HDR: begin
                     if (!tx_busy) begin
-                        // header layout (29 bytes total):
-                        //  0 1 2 3 4  5 6 7 8  9 10 11 12  13 14 15 16  17 18 19 20 21 22 23 24 25 26 27 28
-                        //  V 6 . 0 ,  M O D E  =  M  M  M  M   ,  S  P  W  R  =  X  ,  T  X  N  =  X  X  \n
+                        // header layout (40 bytes total):
+                        // V6.5,SID=00000,MID=0,FULL,SPWR=1,TXN=3C\n
                         case (idx)
-                            // V + MAJOR + . + MINOR (dynamic from parameters)
                             8'd0:  tx_data_reg <= "V";
                             8'd1:  tx_data_reg <= 8'd48 + VERSION_MAJOR[3:0];
                             8'd2:  tx_data_reg <= ".";
                             8'd3:  tx_data_reg <= 8'd48 + VERSION_MINOR[3:0];
                             8'd4:  tx_data_reg <= ",";
-                            8'd5:  tx_data_reg <= "M";
-                            8'd6:  tx_data_reg <= "O";
+                            8'd5:  tx_data_reg <= "S";
+                            8'd6:  tx_data_reg <= "I";
                             8'd7:  tx_data_reg <= "D";
-                            8'd8:  tx_data_reg <= "E";
-                            8'd9:  tx_data_reg <= "=";
-                            // idx 10-13: mode name (4 bytes)
-                            8'd10: tx_data_reg <= mode_b3;
-                            8'd11: tx_data_reg <= mode_b2;
-                            8'd12: tx_data_reg <= mode_b1;
-                            8'd13: tx_data_reg <= mode_b0;
+                            8'd8:  tx_data_reg <= "=";
+                            8'd9:  tx_data_reg <= dec_digit5(sample_id, 3'd0);
+                            8'd10: tx_data_reg <= dec_digit5(sample_id, 3'd1);
+                            8'd11: tx_data_reg <= dec_digit5(sample_id, 3'd2);
+                            8'd12: tx_data_reg <= dec_digit5(sample_id, 3'd3);
+                            8'd13: tx_data_reg <= dec_digit5(sample_id, 3'd4);
                             8'd14: tx_data_reg <= ",";
-                            8'd15: tx_data_reg <= "S";
-                            8'd16: tx_data_reg <= "P";
-                            8'd17: tx_data_reg <= "W";
-                            8'd18: tx_data_reg <= "R";
-                            8'd19: tx_data_reg <= "=";
-                            8'd20: tx_data_reg <= sensor_power ? "1" : "0";
-                            8'd21: tx_data_reg <= ",";
-                            8'd22: tx_data_reg <= "T";
-                            8'd23: tx_data_reg <= "X";
-                            8'd24: tx_data_reg <= "N";
-                            8'd25: tx_data_reg <= "=";
-                            8'd26: tx_data_reg <= hex_digit(txn_id[7:4]);
-                            8'd27: tx_data_reg <= hex_digit(txn_id[3:0]);
-                            8'd28: tx_data_reg <= 8'h0A;
+                            8'd15: tx_data_reg <= "M";
+                            8'd16: tx_data_reg <= "I";
+                            8'd17: tx_data_reg <= "D";
+                            8'd18: tx_data_reg <= "=";
+                            8'd19: tx_data_reg <= 8'd48 + {5'd0, mode_idx};
+                            8'd20: tx_data_reg <= ",";
+                            8'd21: tx_data_reg <= mode_b3;
+                            8'd22: tx_data_reg <= mode_b2;
+                            8'd23: tx_data_reg <= mode_b1;
+                            8'd24: tx_data_reg <= mode_b0;
+                            8'd25: tx_data_reg <= ",";
+                            8'd26: tx_data_reg <= "S";
+                            8'd27: tx_data_reg <= "P";
+                            8'd28: tx_data_reg <= "W";
+                            8'd29: tx_data_reg <= "R";
+                            8'd30: tx_data_reg <= "=";
+                            8'd31: tx_data_reg <= sensor_power ? "1" : "0";
+                            8'd32: tx_data_reg <= ",";
+                            8'd33: tx_data_reg <= "T";
+                            8'd34: tx_data_reg <= "X";
+                            8'd35: tx_data_reg <= "N";
+                            8'd36: tx_data_reg <= "=";
+                            8'd37: tx_data_reg <= hex_digit(txn_id[7:4]);
+                            8'd38: tx_data_reg <= hex_digit(txn_id[3:0]);
+                            8'd39: tx_data_reg <= 8'h0A;
                             default: tx_data_reg <= 8'h0A;
                         endcase
                         tx_start <= 1'b1;
                         return_state <= ST_HDR;
                         state <= ST_WAIT_ACK;
-                        if (idx == 8'd28) begin
+                        if (idx == 8'd39) begin
                             idx <= 8'd0;
                             return_state <= ST_PREFIX;
                             state <= ST_WAIT_ACK;

@@ -1,6 +1,6 @@
 # FPGA_transDATA
 
-PUF 瞬态采集 V6.3。项目代码在 `PUF_dataTransFreq_v60_capture/`。
+PUF 瞬态采集 V6.4。项目代码在 `PUF_dataTransFreq_v60_capture/`。
 
 ## 技术栈
 

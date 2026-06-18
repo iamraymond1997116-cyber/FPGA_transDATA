@@ -1,11 +1,34 @@
 ﻿# PROGRESS
 
 ## Last Updated
-2026-06-16
+2026-06-18
+
+## Roadmap
+
+| 版本 | 范围 | 状态 |
+|:---|:---|:---|
+| V6.5 | UART 帧加 SID/MID（cycle-aware）+ PC 端 13 项数据格式重构 | ✅ 完成（上板验证通过）|
+| **V6.6** | **ASCII 协议加固**：R1 行级 CRC8（RTL+PC）+ R3 帧序号校验（PC）| 📅 下一步 |
+| V6.7+ | UART 传输 binary 化（动 RTL 帧格式，~5x 提速）| 🔮 待评估 |
+
+> V6.6 决策依据：当前 8 秒/100 sample 已可接受，binary 化提速 4.7x 但**整体流程**只快 ~16%（人工换传感器是瓶颈）。优先做可靠性（CRC + 序号校验），binary 推迟到真有吞吐瓶颈再做。
 
 ## Current State
 
-V6.3 Multi-Mode Transient Capture, built and verified on hardware.
+V6.5 cycle-aware capture + PC pipeline 完整就绪：
+- RTL：UART 头加 `SID=NNNNN,MID=N`，sample_id 在 FCYC 完成后递增（pending flag 防 race）
+- PC：CSV 元数据 + `.npy` 二进制 payload + `session.json` 元数据 + 边界 trim + ADC 饱和标记 + UUID 命名 + 批量 `--glob` 后处理 + `manifest.json`
+- 文档：`doc/DATA_FORMAT.md` 权威字段参考（任何分析任务的入口）
+
+### V6.5 验证记录
+
+| 检查 | 结果 |
+|:---|:---|
+| `tasks.ps1 check`（env+lint+sim） | ✅ 0 Error |
+| `tasks.ps1 build`（V6.5 bitstream） | ✅ WNS=3.155ns |
+| `tasks.ps1 program`（JTAG SRAM） | ✅ |
+| 采集 10/20/15 sample 多轮 | ✅ parse_errors=0 |
+| 批量 post_process 14 sample | ✅ valid=14/14 |
 
 ### Latest: 10-sensor × 4-condition dataset (0612)
 - **40 CSV files, 8000 frames** (10 sensors × 4 conditions × 200 frames × 5 modes)
@@ -32,7 +55,7 @@ V6.3 Multi-Mode Transient Capture, built and verified on hardware.
 
 | File | Description |
 |:---|:---|
-| `rtl/transient_puf_v60_top.v` | Top-level, V6.3, 5-mode state machine |
+| `rtl/transient_puf_v60_top.v` | Top-level, V6.5, 5-mode state machine + sample_id/mode_idx |
 | `rtl/sensor_power_control.v` | 5-mode power sequencing |
 | `rtl/capture_uart_streamer.v` | ASCII UART frame output |
 | `rtl/transient_capture.v` | 128-point dual-channel capture |
