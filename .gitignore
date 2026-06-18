@@ -16,3 +16,7 @@ __pycache__/
 
 # Harness auto-generated state
 PUF_dataTransFreq_v60_capture/.harness/state/env.json
+
+# Processed intermediate files (post_process per-file outputs)
+PUF_dataTransFreq_v60_capture/logs/*/processed/v66_*_X_cycles.npz
+PUF_dataTransFreq_v60_capture/logs/*/processed/v66_*_metadata_cycles.csv
