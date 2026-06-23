@@ -540,6 +540,36 @@ def make_stem(sensor, condition, ts_str, suffix):
     return "_".join(parts)
 
 
+# ── Baseline DC sanity check ──
+# 见 doc/数据采样/CAPTURE_PROTOCOL.md §2.1.1
+# AD7606 偶发进入 DC 共模偏置稳态（+13088 LSB ≈ +2V），
+# 表现为 NCUT baseline 从 ~10000 跳到 ~21000（看似 ×2 实际是 +offset）。
+# 物理 reset 才能解锁，但工况切换的 sensor power-cycle 也会触发恢复。
+BASELINE_OK_LOW = 5000      # 低于此值 → FLAT / 无供电
+BASELINE_OK_HIGH = 18000    # 高于此值 → DOUBLED / DC offset 异常
+NCUT_MODE_IDX = 2
+NCUT_STEADY_FROM = 30       # NCUT 第 30~127 点为稳态段
+
+
+def check_baseline_dc(npy_path):
+    """读 .npy，返回 (verdict, ch1_baseline, ch2_baseline)。
+    verdict ∈ {'OK', 'DOUBLED', 'FLAT', 'EMPTY'}。"""
+    import numpy as _np
+    try:
+        X = _np.load(str(npy_path))
+    except Exception as e:
+        return ("EMPTY", 0.0, 0.0)
+    if X.shape[0] == 0:
+        return ("EMPTY", 0.0, 0.0)
+    ch1 = float(X[:, NCUT_MODE_IDX, 0, NCUT_STEADY_FROM:].mean())
+    ch2 = float(X[:, NCUT_MODE_IDX, 1, NCUT_STEADY_FROM:].mean())
+    if ch1 > BASELINE_OK_HIGH or ch2 > BASELINE_OK_HIGH:
+        return ("DOUBLED", ch1, ch2)
+    if ch1 < BASELINE_OK_LOW or ch2 < BASELINE_OK_LOW:
+        return ("FLAT", ch1, ch2)
+    return ("OK", ch1, ch2)
+
+
 def main():
     ap = argparse.ArgumentParser(description="Capture V6.6 ASCII reliability-hardened UART frames.")
     ap.add_argument("--port", default="COM5")
@@ -553,6 +583,10 @@ def main():
     ap.add_argument("--condition", default=None)
     ap.add_argument("--no-trim", action="store_true",
                     help="Keep boundary half-samples (default: drop them)")
+    ap.add_argument("--no-baseline-check", action="store_true",
+                    help="Skip NCUT baseline DC sanity check after capture")
+    ap.add_argument("--max-retries", type=int, default=2,
+                    help="Auto-retry capture when baseline check fails (default: 2)")
     ap.add_argument("--test", action="store_true")
     args = ap.parse_args()
 
@@ -567,17 +601,6 @@ def main():
 
     out = pathlib.Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    ts_str = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
-    suffix = uuid.uuid4().hex[:6]
-    stem = make_stem(args.sensor, args.condition, ts_str, suffix)
-    csv_path = out / f"{stem}.csv"
-    npy_path = out / f"{stem}.npy"
-    samples_path = out / f"{stem}_samples.csv"
-    session_path = out / f"{stem}_session.json"
-    errors_path = out / f"{stem}_errors.log"
-
-    print(f"Sensor: {args.sensor or 'N/A'}  Condition: {args.condition or 'N/A'}  "
-          f"Target: {args.frames} frames  Timeout: {args.timeout}s  Stem: {stem}")
 
     ser = serial.Serial(args.port, args.baud, timeout=0.01)
     try:
@@ -585,105 +608,172 @@ def main():
     except AttributeError:
         pass
 
-    frames = []
-    errors_with_raw = []
-    deadline = time.time() + args.timeout
-    pending = []
-    buf = b""
-    recv_bytes = 0
-    t0 = time.time()
+    rc = 0
     try:
-        while len(frames) < args.frames and time.time() < deadline:
-            chunk = ser.read(ser.in_waiting or 65536)
-            if not chunk:
-                continue
-            buf += chunk
-            recv_bytes += len(chunk)
-            if len(buf) > 256 * 1024:
-                buf = buf[-65536:]
-            while b"\n" in buf:
-                line_bytes, buf = buf.split(b"\n", 1)
-                line = line_bytes.decode("ascii", errors="replace").strip()
-                if not line:
+        for attempt in range(1 + args.max_retries):
+            ts_str = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+            suffix = uuid.uuid4().hex[:6]
+            stem = make_stem(args.sensor, args.condition, ts_str, suffix)
+            csv_path = out / f"{stem}.csv"
+            npy_path = out / f"{stem}.npy"
+            samples_path = out / f"{stem}_samples.csv"
+            session_path = out / f"{stem}_session.json"
+            errors_path = out / f"{stem}_errors.log"
+
+            if attempt == 0:
+                print(f"Sensor: {args.sensor or 'N/A'}  Condition: {args.condition or 'N/A'}  "
+                      f"Target: {args.frames} frames  Timeout: {args.timeout}s  Stem: {stem}")
+            else:
+                print(f"\n!! RETRY {attempt}/{args.max_retries} — new stem: {stem}")
+                # 清理串口缓冲，让 ADC 在新工况切换的间隙重新进入稳定状态
+                try:
+                    ser.reset_input_buffer()
+                except Exception:
+                    pass
+
+            frames = []
+            errors_with_raw = []
+            deadline = time.time() + args.timeout
+            pending = []
+            buf = b""
+            recv_bytes = 0
+            t0 = time.time()
+            while len(frames) < args.frames and time.time() < deadline:
+                chunk = ser.read(ser.in_waiting or 65536)
+                if not chunk:
                     continue
-                if line.startswith("V6."):
-                    pending = [line]
-                elif pending:
-                    pending.append(line)
-                    if len(pending) == 3:
-                        fr, err = parse_frame(pending)
-                        if err:
-                            errors_with_raw.append({
-                                "ts": dt.datetime.now().isoformat(),
-                                "err": err,
-                                "raw": list(pending),
-                            })
-                        else:
-                            fr["_ts"] = dt.datetime.now().isoformat()
-                            frames.append(fr)
-                            if len(frames) >= args.frames:
-                                buf = b""
-                                break
-                        pending = []
-            n = len(frames)
-            if n > 0 and n % 50 == 0:
-                elapsed = time.time() - t0
-                rate = n / elapsed if elapsed > 0 else 0
-                eta = (args.frames - n) / rate if rate > 0 else 0
-                print(f"  {n}/{args.frames} frames  {recv_bytes / 1024:.0f} KB  "
-                      f"{rate:.0f} fps  ETA {eta:.0f}s")
+                buf += chunk
+                recv_bytes += len(chunk)
+                if len(buf) > 256 * 1024:
+                    buf = buf[-65536:]
+                while b"\n" in buf:
+                    line_bytes, buf = buf.split(b"\n", 1)
+                    line = line_bytes.decode("ascii", errors="replace").strip()
+                    if not line:
+                        continue
+                    if line.startswith("V6."):
+                        pending = [line]
+                    elif pending:
+                        pending.append(line)
+                        if len(pending) == 3:
+                            fr, err = parse_frame(pending)
+                            if err:
+                                errors_with_raw.append({
+                                    "ts": dt.datetime.now().isoformat(),
+                                    "err": err,
+                                    "raw": list(pending),
+                                })
+                            else:
+                                fr["_ts"] = dt.datetime.now().isoformat()
+                                frames.append(fr)
+                                if len(frames) >= args.frames:
+                                    buf = b""
+                                    break
+                            pending = []
+                n = len(frames)
+                if n > 0 and n % 50 == 0:
+                    elapsed = time.time() - t0
+                    rate = n / elapsed if elapsed > 0 else 0
+                    eta = (args.frames - n) / rate if rate > 0 else 0
+                    print(f"  {n}/{args.frames} frames  {recv_bytes / 1024:.0f} KB  "
+                          f"{rate:.0f} fps  ETA {eta:.0f}s")
+
+            elapsed = time.time() - t0
+            raw_frame_count = len(frames)
+
+            # Back-fill legacy SIDs (no-op for pure V6.5)
+            assign_legacy_sample_ids(frames)
+
+            # Trim boundary half-samples by default
+            if args.no_trim:
+                kept, dropped, drop_ids = frames, 0, []
+            else:
+                kept, dropped, drop_ids = trim_boundary_samples(frames)
+
+            # Write outputs
+            write_meta_csv(csv_path, kept, args.sensor, args.condition)
+            n_samples = write_npy_payload(npy_path, kept)
+            sample_errors = write_samples_csv(samples_path, kept)
+            write_errors_log(errors_path, errors_with_raw)
+
+            counts = Counter(f["mode"] for f in kept)
+            mode_str = "  ".join(f"{m}={counts.get(m, 0)}" for m in MODES)
+            summary = {
+                "raw_frames": raw_frame_count,
+                "kept_frames": len(kept),
+                "samples_written": n_samples,
+                "boundary_dropped_samples": dropped,
+                "boundary_dropped_sample_ids": drop_ids,
+                "parse_errors": len(errors_with_raw),
+                "sample_errors": len(sample_errors),
+                "elapsed_seconds": round(elapsed, 2),
+                "fps": round(raw_frame_count / elapsed, 1) if elapsed else 0,
+                "saturated_total": sum(f.get("saturated", 0) for f in kept),
+                "stem": stem,
+            }
+
+            # 基线 DC 校验 — 检测 AD7606 共模偏置稳态（NCUT baseline ≈21000 异常）
+            baseline_verdict = "SKIPPED"
+            baseline_ch1 = baseline_ch2 = 0.0
+            if not args.no_baseline_check and n_samples > 0:
+                baseline_verdict, baseline_ch1, baseline_ch2 = check_baseline_dc(npy_path)
+            summary["baseline_verdict"] = baseline_verdict
+            summary["baseline_ch1"] = round(baseline_ch1, 1)
+            summary["baseline_ch2"] = round(baseline_ch2, 1)
+            summary["attempt"] = attempt + 1
+
+            write_session_json(session_path, args, collect_provenance(), summary)
+
+            print(
+                f"\nDONE  {raw_frame_count} frames in {elapsed:.1f}s  "
+                f"{summary['fps']:.0f} fps  {mode_str}\n"
+                f"  samples kept={n_samples}  dropped(boundary)={dropped}  "
+                f"parse_errors={len(errors_with_raw)}  sample_errors={len(sample_errors)}  "
+                f"saturated={summary['saturated_total']}"
+            )
+            print(f"  baseline_NCUT: CH1={baseline_ch1:.0f}  CH2={baseline_ch2:.0f}  "
+                  f"[{baseline_verdict}]")
+            print(f"CSV:     {csv_path}")
+            print(f"NPY:     {npy_path}  shape=[{n_samples}, 5, 2, 128]")
+            print(f"Samples: {samples_path}")
+            print(f"Session: {session_path}")
+            if errors_with_raw:
+                print(f"Errors:  {errors_path}  ({len(errors_with_raw)} entries)")
+
+            capture_ok = (n_samples > 0 and not sample_errors)
+            baseline_ok = baseline_verdict in ("OK", "SKIPPED")
+
+            if capture_ok and baseline_ok:
+                rc = 0
+                break
+
+            # 失败：删掉这次的 4 件套，让下一轮干净重采
+            if not baseline_ok:
+                print(f"\n!! BASELINE_{baseline_verdict} — CH1={baseline_ch1:.0f} CH2={baseline_ch2:.0f}"
+                      f"\n   AD7606 进入 DC 共模偏置稳态（~+2V offset）。"
+                      f"\n   该文件不可用，正在删除：{stem}.*")
+                for p in (csv_path, npy_path, samples_path, session_path, errors_path):
+                    try:
+                        if p.exists():
+                            p.unlink()
+                    except Exception:
+                        pass
+                rc = 2  # baseline failure
+            else:
+                rc = 1  # capture failure (parse / sample errors)
+                break  # parse / sample 错通常重采也救不了，停手让用户介入
+
+        else:
+            # for-else: 全部 retries 用完仍未通过基线
+            print(f"\n!! 已重试 {args.max_retries} 次仍未通过基线校验。"
+                  f"\n   AD7606 似乎卡在 DC 偏置稳态。建议："
+                  f"\n   1) 按一下 FPGA 上 key1（全局 reset），让 ADC 重 RESET"
+                  f"\n   2) 或断电重新上电"
+                  f"\n   3) 然后重新运行采集命令")
     finally:
         ser.close()
 
-    elapsed = time.time() - t0
-    raw_frame_count = len(frames)
-
-    # Back-fill legacy SIDs (no-op for pure V6.5)
-    assign_legacy_sample_ids(frames)
-
-    # Trim boundary half-samples by default
-    if args.no_trim:
-        kept, dropped, drop_ids = frames, 0, []
-    else:
-        kept, dropped, drop_ids = trim_boundary_samples(frames)
-
-    # Write outputs
-    write_meta_csv(csv_path, kept, args.sensor, args.condition)
-    n_samples = write_npy_payload(npy_path, kept)
-    sample_errors = write_samples_csv(samples_path, kept)
-    write_errors_log(errors_path, errors_with_raw)
-
-    counts = Counter(f["mode"] for f in kept)
-    mode_str = "  ".join(f"{m}={counts.get(m, 0)}" for m in MODES)
-    summary = {
-        "raw_frames": raw_frame_count,
-        "kept_frames": len(kept),
-        "samples_written": n_samples,
-        "boundary_dropped_samples": dropped,
-        "boundary_dropped_sample_ids": drop_ids,
-        "parse_errors": len(errors_with_raw),
-        "sample_errors": len(sample_errors),
-        "elapsed_seconds": round(elapsed, 2),
-        "fps": round(raw_frame_count / elapsed, 1) if elapsed else 0,
-        "saturated_total": sum(f.get("saturated", 0) for f in kept),
-        "stem": stem,
-    }
-    write_session_json(session_path, args, collect_provenance(), summary)
-
-    print(
-        f"\nDONE  {raw_frame_count} frames in {elapsed:.1f}s  "
-        f"{summary['fps']:.0f} fps  {mode_str}\n"
-        f"  samples kept={n_samples}  dropped(boundary)={dropped}  "
-        f"parse_errors={len(errors_with_raw)}  sample_errors={len(sample_errors)}  "
-        f"saturated={summary['saturated_total']}"
-    )
-    print(f"CSV:     {csv_path}")
-    print(f"NPY:     {npy_path}  shape=[{n_samples}, 5, 2, 128]")
-    print(f"Samples: {samples_path}")
-    print(f"Session: {session_path}")
-    if errors_with_raw:
-        print(f"Errors:  {errors_path}  ({len(errors_with_raw)} entries)")
-    return 0 if (n_samples > 0 and not sample_errors) else 1
+    return rc
 
 
 if __name__ == "__main__":

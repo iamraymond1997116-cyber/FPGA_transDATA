@@ -6,16 +6,19 @@
     "baud": 921600,
     "samples": 100,
     "frames": 500,
-    "sensor": "B2-2",
-    "condition": "NTHP",
+    "sensor": "B2-10",
+    "condition": "HTNP",
     "timeout": 120.0,
-    "out_dir": "PUF_dataTransFreq_v60_capture/logs/0618_4state_10sensors_v66"
+    "out_dir": "logs/0618_4state_10sensors_v66"
   },
   "env": {
-    "captured_at": "2026-06-18T11:18:45.290754",
+    "captured_at": "2026-06-23T14:50:05.205147",
     "host": "WCW-Ylab",
     "python_version": "3.13.5",
     "platform": "Windows-11-10.0.26200-SP0",
+    "git_hash": "c31213e415ecb4db518ed89dcb867b9e416c8b51",
+    "git_branch": "main",
+    "git_dirty": true,
     "rtl_version": "V6.6"
   },
   "summary": {
@@ -24,14 +27,14 @@
     "samples_written": 99,
     "boundary_dropped_samples": 2,
     "boundary_dropped_sample_ids": [
-      24701,
-      24801
+      13582,
+      13682
     ],
     "parse_errors": 0,
     "sample_errors": 0,
     "elapsed_seconds": 8.02,
-    "fps": 62.3,
+    "fps": 62.4,
     "saturated_total": 0,
-    "stem": "v66_B2-2_NTHP_20260618_111837_e403cc"
+    "stem": "v66_B2-10_HTNP_20260623_144957_b7ed74"
   }
 }
