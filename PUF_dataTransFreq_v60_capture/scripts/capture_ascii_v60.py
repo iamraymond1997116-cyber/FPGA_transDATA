@@ -32,9 +32,9 @@ try:
 except ImportError:
     serial = None
 
-# ── Frame regexes (header *with* CRC trailer for V6.5+/V6.6, payload alone for legacy) ──
-HEADER_RE_V66 = re.compile(
-    r"^V6\.6,SID=(\d{5}),MID=([0-4]),(FULL|PCUT|NCUT|EXTR|FCYC),SPWR=([01]),TXN=([0-9A-F]{2})$"
+# ── Frame regexes (header *with* CRC trailer for V6.6+/V6.7, payload alone for legacy) ──
+HEADER_RE_V66PLUS = re.compile(
+    r"^V6\.([6-9]),SID=(\d{5}),MID=([0-4]),(FULL|PCUT|NCUT|EXTR|FCYC),SPWR=([01]),TXN=([0-9A-F]{2})$"
 )
 HEADER_RE_V65 = re.compile(
     r"^V6\.5,SID=(\d{5}),MID=([0-4]),(FULL|PCUT|NCUT|EXTR|FCYC),SPWR=([01]),TXN=([0-9A-F]{2})$"
@@ -101,14 +101,15 @@ def count_saturated(ch1_hex, ch2_hex):
 
 
 def parse_header(payload):
-    m = HEADER_RE_V66.match(payload)
+    m = HEADER_RE_V66PLUS.match(payload)
     if m:
+        minor = m.group(1)
         return {
-            "protocol": "V66_RAW",
-            "sample_id": int(m.group(1)),
-            "mode_idx": int(m.group(2)),
-            "mode": m.group(3),
-            "txn": m.group(5),
+            "protocol": f"V6{minor}_RAW",
+            "sample_id": int(m.group(2)),
+            "mode_idx": int(m.group(3)),
+            "mode": m.group(4),
+            "txn": m.group(6),
         }, None
     m = HEADER_RE_V65.match(payload)
     if m:
@@ -530,7 +531,7 @@ def run_self_test():
 # ── Main ──
 
 def make_stem(sensor, condition, ts_str, suffix):
-    parts = ["v66"]
+    parts = ["v67"]
     if sensor:
         parts.append(sensor)
     if condition:
@@ -570,6 +571,66 @@ def check_baseline_dc(npy_path):
     return ("OK", ch1, ch2)
 
 
+def preflight_baseline(ser, n_samples=4, timeout_s=8.0):
+    """采集前自检：快采 n_samples × 5 帧，仅看 NCUT baseline，不落盘。
+    返回 (verdict, ch1_baseline, ch2_baseline)。"""
+    import numpy as _np
+    target_frames = n_samples * 5
+    frames = []
+    pending = []
+    buf = b""
+    deadline = time.time() + timeout_s
+    try:
+        ser.reset_input_buffer()
+    except Exception:
+        pass
+    while len(frames) < target_frames and time.time() < deadline:
+        chunk = ser.read(ser.in_waiting or 32768)
+        if not chunk:
+            continue
+        buf += chunk
+        if len(buf) > 256 * 1024:
+            buf = buf[-65536:]
+        while b"\n" in buf:
+            line_bytes, buf = buf.split(b"\n", 1)
+            line = line_bytes.decode("ascii", errors="replace").strip()
+            if not line:
+                continue
+            if line.startswith("V6."):
+                pending = [line]
+            elif pending:
+                pending.append(line)
+                if len(pending) == 3:
+                    fr, err = parse_frame(pending)
+                    if not err:
+                        frames.append(fr)
+                    pending = []
+    if len(frames) < target_frames:
+        return ("TIMEOUT", 0.0, 0.0)
+
+    # 找出 NCUT 帧（mode_idx==2）并取稳态段平均
+    ncut_ch1_vals = []
+    ncut_ch2_vals = []
+    for fr in frames:
+        if fr.get("mode_idx") != NCUT_MODE_IDX:
+            continue
+        ch1 = fr.get("ch1") or []
+        ch2 = fr.get("ch2") or []
+        if len(ch1) < 128 or len(ch2) < 128:
+            continue
+        ncut_ch1_vals.append(_np.mean(ch1[NCUT_STEADY_FROM:]))
+        ncut_ch2_vals.append(_np.mean(ch2[NCUT_STEADY_FROM:]))
+    if not ncut_ch1_vals:
+        return ("NO_NCUT", 0.0, 0.0)
+    ch1_m = float(_np.mean(ncut_ch1_vals))
+    ch2_m = float(_np.mean(ncut_ch2_vals))
+    if ch1_m > BASELINE_OK_HIGH or ch2_m > BASELINE_OK_HIGH:
+        return ("DOUBLED", ch1_m, ch2_m)
+    if ch1_m < BASELINE_OK_LOW or ch2_m < BASELINE_OK_LOW:
+        return ("FLAT", ch1_m, ch2_m)
+    return ("OK", ch1_m, ch2_m)
+
+
 def main():
     ap = argparse.ArgumentParser(description="Capture V6.6 ASCII reliability-hardened UART frames.")
     ap.add_argument("--port", default="COM5")
@@ -587,6 +648,8 @@ def main():
                     help="Skip NCUT baseline DC sanity check after capture")
     ap.add_argument("--max-retries", type=int, default=2,
                     help="Auto-retry capture when baseline check fails (default: 2)")
+    ap.add_argument("--preflight-samples", type=int, default=4,
+                    help="Pre-capture sanity check sample count (0 to disable, default: 4)")
     ap.add_argument("--test", action="store_true")
     args = ap.parse_args()
 
@@ -607,6 +670,18 @@ def main():
         ser.set_buffer_size(rx_size=256 * 1024)
     except AttributeError:
         pass
+
+    # ── 采集基线自检 ──
+    # 开正式采集前快速采 n 个 sample，验 NCUT baseline 是否正常
+    if args.preflight_samples > 0:
+        print(f"  Preflight: capturing {args.preflight_samples} samples for baseline sanity...")
+        pf_v, pf_c1, pf_c2 = preflight_baseline(ser, args.preflight_samples)
+        print(f"  Preflight NCUT baseline: CH1={pf_c1:.0f} CH2={pf_c2:.0f}  [{pf_v}]")
+        if pf_v in ("DOUBLED", "FLAT", "TIMEOUT"):
+            print(f"\n!! PREFLIGHT FAILED [{pf_v}] — ADC 进入异常稳态。"
+                  f"\n   建议：按 FPGA 上 key1 触发全局 reset，然后重试本命令。")
+            ser.close()
+            return 2 if pf_v == "DOUBLED" else 3
 
     rc = 0
     try:

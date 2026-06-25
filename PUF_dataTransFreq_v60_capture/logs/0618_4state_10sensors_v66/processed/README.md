@@ -1,194 +1,137 @@
-# 0618 数据集分析说明书 — 对比学习可视化
+# 0618 数据集 — 10 传感器 × 4 工况 × 100 样本（V6.6 + 基线修复）
 
-> 给分析 AI 的任务书。输入两个文件，产出对比学习点云图 + 关键指标。
+> 采集起始：2026-06-18
+> 基线修复重采：2026-06-23
+> 协议：V6.6（CRC8 + R3 帧序号校验）
+> 数据采集脚本：`scripts/capture_ascii_v60.py`
 
 ---
 
-## 1. 输入文件（在同一个目录下）
+## 1. 数据组织
 
-| 文件 | 说明 |
+| 维度 | 取值 |
 |:---|:---|
-| `all_dataset.npz` | 全部数据，shape=(3967, 5, 2, 128)，附带传感器 ID、条件、校验标记等元数据 |
-| `manifest.json` | 数据集汇总清单（每个文件的 sample 数、有效性、饱和数） |
+| 传感器 | B2-1 ~ B2-10（10 个）|
+| 工况 | NTNP / NTHP / HTNP / HTHP（4 个）|
+| 每文件 sample 数 | 99~100 |
+| 模式 | FULL / PCUT / NCUT / EXTR / FCYC（5 种自动循环）|
+| 总 sample | 4759（合并后 `processed/all_dataset.npz` 验证；含 B2-6/B2-8 各 4 工况第二份对照）|
+| 全 `valid=1` | ✅ 100% |
 
-## 2. 数据形状
+数据形状：`(4759, 5, 2, 128)` int16 — sample × mode × channel × 128 点。
+
+---
+
+## 2. 基线修复记录（2026-06-23）
+
+### 2.1 故障现象
+
+整轮 40 个工况文件初采后，**3 个文件出现 NCUT baseline ≈21000（精确 ≈2× 翻倍）**：
+
+| 原始文件 | NCUT CH1 baseline | NCUT CH2 baseline |
+|:---|---:|---:|
+| `v66_B2-2_NTHP_20260618_111837_e403cc` | ≈21000 | ≈21000 |
+| `v66_B2-6_NTNP_20260618_142538_f1cb69` | 21424 | 21427 |
+| `v66_B2-10_HTNP_20260618_153356_46c358` | ≈21000 | ≈21000 |
+
+其余 37 文件 baseline 全 ~10000 正常。
+
+### 2.2 根因
+
+**不是 ×2 量程切换，是 +13088 LSB（≈+2V）的纯 DC 共模偏置**：
+
+- FULL 尾部（sensor OFF）正常 ≈92 LSB（接近 0V），翻倍时 ≈13180 LSB（差 +13088）
+- CH1−CH2 差值从正常 −86 LSB 塌缩到 −3 LSB（两通道叠加同一共模电压）
+- 多次出现的 baseline 个位精确一致（21419 跨日期复现）
+
+**AD7606 模拟前端在某些 sensor 上电序列下进入 DC 偏置稳态**。FPGA 全局只 RESET 一次（[ad7606_if.v:53-63](../../rtl/ad7606_if.v#L53-L63)），异常稳态没有自恢复机制，依赖工况切换的 sensor 功率序列"摇"出来。
+
+完整因果追踪见 git commit `chore: trace baseline doubling root cause` 的 tracer 报告。
+
+### 2.3 修复动作
+
+| 旧文件 | 新文件 | 重采 baseline |
+|:---|:---|:---|
+| `B2-2_NTHP_20260618_111837_e403cc.*` | `B2-2_NTHP_20260623_142554_b8c0a4.*` | CH1=10813 CH2=10840 ✅ |
+| `B2-6_NTNP_20260618_142538_f1cb69.*` | `B2-6_NTNP_20260623_143735_9726f2.*` | CH1=10683 CH2=10679 ✅ |
+| `B2-6_NTHP_20260618_142749_5f13c0.*` | `B2-6_NTHP_20260623_143430_ca4af2.*` | CH1=10643 CH2=10735 ✅（重采作为对照实验，已统一保留新版）|
+| `B2-10_HTNP_20260618_153356_46c358.*` | `B2-10_HTNP_20260623_144957_b7ed74.*` | CH1=10504 CH2=10492 ✅ |
+
+修复后 40 文件 NCUT baseline 全部落在 9920 ~ 10674 区间（正常）。
+
+---
+
+## 3. 黄金模式
+
+**NCUT（mode_idx=2，下电截断）** — 信噪比最高，类间距离最大。
+
+完整分析路径见 [../../doc/数据采样/CAPTURE_PROTOCOL.md §4](../../doc/数据采样/CAPTURE_PROTOCOL.md#4-黄金分析路径)。
+
+---
+
+## 4. 已知通道问题
+
+- **B2-4 CH2**：硬件不稳定（frmVar 偏大但未达 UNSTABLE 阈值），分析时建议仅用 CH1 或在 CMR 后观察
+- 其余 9 个传感器 CH1/CH2 均正常
+
+---
+
+## 5. 快速加载
 
 ```python
 import numpy as np
-d = np.load("all_dataset.npz")
-X = d["X"]                       # (3967, 5, 2, 128)  int16
-#   dim0: sample（每个 sample = 一个传感器的完整 5 模式数据）
-#   dim1: mode（0=FULL, 1=PCUT, 2=NCUT, 3=EXTR, 4=FCYC）
-#   dim2: channel（0=CH1, 1=CH2）
-#   dim3: 128 个 ADC 采样点（16-bit 有符号, ±5V）
+d = np.load("processed/all_dataset.npz")
+mask = (d["valid"] == 1)
+ncut_ch1 = d["X"][mask, 2, 0, :]      # NCUT CH1
+ncut_ch2 = d["X"][mask, 2, 1, :]      # NCUT CH2
+cmr      = ncut_ch1 - ncut_ch2        # 共模抑制
+y_sensor = d["sensor_id"][mask]
+y_cond   = d["condition"][mask]
 ```
 
-元数据：
-```python
-d["sensor_id"]   # (3967,) str  — B2-1~B2-10
-d["condition"]   # (3967,) str  — NTNP / NTHP / HTNP / HTHP
-d["valid"]       # (3967,) int8 — 全 1（此数据集 100% 校验通过）
-d["sample_id"]   # (3967,) int32
-d["timestamp"]   # (3967,) str  — 采集时 PC 时间
-d["mode_names"]  # ['FULL' 'PCUT' 'NCUT' 'EXTR' 'FCYC']
-d["channel_names"]  # ['CH1' 'CH2']
-```
+字段定义见 [../../doc/数据采样/DATA_FORMAT.md](../../doc/数据采样/DATA_FORMAT.md)。
 
-## 3. 分析目标
+---
 
-**对比学习的核心目标**：同一个传感器在不同环境条件（温度、压力）下的样本应该被拉近聚成一簇，不同传感器的样本应该被推开。
+## 6. manifest 速览
 
-提取特征 → 降维投影 → 画出点云图，验证这个目标是否达成。
+`processed/manifest.json` 关键字段：
 
-关键指标：
-- **轮廓系数 (silhouette score)** — 越高越好（参考值：~0.85+ 表示很好的分离）
-- **最近质心分类准确率** — 每个传感器到自己的质心最近就是对的（参考值：1.0000）
-- **异类/同类距离比** — 越大越好（参考值：> 10x）
+- `total_samples = 4759`
+- `total_valid = 4759`（100%）
+- `files[]` 每文件 mode=`v66` / valid=samples / saturated=0
 
-## 4. 数据预处理（必须做）
+---
 
-### 4.1 只取黄金模式
+## 7. B2-6 / B2-8 重复采集记录（2026-06-23 16:27–16:53）
 
-**NCUT（mode_idx=2）已验证为黄金模式**——信噪比最高，类间距离最大。**不要混用 5 种模式。**
+### 7.1 动机
 
-```python
-ncut = X[:, 2, :, :]  # (3967, 2, 128)
-```
+跨工况识别分析（详见外部研究报告 §9.3）显示，**HTHP 极端工况下只有 B2-6 / B2-8 的识别召回为 0**（漂到邻居身上），其余 7 个传感器召回 ≈ 1.00。为了排除"第一次采集本身有问题"，给这两个传感器各采了第二份完整数据（4 工况），同传感器同工况两份并存。
 
-### 4.2 CH1-CH2 共模抑制（CMR）
+### 7.2 文件清单
 
-消除温度和压力变化带来的共模扰动：
-```python
-cmr = ncut[:, 0, :] - ncut[:, 1, :]  # (3967, 128)
-```
+| 传感器 | 工况 | v1（原始）baseline | v2（重采）baseline |
+|:---|:---|---:|---:|
+| B2-6 | NTNP | 10683（06-23 14:37）| 10697（06-23 16:27）|
+| B2-6 | NTHP | 10643（06-23 14:34）| 10657（06-23 16:31）|
+| B2-6 | HTNP | 10672（06-18 14:28）| 10687（06-23 16:32）|
+| B2-6 | HTHP | 10673（06-18 14:36）| 10671（06-23 16:33）|
+| B2-8 | NTNP | 10122（06-18 15:07）| 10689（06-23 16:47）|
+| B2-8 | NTHP | 10092（06-18 15:08）| 10649（06-23 16:49）|
+| B2-8 | HTNP | 10120（06-18 15:11）| 10684（06-23 16:51）|
+| B2-8 | HTHP | 10126（06-18 15:24）| 10667（06-23 16:53）|
 
-### 4.3 条件归一化（关键步骤）
+### 7.3 重要说明
 
-不同环境条件下所有传感器的整体偏移要消除，否则环境差异会压倒传感器身份差异：
+- **两份都保留在数据集里**，未删除 v1，方便后续 A/B 对照。
+- B2-6 v1 vs v2 NCUT 波形 corr=1.0000，rms_diff=13–19 LSB（几乎一致）。
+- B2-8 v1 vs v2 整体平移 ~550 LSB（v1 全 ~10120 / v2 全 ~10670），CH1/CH2 同步、非翻倍特征，可能是几天间温度/接触阻抗的真实漂移，需要后续分析判断。
 
-```python
-cmr_normalized = cmr.copy().astype('f8')
-for cond in ['NTNP', 'NTHP', 'HTNP', 'HTHP']:
-    mask = d['condition'] == cond
-    cmr_normalized[mask] -= cmr[mask].mean(axis=0)
-```
+### 7.4 后续动作（TODO）
 
-## 5. 特征提取
+**待办**：用 v2 数据替分析 B2-6/B2-8 在 HTHP 工况的识别召回是否改善。
+- 若 v1 数据本身有问题（如 ADC 还未完全稳定、接触不良）→ **改用 v2 数据**（删除 v1）
+- 若 v1/v2 一致 → 说明召回 0 是器件物理可分性极限，与数据采集无关
 
-### 5.1 推荐的特征组合（已验证有效）
-
-```python
-from scipy.fft import fft
-import numpy as np
-from sklearn.preprocessing import StandardScaler
-
-def extract_features(cmr_signal, nbins=64):
-    """
-    cmr_signal: (N, 128) CH1-CH2 差分
-    返回: (N, nbins) FFT 低频幅值
-    """
-    f = np.abs(fft(cmr_signal, axis=1))[:, 1:nbins+1]  # 跳 DC
-    # 归一化每帧总能量
-    return f / (f.sum(axis=1, keepdims=True) + 1e-10)
-
-features = extract_features(cmr_normalized)
-```
-
-这样从 128 维时域信号压到 64 维频域特征，**用谱形而不是绝对幅值**区分传感器。
-
-### 5.2 LDA 投影
-
-```python
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-from sklearn.preprocessing import StandardScaler
-
-feat_scaled = StandardScaler().fit_transform(features)
-lda = LDA(n_components=min(9, len(np.unique(d['sensor_id'])) - 1))
-Z = lda.fit_transform(feat_scaled, d['sensor_id'])  # (3967, 9)
-# 标签是 sensor_id（B2-1~B2-10），不是 condition
-```
-
-## 6. 选最佳二维展示面
-
-9 个 LDA 维度中枚举所有组合，选 silhouette 最高的：
-
-```python
-from itertools import combinations
-from sklearn.metrics import silhouette_score
-
-best_sil, best_dims = -1, (0, 1)
-for d1, d2 in combinations(range(Z.shape[1]), 2):
-    sil = silhouette_score(Z[:, [d1, d2]], d['sensor_id'])
-    if sil > best_sil:
-        best_sil, best_dims = sil, (d1, d2)
-Z_2d = Z[:, best_dims]
-```
-
-## 7. 必出图表
-
-### 7.1 主图：对比学习嵌入点云
-
-参考样式见 `D:\Project\FPGA_transDATA\研究报告\codex对比学习结果\figures\contrastive_embedding_lda.png`
-
-要求：
-- 每个传感器一个颜色，10 种
-- B2-1 的四条件中心用大点标记并用线连接🔴
-- 每个传感器画 85% 包络圆（红色虚线圆，半径 = 85% 分位距离）
-- 图例标注传感器编号
-- 网格半透灰
-- 标题写 silhouette 值
-- 输出：`figures/embedding_lda.png`
-
-### 7.2 辅助图 1：同/异传感器距离箱线图
-
-参考 `contrastive_distance_boxplot.png`
-- 左侧箱线 = 同传感器不同条件的 CMR 信号欧氏距离
-- 右侧箱线 = 不同传感器之间的 CMR 信号欧氏距离
-- 输出：`figures/distance_boxplot.png`
-
-### 7.3 辅助图 2：质心相似度矩阵
-
-参考 `contrastive_centroid_similarity.png`
-- 10×10 矩阵，热图显示每对传感器的 NCUT CMR 平均信号之间的皮尔逊相关系数
-- 对角线（自相似）= 1.0；颜色区分
-- 输出：`figures/centroid_similarity.png`
-
-## 8. 必出指标指标表
-
-| 指标 | 含义 | 期望 |
-|:---|:---|:---|
-| silhouette | 嵌入轮廓系数 | > 0.80 |
-| centroid_acc | 最近质心分类准确率 | ~1.0 |
-| same_mean_distance | 同传感器不同条件样本间平均距离 | 尽量小 |
-| different_mean_distance | 不同传感器样本间平均距离 | 尽量大 |
-| distance_ratio | 异类/同类距离比 | > 10x |
-
-## 9. 输出清单
-
-放到本目录下的 `results/` 文件夹：
-
-```
-processed/results/
-├── embedding_lda.png
-├── distance_boxplot.png
-├── centroid_similarity.png
-└── summary.json  （全部指标）
-```
-
-## 10. 已知数据质量说明
-
-以下传感器**不是错误**，是传感器自身物理特性（已验证 frmVar < 3，帧间稳定）：
-
-| 传感器 | 条件 | 现象 |
-|:---|:---|:---|
-| B2-2 NTHP | 常温高压 | peak ~21979（基线偏高，正常传感器的 2x）|
-| B2-6 NTNP | 常温常压 | peak ~22005（同上）|
-| B2-10 HTNP | 高温常压 | peak ~21987（同上）|
-
-**不要因为这 3 个条件的高基线而排除数据。**
-
-## 11. 环境依赖
-
-```bash
-pip install numpy scipy scikit-learn matplotlib
-```
+判断方法：对每个工况算 v1 vs v2 的相关系数 + LDA 投影距离，若 corr > 0.99 且距离差 < 5% 则视为一致。

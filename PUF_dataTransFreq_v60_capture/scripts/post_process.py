@@ -165,8 +165,12 @@ def load_one(csv_path: pathlib.Path):
     """Auto-detect V6.6 vs V6.5 (companion .npy) vs legacy (payload in CSV)."""
     npy_path = find_companion_npy(csv_path)
     if npy_path is not None:
-        # V6.6 文件以 v66_ 为前缀；V6.5 以 v65_ 为前缀
-        mode = "v66" if csv_path.stem.startswith("v66_") else "v65"
+        if csv_path.stem.startswith("v67_"):
+            mode = "v67"
+        elif csv_path.stem.startswith("v66_"):
+            mode = "v66"
+        else:
+            mode = "v65"
         return load_v65_with_npy(csv_path, npy_path), mode
     return load_legacy(csv_path), "legacy"
 

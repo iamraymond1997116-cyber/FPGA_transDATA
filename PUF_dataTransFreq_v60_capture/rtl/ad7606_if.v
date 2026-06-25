@@ -9,6 +9,7 @@ module ad7606_if #(
 ) (
     input  wire        clk,
     input  wire        rst_n,
+    input  wire        soft_rst_n,   // 运行时软复位：拉低 ≥ 50ns 触发 ADC RESET（修复 +2V DC 偏置稳态）
     input  wire [15:0] ad_data,
     input  wire        ad_busy,
     input  wire        first_data,
@@ -54,6 +55,10 @@ module ad7606_if #(
         if (!rst_n) begin
             rst_cnt <= 16'd0;
             ad_reset <= 1'b0;
+        end else if (!soft_rst_n) begin
+            // 软复位触发：rst_cnt 回零，重新走一遍 RESET 序列
+            rst_cnt <= 16'd0;
+            ad_reset <= 1'b1;
         end else if (rst_cnt < RESET_CYCLES[15:0]) begin
             rst_cnt <= rst_cnt + 16'd1;
             ad_reset <= 1'b1;

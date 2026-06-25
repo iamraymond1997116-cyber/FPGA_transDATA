@@ -1,8 +1,8 @@
 // ============================================================================
 // capture_uart_streamer — UART ASCII frame output for V6.x multi-mode capture
 //
-// V6.6 frame format (each line ends with *XX where XX = CRC8 of line payload):
-//   V6.6,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX*HH\n
+// V6.7 frame format (each line ends with *XX where XX = CRC8 of line payload):
+//   V6.7,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX*HH\n
 //   CH1,RAW,128,...*HH\n
 //   CH2,RAW,128,...*HH\n
 //
@@ -23,7 +23,7 @@
 module capture_uart_streamer #(
     parameter integer CLKS_PER_BIT = 9,
     parameter [7:0] VERSION_MAJOR = 8'd6,
-    parameter [7:0] VERSION_MINOR = 8'd6
+    parameter [7:0] VERSION_MINOR = 8'd7
 ) (
     input  wire        clk,
     input  wire        rst_n,
@@ -180,7 +180,7 @@ module capture_uart_streamer #(
                     end
                 end
 
-                // ── Header: V6.6,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX (38 payload bytes, then *XX\n) ──
+                // ── Header: V6.7,SID=00000,MID=0,XXXX,SPWR=X,TXN=XX (38 payload bytes, then *XX\n) ──
                 ST_HDR: begin
                     if (!tx_busy) begin
                         // 38 header payload bytes (idx 0..37); *XX\n appended in ST_LINE_END.
