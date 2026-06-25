@@ -1,7 +1,7 @@
 ﻿# PROGRESS
 
 ## Last Updated
-2026-06-18
+2026-06-23
 
 ## Roadmap
 
@@ -13,7 +13,19 @@
 
 ## Current State
 
-V6.6 ASCII 加固完成：
+V6.7 baseline hardening 已进入验证阶段：
+- **RTL 修复**：`ad7606_if.v` 新增 `soft_rst_n`，`transient_puf_v60_top.v` 在每次 `capture_start` 上升沿触发 AD7606 软复位脉冲，目标是消除 +2V DC 共模偏置稳态（baseline doubling）。
+- **PC 防线**：`capture_ascii_v60.py` 新增采集前 preflight baseline 自检 + 采后 baseline 自动校验；发现 `DOUBLED/FLAT` 自动拒绝并重采。
+- **验证**：`tasks.ps1 check` 已通过（env + lint + sim），新增 `tb_ad7606_soft_reset`，全量 sim 4/4 PASS；V6.7 bitstream 已生成（2026-06-23 17:47）。
+- **待验证**：V6.7 SRAM program 后需确认 LCD/协议头为 `V6.7`，再用 B2-8 NTNP 跑采集，验证 baseline 不再卡在 21400 附近。
+
+0618 数据集状态（重要）：
+- `logs/0618_4state_10sensors_v66/` 已完成基线翻倍文件重采、B2-6/B2-8 重复采集、`processed/all_dataset.npz` 重建（4759 samples, valid=100%）。
+- 但该批次仍发现跨日期系统性漂移：B2-8 v1 baseline ~10120，v2 baseline ~10670；B2-7 CH1 在温度比较中出现 ~±450 LSB 异常跳变。
+- 因此 **0618 批次不作为最终定稿数据集**，只作为方法验证/异常案例/临时分析用。
+- 后续最终数据集应在 V6.7 确认烧录与 baseline 自检稳定后重新采集，建议目录：`logs/0624_4state_10sensors_v67/`。
+
+V6.6 ASCII 加固完成（历史状态）：
 - **R1 CRC8**：每行 ASCII payload 末尾追加 `*HH`（CRC-8/CCITT，poly=0x07）。RTL `capture_uart_streamer.v` 加 `crc8_step()` 同步累计；PC `capture_ascii_v60.py` 解析时校验，不匹配整帧丢弃 → `_errors.log`。每帧 +9 字节（0.7% overhead）。
 - **R3 序号校验**：纯 PC 改动。`_samples.csv` 多三列 `txn_gap_ok` / `mid_strict_order` / `sid_monotonic`。任一失败 → `valid=0`。
 - 兼容：parser 检测到无 `*` 自动走 V6.5/V6.0~V6.4 旧路径，0612 数据集仍可后处理。

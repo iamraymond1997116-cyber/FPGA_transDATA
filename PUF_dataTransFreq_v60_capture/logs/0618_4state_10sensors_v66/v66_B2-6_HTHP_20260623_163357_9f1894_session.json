@@ -1,0 +1,44 @@
+{
+  "tool": "capture_ascii_v60.py",
+  "tool_version": "v65-pc-revamp",
+  "args": {
+    "port": "COM5",
+    "baud": 921600,
+    "samples": 100,
+    "frames": 500,
+    "sensor": "B2-6",
+    "condition": "HTHP",
+    "timeout": 120.0,
+    "out_dir": "logs/0618_4state_10sensors_v66"
+  },
+  "env": {
+    "captured_at": "2026-06-23T16:34:05.158596",
+    "host": "WCW-Ylab",
+    "python_version": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "git_hash": "17e3e8c2ade801e425b01bc8139e90a840802a56",
+    "git_branch": "fix/ad7606-reset-on-mode-switch",
+    "git_dirty": true,
+    "rtl_version": "V6.6"
+  },
+  "summary": {
+    "raw_frames": 500,
+    "kept_frames": 495,
+    "samples_written": 99,
+    "boundary_dropped_samples": 2,
+    "boundary_dropped_sample_ids": [
+      26028,
+      26128
+    ],
+    "parse_errors": 0,
+    "sample_errors": 0,
+    "elapsed_seconds": 8.02,
+    "fps": 62.3,
+    "saturated_total": 0,
+    "stem": "v66_B2-6_HTHP_20260623_163357_9f1894",
+    "baseline_verdict": "OK",
+    "baseline_ch1": 10671.0,
+    "baseline_ch2": 10709.8,
+    "attempt": 1
+  }
+}

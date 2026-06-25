@@ -39,7 +39,7 @@ module transient_puf_v60_top (
 );
 
     localparam [7:0] VERSION_MAJOR = 8'd6;
-    localparam [7:0] VERSION_MINOR = 8'd6;
+    localparam [7:0] VERSION_MINOR = 8'd7;
 
     // ── Mode encoding (3-bit) ──
     localparam [2:0] MODE_FULL        = 3'd0;
@@ -81,6 +81,11 @@ module transient_puf_v60_top (
     wire       power_off_pulse;
     wire       capture_trigger;     // unified trigger for transient_capture
     wire       early_precharge;     // pre-assert ON during UART busy (NEG_CUT)
+
+    // ADC 软复位（修复 baseline doubling）：capture_start 上升沿触发 1us RESET 脉冲
+    reg        capture_start_d1 = 1'b0;
+    reg  [8:0] adc_soft_rst_cnt  = 9'd0;   // 0 = idle, 非零 = 正在复位
+    reg        adc_soft_rst_n    = 1'b1;
 
     wire capture_done;
     wire [6:0] capture_buffer_addr;
@@ -145,6 +150,7 @@ module transient_puf_v60_top (
     ad7606_if ad7606_if_inst (
         .clk(pixel_clk),
         .rst_n(system_reset_n),
+        .soft_rst_n(adc_soft_rst_n),
         .ad_data(ad7606_data),
         .ad_busy(ad7606_busy),
         .first_data(ad7606_first_data),
@@ -270,6 +276,29 @@ module transient_puf_v60_top (
                 capture_mode <= mode_select;
                 capture_start <= 1'b1;
                 capture_req <= 1'b0;
+            end
+        end
+    end
+
+    // ── ADC 软复位脉冲生成 ──
+    // capture_start 上升沿触发 1us 低电平（200 cycles @ 200MHz），远 > AD7606 50ns 最小值
+    // 修复 AD7606 内部模拟前端 DC 偏置稳态（baseline doubling），让 ADC 在每次模式切换时硬重置
+    always @(posedge pixel_clk or negedge system_reset_n) begin
+        if (!system_reset_n) begin
+            capture_start_d1 <= 1'b0;
+            adc_soft_rst_cnt <= 9'd0;
+            adc_soft_rst_n   <= 1'b1;
+        end else begin
+            capture_start_d1 <= capture_start;
+            if (capture_start && !capture_start_d1) begin
+                // capture_start 上升沿：启动 1us 软复位脉冲
+                adc_soft_rst_cnt <= 9'd200;
+                adc_soft_rst_n   <= 1'b0;
+            end else if (adc_soft_rst_cnt != 9'd0) begin
+                adc_soft_rst_cnt <= adc_soft_rst_cnt - 9'd1;
+                adc_soft_rst_n   <= (adc_soft_rst_cnt != 9'd1);
+            end else begin
+                adc_soft_rst_n   <= 1'b1;
             end
         end
     end
